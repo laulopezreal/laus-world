@@ -6,16 +6,16 @@ interface ReadingProgressProps {
 
 export function ReadingProgress({ content }: ReadingProgressProps) {
     const [progress, setProgress] = useState(0);
-    const [shouldShow, setShouldShow] = useState(false);
-
     const wordCount = useMemo(() => {
-        return content.trim().split(/\s+/).length;
+        // Using match with \S+ is more robust for word counting
+        return content.match(/\S+/g)?.length ?? 0;
     }, [content]);
 
-    useEffect(() => {
-        // Only show if the note is long enough (> 300 words)
-        setShouldShow(wordCount > 300);
-    }, [wordCount]);
+    const MIN_WORD_COUNT_TO_SHOW_PROGRESS = 300;
+    const shouldShow = useMemo(
+        () => wordCount > MIN_WORD_COUNT_TO_SHOW_PROGRESS,
+        [wordCount]
+    );
 
     const handleScroll = useCallback(() => {
         if (!shouldShow) return;

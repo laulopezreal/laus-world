@@ -18,6 +18,12 @@ export default {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif']
       },
+      fontSize: {
+        '2xs': '10px'
+      },
+      letterSpacing: {
+        'wide-xl': '0.4em'
+      },
       borderRadius: {
         lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)'

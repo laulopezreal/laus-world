@@ -29,7 +29,7 @@ interface TreeNodeComponentProps {
 }
 
 function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
-    const [isExpanded, setIsExpanded] = useState(level === 0);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     if (node.type === 'note') {
         return (

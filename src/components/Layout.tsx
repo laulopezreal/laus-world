@@ -33,8 +33,8 @@ export function Layout({ children }: { children: ReactNode }) {
             open && 'translate-x-0'
           )}
         >
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-lg font-display tracking-wide">
+          <div className="flex items-center justify-between min-h-[4rem]">
+            <Link to="/" className="text-xl font-display tracking-tight hover:text-accent transition-colors">
               Laura&apos;s World
             </Link>
             <button
@@ -72,8 +72,8 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </aside>
 
-        <main className="flex-1 lg:ml-72">
-          <header className="sticky top-0 z-30 mb-6 rounded-2xl border border-border bg-surface/80 px-4 py-3 backdrop-blur-md">
+        <main className="flex-1 min-w-0">
+          <header className="sticky top-0 z-40 mb-6 rounded-2xl border border-border bg-surface/80 px-4 py-3 backdrop-blur-md">
             <form onSubmit={handleSearch} className="flex items-center gap-3">
               <input
                 type="text"

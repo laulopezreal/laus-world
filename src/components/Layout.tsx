@@ -26,7 +26,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto flex min-h-screen max-w-6xl gap-6 px-4 py-6 lg:px-8">
+      <div className="mx-auto flex min-h-screen max-w-7xl gap-8 px-6 py-8 lg:px-12">
         <aside
           className={clsx(
             'fixed inset-y-0 left-0 z-40 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',

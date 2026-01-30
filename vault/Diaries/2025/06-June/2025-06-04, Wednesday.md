@@ -1,0 +1,5 @@
+- [ ]  Answer Deepmind
+- [ ] Send email to Haji and Namshek regarding PhD application
+- [ ] RAGIFY BLUEPRINT
+- [ ] Talk to Cherry and Haji about the graduate program https://az.brightidea.com/EarlyTalentRotationOpportunities
+- [ ] Try the experiment to assume an IAM role to access S3 buckets outside Domino Organisation

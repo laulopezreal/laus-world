@@ -1,0 +1,95 @@
+/* Ported from lau-site */
+
+.toggle-container {
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.65);
+    /* Scaled down slightly for sidebar */
+    transform-origin: center;
+}
+
+.box {
+    height: 2.5rem;
+    width: 7.5rem;
+    border-radius: 40px;
+    border: 2px solid var(--color-border);
+    transition: background-color 0.4s var(--ease-smooth);
+}
+
+.box.boxedin {
+    background-color: var(--color-accent);
+    /* Night mode active */
+}
+
+.box.boxedout {
+    background-color: var(--color-elevated);
+    /* Day mode active */
+}
+
+.switch {
+    height: 30px;
+    width: 110px;
+    margin-top: 3px;
+    margin-left: 3px;
+    border-radius: 30px;
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+.switch.switchedin {
+    background-color: var(--color-accent-soft);
+    transition: background-color 0.4s var(--ease-smooth);
+}
+
+.switch.switchedout {
+    background-color: var(--color-muted);
+    transition: background-color 0.4s var(--ease-smooth);
+}
+
+.yoke {
+    height: 1.25rem;
+    width: 1.4rem;
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    border-radius: 20px;
+    background-color: #FBFFC9;
+    /* Pale yellow */
+    position: absolute;
+}
+
+.yoke.yoked {
+    animation: yokeMoveIn 0.4s forwards var(--ease-smooth);
+}
+
+.yoke.unyoked {
+    animation: yokeMoveOut 0.4s forwards var(--ease-smooth);
+}
+
+@keyframes yokeMoveIn {
+    from {
+        margin-left: 5px;
+        background-color: #FBFFC9;
+    }
+
+    to {
+        margin-left: 80px;
+        background-color: var(--color-bg);
+    }
+}
+
+@keyframes yokeMoveOut {
+    from {
+        margin-left: 80px;
+        background-color: var(--color-bg);
+    }
+
+    to {
+        margin-left: 5px;
+        background-color: #FBFFC9;
+    }
+}

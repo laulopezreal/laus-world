@@ -1,0 +1,38 @@
+
+- [ ] Open PR in Scispacy to update:
+	- [ ] Spacy to the latest version
+	- [ ] Numpy to >v2
+- [ ] Advance with the Ragify blueprint
+
+**Work**
+- [ ] Talk to the guy of the Barcelona IT graduates program
+- [ ] Talk to Cherry and Haji about the graduate program https://az.brightidea.com/EarlyTalentRotationOpportunities
+- [ ] Answer Deepmind
+- [ ] Answer AWS and google cloud
+- [ ] Answer johannes
+- [ ] Update domino tickets
+
+**AI SUMMIT**
+- [x] upload the tickets and bills from the trip
+- [x] Send concur Informs
+- [ ] Transcribe the conference notes
+
+**Agentic AI Hands-on**
+
+- [ ] Hablar con los cloud vendors para el Agentic AI hands-on workshop
+- [ ] send the proposal through the form: https://forms.office.com/Pages/ResponsePage.aspx?id=o4mOr6zZL0KtBsxOtCFDFMaInFy0dx1CmL1mWXOUYPhUQldCSEdBU0w3RjBHMkhGVDU2OE5aMUlBRy4u
+ - [x] Hablar con AZ reception about Agentic AI hands-on workshop
+- [x] folloe up with  reception and confirm that we will be around 50 people, on/site, 4 and 5 September
+
+**PhD**
+- [ ] Open the applicant portal
+- [ ] Find out about Bench Fees
+- [ ] Follow up with Michael
+- [ ] Ask nacho to confirm his ref letter.
+- [x] Do the ATLAS training
+__
+**Life**
+- [ ] Claim yellow jersey
+- [ ] Organizar baby shower Marta
+- [ ] Return printer
+- [ ] Check conditions for emancipacio program

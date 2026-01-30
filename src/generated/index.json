@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-01-29T18:00:00.000Z",
+  "notes": [
+    {
+      "slug": "welcome",
+      "path": "Welcome.md",
+      "title": "Welcome to Laura's World",
+      "excerpt": "This is the opening portal into the vault. Explore Studio Rituals or revisit the archive guide.",
+      "tags": ["pin", "intro"],
+      "created": "2026-01-01",
+      "updated": "2026-01-20",
+      "cover": null,
+      "content": "\nThis is the opening portal into the vault. Explore [[Studio Rituals]] or revisit the [[Archive|archive guide]].\n\n- Build cozy systems\n- Connect ideas\n- Protect the quiet\n",
+      "links": [
+        {
+          "label": "Studio Rituals",
+          "target": "studio-rituals",
+          "type": "wikilink"
+        },
+        {
+          "label": "archive guide",
+          "target": "archive",
+          "type": "wikilink"
+        }
+      ],
+      "backlinks": [
+        {
+          "target": "archive",
+          "label": "Archive",
+          "type": "wikilink"
+        }
+      ]
+    },
+    {
+      "slug": "studio-rituals",
+      "path": "Studio Rituals.md",
+      "title": "Studio Rituals",
+      "excerpt": "Morning light, slow playlists, and a checklist that starts with tea. Link to Archive.",
+      "tags": ["pin", "process"],
+      "created": "2026-01-02",
+      "updated": "2026-01-22",
+      "cover": null,
+      "content": "\nMorning light, slow playlists, and a checklist that starts with tea. Link to [Archive](Archive.md).\n",
+      "links": [
+        {
+          "label": "Archive",
+          "target": "archive",
+          "type": "markdown"
+        }
+      ],
+      "backlinks": [
+        {
+          "target": "welcome",
+          "label": "Welcome to Laura's World",
+          "type": "wikilink"
+        }
+      ]
+    },
+    {
+      "slug": "archive",
+      "path": "Archive.md",
+      "title": "Archive",
+      "excerpt": "The archive stores project snapshots, moodboards, and long-form essays. Related: Welcome to Laura's World.",
+      "tags": ["reference"],
+      "created": "2025-12-10",
+      "updated": "2026-01-18",
+      "cover": null,
+      "content": "\nThe archive stores project snapshots, moodboards, and long-form essays. Related: [[Welcome to Laura's World]].\n",
+      "links": [
+        {
+          "label": "Welcome to Laura's World",
+          "target": "welcome",
+          "type": "wikilink"
+        }
+      ],
+      "backlinks": [
+        {
+          "target": "welcome",
+          "label": "Welcome to Laura's World",
+          "type": "wikilink"
+        },
+        {
+          "target": "studio-rituals",
+          "label": "Studio Rituals",
+          "type": "markdown"
+        }
+      ]
+    }
+  ],
+  "tags": ["intro", "pin", "process", "reference"]
+}

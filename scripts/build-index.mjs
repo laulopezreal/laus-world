@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const vaultDir = path.resolve('vault');
+const vaultDir = path.resolve('public/vault');
 const outputPath = path.resolve('src/generated/index.json');
 
 const slugify = (value) =>

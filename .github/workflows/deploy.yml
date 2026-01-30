@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # IMPORTANT: We run sync here. 
+      # Since we can't access local Obsidian, this relies on notes being committed to public/vault.
+      # If public/vault is empty in the repo, this will just do nothing (or partial sync).
+      # But the goal is to use the repo's state.
+      - name: Sync & Build Index
+        run: |
+          npm run sync
+          npm run build:index
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages

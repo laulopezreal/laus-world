@@ -7,52 +7,62 @@ import fs from 'node:fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 
-// Default config
+// Sync Configuration
+const OBSIDIAN_REPO = path.resolve(projectRoot, '../Obsidian');
+const VAULTS_TO_SYNC = ['Astrazeneca', 'Training'];
+
 const CONFIG = {
-    // Going up from 'lauras-world/scripts' -> 'lauras-world' -> 'Obsidian' -> 'Astrazeneca'
-    sourceDir: path.resolve(projectRoot, '../Astrazeneca'),
-    targetDir: path.resolve(projectRoot, 'vault'),
-    // Subfolders to exclude if needed
-    exclude: ['.obsidian', '.git', 'node_modules']
+    // Where to put them in the web app
+    targetRoot: path.resolve(projectRoot, 'public/vault'),
+    exclude: ['.obsidian', '.git', 'node_modules', '.DS_Store']
 };
 
-async function syncVault() {
-    console.log('🔄 Starting Vault Sync...');
-    console.log(`📂 Source: ${CONFIG.sourceDir}`);
-    console.log(`📂 Target: ${CONFIG.targetDir}`);
+async function syncVaults() {
+    console.log('🔄 Starting Multi-Vault Sync...');
+    console.log(`📂 Notes Repository: ${OBSIDIAN_REPO}`);
 
-    if (!fs.existsSync(CONFIG.sourceDir)) {
-        console.error(`❌ Source directory not found: ${CONFIG.sourceDir}`);
+    if (!fs.existsSync(OBSIDIAN_REPO)) {
+        console.error(`❌ Obsidian repo not found at: ${OBSIDIAN_REPO}`);
         process.exit(1);
     }
 
-    // 1. Clean target directory (optional - be careful not to delete system files)
-    // For safety, we might just overwrite. But to remove deleted notes, cleaning is best.
-    // We'll preserve 'Welcome.md' or similar if intended, but usually a full sync is better.
-    console.log('🧹 Cleaning target directory...');
-    await rm(CONFIG.targetDir, { recursive: true, force: true });
-    await mkdir(CONFIG.targetDir, { recursive: true });
+    // 1. Clean entire target vault directory to ensure freshness
+    console.log('🧹 Cleaning target vault...');
+    await rm(CONFIG.targetRoot, { recursive: true, force: true });
+    await mkdir(CONFIG.targetRoot, { recursive: true });
 
-    // 2. recursive copy
-    console.log('📦 Copying files...');
+    // 2. Iterate and sync each vault
+    for (const vaultName of VAULTS_TO_SYNC) {
+        const sourcePath = path.join(OBSIDIAN_REPO, vaultName);
+        const targetPath = path.join(CONFIG.targetRoot, vaultName);
 
-    // We use fs.cp with a filter function
-    await cp(CONFIG.sourceDir, CONFIG.targetDir, {
-        recursive: true,
-        filter: (src, dest) => {
-            const basename = path.basename(src);
-            // Skip hidden files/dirs (starting with .) except if needed? 
-            // Actually usually we want to skip .obsidian folder but keep .md files.
-            if (CONFIG.exclude.includes(basename)) return false;
-            if (basename.startsWith('.') && basename !== '.htaccess') return false; // skip hidden files
-            return true;
+        console.log(`\n📦 Syncing Vault: ${vaultName}`);
+        console.log(`   From: ${sourcePath}`);
+        console.log(`   To:   ${targetPath}`);
+
+        if (!fs.existsSync(sourcePath)) {
+            console.warn(`   ⚠️ Source vault not found: ${sourcePath} (Skipping)`);
+            continue;
         }
-    });
 
-    console.log('✅ Sync Complete!');
+        await mkdir(targetPath, { recursive: true });
+
+        await cp(sourcePath, targetPath, {
+            recursive: true,
+            filter: (src, dest) => {
+                const basename = path.basename(src);
+                if (CONFIG.exclude.includes(basename)) return false;
+                if (basename.startsWith('.') && basename !== '.htaccess') return false;
+                return true;
+            }
+        });
+        console.log(`   ✅ Synced ${vaultName}`);
+    }
+
+    console.log('\n✨ All Vaults Synced Successfully!');
 }
 
-syncVault().catch(err => {
+syncVaults().catch(err => {
     console.error('❌ Sync Failed:', err);
     process.exit(1);
 });

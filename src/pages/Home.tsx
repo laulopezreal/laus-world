@@ -9,93 +9,102 @@ export function Home() {
   const recent = getRecentNotes();
 
   return (
-    <div className="space-y-10">
-      <section className="rounded-3xl border border-border bg-elevated/60 p-10 shadow-glow">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted">Obsidian Vault</p>
-        <h1 className="mt-4 text-4xl font-display leading-tight md:text-5xl">
-          Laura&apos;s World
-        </h1>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          A calm, luminous window into your notes — curated, connected, and ready for a
-          midnight wander.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            to="/search"
-            className="rounded-full border border-border bg-accentSoft px-5 py-2 text-xs uppercase tracking-[0.3em] text-text transition duration-300 ease-smooth hover:shadow-glow"
-          >
-            Open Search
-          </Link>
-          <Link
-            to="/graph"
-            className="rounded-full border border-border px-5 py-2 text-xs uppercase tracking-[0.3em] text-muted transition duration-300 ease-smooth hover:text-text"
-          >
-            View Graph
-          </Link>
+    <div className="space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-700 ease-out">
+      <section className="relative overflow-hidden rounded-[2.5rem] border border-border bg-surface/40 p-12 shadow-glow-sm backdrop-blur-sm">
+        <div className="relative z-10">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-semibold">Discovery</p>
+          <h1 className="mt-4 text-5xl font-display leading-[1.1] md:text-6xl tracking-tight">
+            Laura&apos;s World
+          </h1>
+          <p className="mt-5 max-w-xl text-lg text-muted leading-relaxed font-light">
+            A quiet sanctuary for your thoughts and discoveries. Explore the connections between your
+            notes in a space designed for reflection.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              to="/graph"
+              className="group flex items-center gap-3 rounded-full border border-accent bg-accentSoft px-8 py-3 text-xs uppercase tracking-[0.3em] text-accent transition-all duration-500 hover:bg-accent hover:text-surface hover:shadow-glow"
+            >
+              Explore Graph
+              <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
         </div>
+
+        {/* Subtle decorative element */}
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
       </section>
 
       <section>
         <SectionHeader
-          title="Pinned notes"
-          subtitle="Highlights tagged with #pin."
+          title="Pinned highlights"
+          subtitle="Fixed thoughts that light the way."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {pinned.length === 0 && (
-            <Card>
-              <p className="text-sm text-muted">No pinned notes yet.</p>
+            <Card className="flex items-center justify-center py-12 border-dashed">
+              <p className="text-sm text-muted italic">No pinned notes yet. Add #pin to any note.</p>
             </Card>
           )}
           {pinned.map((note) => (
-            <Card key={note.slug}>
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-display">{note.title}</h3>
-                <Link className="text-xs uppercase tracking-[0.3em] text-accent" to={`/note/${note.slug}`}>
-                  Read
-                </Link>
-              </div>
-              <p className="mt-3 text-sm text-muted">{note.excerpt}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {note.tags.map((tag) => (
-                  <TagChip key={tag} tag={tag} />
-                ))}
-              </div>
-            </Card>
+            <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
+              <Card className="h-full border-border/40 group-hover:border-accent group-hover:bg-accentSoft group-hover:shadow-glow-sm transition-all duration-500">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-display group-hover:text-accent transition-colors">{note.title}</h3>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-muted group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
+                    Read
+                  </span>
+                </div>
+                <p className="mt-3 text-sm text-muted line-clamp-2 leading-relaxed">{note.excerpt}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {note.tags.map((tag) => (
+                    <TagChip key={tag} tag={tag} />
+                  ))}
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>
 
       <section>
-        <SectionHeader title="Recent notes" subtitle="Latest updates from the vault." />
+        <SectionHeader title="Latest updates" subtitle="The pulse of your recent thoughts." />
         <div className="grid gap-6 md:grid-cols-3">
           {recent.map((note) => (
-            <Card key={note.slug} className="flex h-full flex-col">
-              <h3 className="text-lg font-display">{note.title}</h3>
-              <p className="mt-3 text-sm text-muted">{note.excerpt}</p>
-              <div className="mt-auto pt-4">
-                <Link className="text-xs uppercase tracking-[0.3em] text-accent" to={`/note/${note.slug}`}>
-                  Continue
-                </Link>
-              </div>
-            </Card>
+            <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
+              <Card key={note.slug} className="flex h-full flex-col border-border/40 group-hover:border-accent/40 group-hover:bg-accentSoft transition-all duration-500">
+                <h3 className="text-lg font-display group-hover:text-accent transition-colors">{note.title}</h3>
+                <p className="mt-3 text-sm text-muted line-clamp-3 leading-relaxed">{note.excerpt}</p>
+                <div className="mt-auto pt-6 flex items-center justify-between">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-semibold group-hover:text-accent transition-colors">
+                    {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-1 group-hover:translate-x-0">
+                    Continue →
+                  </span>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section>
-        <SectionHeader title="Quick links" subtitle="Jump to curated views." />
+      <section className="pb-10">
+        <SectionHeader title="Collections" subtitle="Navigate your digital garden." />
         <div className="grid gap-4 md:grid-cols-3">
           {[
             { to: '/tags', label: 'All Tags', copy: 'Browse by theme.' },
-            { to: '/search', label: 'Search', copy: 'Find anything fast.' },
-            { to: '/graph', label: 'Graph', copy: 'See the network.' }
+            { to: '/graph', label: 'Knowledge Graph', copy: 'See the network.' }
           ].map((item) => (
-            <Card key={item.to} className="space-y-2">
-              <Link className="text-lg font-display" to={item.to}>
-                {item.label}
-              </Link>
-              <p className="text-sm text-muted">{item.copy}</p>
-            </Card>
+            <Link key={item.to} to={item.to} className="group block">
+              <Card className="space-y-2 border-border/40 group-hover:border-accent group-hover:bg-accentSoft transition-all duration-500">
+                <h3 className="text-xl font-display group-hover:text-accent transition-colors">
+                  {item.label}
+                </h3>
+                <p className="text-sm text-muted font-light">{item.copy}</p>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>

@@ -64,7 +64,7 @@ Error generating stack: `+o.message+`
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function yc(){return yc=Object.assign?Object.assign.bind():function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var a in r)Object.prototype.hasOwnProperty.call(r,a)&&(e[a]=r[a])}return e},yc.apply(this,arguments)}function o4(e,n){if(e==null)return{};var r={},a=Object.keys(e),i,o;for(o=0;o<a.length;o++)i=a[o],!(n.indexOf(i)>=0)&&(r[i]=e[i]);return r}function nA(e){return!!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)}function rA(e,n){return e.button===0&&(!n||n==="_self")&&!nA(e)}const aA=["onClick","relative","reloadDocument","replace","state","target","to","preventScrollReset","viewTransition"],iA=["aria-current","caseSensitive","className","end","style","to","viewTransition","children"],oA="6";try{window.__reactRouterVersion=oA}catch{}const sA=$.createContext({isTransitioning:!1}),lA="startTransition",gg=ex[lA];function uA(e){let{basename:n,children:r,future:a,window:i}=e,o=$.useRef();o.current==null&&(o.current=h7({window:i,v5Compat:!0}));let s=o.current,[l,u]=$.useState({action:s.action,location:s.location}),{v7_startTransition:c}=a||{},h=$.useCallback(d=>{c&&gg?gg(()=>u(d)):u(d)},[u,c]);return $.useLayoutEffect(()=>s.listen(h),[s,h]),$.useEffect(()=>$7(a),[a]),$.createElement(eA,{basename:n,children:r,location:l.location,navigationType:l.action,navigator:s,future:a})}const cA=typeof window<"u"&&typeof window.document<"u"&&typeof window.document.createElement<"u",dA=/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,qt=$.forwardRef(function(n,r){let{onClick:a,relative:i,reloadDocument:o,replace:s,state:l,target:u,to:c,preventScrollReset:h,viewTransition:d}=n,f=o4(n,aA),{basename:p}=$.useContext(qa),y,w=!1;if(typeof c=="string"&&dA.test(c)&&(y=c,cA))try{let x=new URL(window.location.href),E=c.startsWith("//")?new URL(x.protocol+c):new URL(c),C=go(E.pathname,p);E.origin===x.origin&&C!=null?c=C+E.search+E.hash:w=!0}catch{}let A=L7(c,{relative:i}),g=pA(c,{replace:s,state:l,target:u,preventScrollReset:h,relative:i,viewTransition:d});function v(x){a&&a(x),x.defaultPrevented||g(x)}return $.createElement("a",yc({},f,{href:y||A,onClick:w||o?a:v,ref:r,target:u}))}),hA=$.forwardRef(function(n,r){let{"aria-current":a="page",caseSensitive:i=!1,className:o="",end:s=!1,style:l,to:u,viewTransition:c,children:h}=n,d=o4(n,iA),f=u0(u,{relative:d.relative}),p=wl(),y=$.useContext(J3),{navigator:w,basename:A}=$.useContext(qa),g=y!=null&&mA(f)&&c===!0,v=w.encodeLocation?w.encodeLocation(f).pathname:f.pathname,x=p.pathname,E=y&&y.navigation&&y.navigation.location?y.navigation.location.pathname:null;i||(x=x.toLowerCase(),E=E?E.toLowerCase():null,v=v.toLowerCase()),E&&A&&(E=go(E,A)||E);const C=v!=="/"&&v.endsWith("/")?v.length-1:v.length;let S=x===v||!s&&x.startsWith(v)&&x.charAt(C)==="/",R=E!=null&&(E===v||!s&&E.startsWith(v)&&E.charAt(v.length)==="/"),D={isActive:S,isPending:R,isTransitioning:g},U=S?a:void 0,P;typeof o=="function"?P=o(D):P=[o,S?"active":null,R?"pending":null,g?"transitioning":null].filter(Boolean).join(" ");let K=typeof l=="function"?l(D):l;return $.createElement(qt,yc({},d,{"aria-current":U,className:P,ref:r,style:K,to:u,viewTransition:c}),typeof h=="function"?h(D):h)});var Vh;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher",e.useViewTransitionState="useViewTransitionState"})(Vh||(Vh={}));var yg;(function(e){e.UseFetcher="useFetcher",e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(yg||(yg={}));function fA(e){let n=$.useContext(s0);return n||ct(!1),n}function pA(e,n){let{target:r,replace:a,state:i,preventScrollReset:o,relative:s,viewTransition:l}=n===void 0?{}:n,u=t4(),c=wl(),h=u0(e,{relative:s});return $.useCallback(d=>{if(rA(d,r)){d.preventDefault();let f=a!==void 0?a:gc(c)===gc(h);u(e,{replace:f,state:i,preventScrollReset:o,relative:s,viewTransition:l})}},[c,u,h,a,i,r,e,o,s,l])}function mA(e,n){n===void 0&&(n={});let r=$.useContext(sA);r==null&&ct(!1);let{basename:a}=fA(Vh.useViewTransitionState),i=u0(e,{relative:n.relative});if(!r.isTransitioning)return!1;let o=go(r.currentLocation.pathname,a)||r.currentLocation.pathname,s=go(r.nextLocation.pathname,a)||r.nextLocation.pathname;return Gh(i.pathname,s)!=null||Gh(i.pathname,o)!=null}const s4=$.createContext(void 0);function gA({children:e}){const[n,r]=$.useState(()=>localStorage.getItem("theme")||"dark");$.useEffect(()=>{const i=document.documentElement;n==="light"?i.classList.add("light"):i.classList.remove("light"),localStorage.setItem("theme",n)},[n]);const a=()=>{r(i=>i==="dark"?"light":"dark")};return H.jsx(s4.Provider,{value:{theme:n,toggleTheme:a,isDark:n==="dark"},children:e})}function yA(){const e=$.useContext(s4);if(e===void 0)throw new Error("useTheme must be used within a ThemeProvider");return e}function l4(e){var n,r,a="";if(typeof e=="string"||typeof e=="number")a+=e;else if(typeof e=="object")if(Array.isArray(e)){var i=e.length;for(n=0;n<i;n++)e[n]&&(r=l4(e[n]))&&(a&&(a+=" "),a+=r)}else for(r in e)e[r]&&(a&&(a+=" "),a+=r);return a}function bc(){for(var e,n,r=0,a="",i=arguments.length;r<i;r++)(e=arguments[r])&&(n=l4(e))&&(a&&(a+=" "),a+=n);return a}function bA(){const{isDark:e,toggleTheme:n}=yA(),[r,a]=$.useState(!1);return $.useEffect(()=>{a(!0)},[]),r?H.jsx("div",{className:"toggle-container",children:H.jsx("div",{className:`box ${e?"boxedin":"boxedout"}`,children:H.jsx("label",{className:`switch ${e?"switchedin":"switchedout"}`,onClick:n,children:H.jsx("div",{className:`yoke ${e?"yoked":"unyoked"}`})})})}):H.jsx("div",{className:"toggle-container opacity-0",children:" "})}function u4({nodes:e,level:n=0}){return H.jsx("div",{className:"folder-tree",children:e.map(r=>H.jsx(vA,{node:r,level:n},r.path))})}function vA({node:e,level:n}){const[r,a]=$.useState(n===0);if(e.type==="note")return H.jsxs(qt,{to:`/note/${e.slug}`,className:"tree-node tree-note",style:{paddingLeft:`${n*1.25+.5}rem`},children:[H.jsx("span",{className:"tree-icon",children:"📄"}),H.jsx("span",{className:"tree-label",children:e.name})]});const i=c4(e);return H.jsxs("div",{className:"tree-folder",children:[H.jsxs("button",{className:"tree-node tree-folder-toggle",style:{paddingLeft:`${n*1.25+.5}rem`},onClick:()=>a(!r),children:[H.jsx("span",{className:"tree-icon",children:r?"📂":"📁"}),H.jsx("span",{className:"tree-label",children:e.name}),H.jsx("span",{className:"tree-count",children:i})]}),r&&e.children&&H.jsx(u4,{nodes:e.children,level:n+1})]})}function c4(e){return e.type==="note"?1:e.children?e.children.reduce((n,r)=>n+c4(r),0):0}const wA=[{slug:"astrazeneca-2025-11-25-tuesday",path:"Astrazeneca/2025-11-25, Tuesday.md",title:"2025-11-25, Tuesday",excerpt:"Meeting R&D Compute Strategy and Domino Atendees : Anders Advissor Principal Architect Strategy & Enterprise IT We spoke about a check on the Domino and Sferical entries, AND",tags:[],content:`
+ */function yc(){return yc=Object.assign?Object.assign.bind():function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var a in r)Object.prototype.hasOwnProperty.call(r,a)&&(e[a]=r[a])}return e},yc.apply(this,arguments)}function o4(e,n){if(e==null)return{};var r={},a=Object.keys(e),i,o;for(o=0;o<a.length;o++)i=a[o],!(n.indexOf(i)>=0)&&(r[i]=e[i]);return r}function nA(e){return!!(e.metaKey||e.altKey||e.ctrlKey||e.shiftKey)}function rA(e,n){return e.button===0&&(!n||n==="_self")&&!nA(e)}const aA=["onClick","relative","reloadDocument","replace","state","target","to","preventScrollReset","viewTransition"],iA=["aria-current","caseSensitive","className","end","style","to","viewTransition","children"],oA="6";try{window.__reactRouterVersion=oA}catch{}const sA=$.createContext({isTransitioning:!1}),lA="startTransition",gg=ex[lA];function uA(e){let{basename:n,children:r,future:a,window:i}=e,o=$.useRef();o.current==null&&(o.current=h7({window:i,v5Compat:!0}));let s=o.current,[l,u]=$.useState({action:s.action,location:s.location}),{v7_startTransition:c}=a||{},h=$.useCallback(d=>{c&&gg?gg(()=>u(d)):u(d)},[u,c]);return $.useLayoutEffect(()=>s.listen(h),[s,h]),$.useEffect(()=>$7(a),[a]),$.createElement(eA,{basename:n,children:r,location:l.location,navigationType:l.action,navigator:s,future:a})}const cA=typeof window<"u"&&typeof window.document<"u"&&typeof window.document.createElement<"u",dA=/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,qt=$.forwardRef(function(n,r){let{onClick:a,relative:i,reloadDocument:o,replace:s,state:l,target:u,to:c,preventScrollReset:h,viewTransition:d}=n,f=o4(n,aA),{basename:p}=$.useContext(qa),y,w=!1;if(typeof c=="string"&&dA.test(c)&&(y=c,cA))try{let x=new URL(window.location.href),E=c.startsWith("//")?new URL(x.protocol+c):new URL(c),C=go(E.pathname,p);E.origin===x.origin&&C!=null?c=C+E.search+E.hash:w=!0}catch{}let A=L7(c,{relative:i}),g=pA(c,{replace:s,state:l,target:u,preventScrollReset:h,relative:i,viewTransition:d});function v(x){a&&a(x),x.defaultPrevented||g(x)}return $.createElement("a",yc({},f,{href:y||A,onClick:w||o?a:v,ref:r,target:u}))}),hA=$.forwardRef(function(n,r){let{"aria-current":a="page",caseSensitive:i=!1,className:o="",end:s=!1,style:l,to:u,viewTransition:c,children:h}=n,d=o4(n,iA),f=u0(u,{relative:d.relative}),p=wl(),y=$.useContext(J3),{navigator:w,basename:A}=$.useContext(qa),g=y!=null&&mA(f)&&c===!0,v=w.encodeLocation?w.encodeLocation(f).pathname:f.pathname,x=p.pathname,E=y&&y.navigation&&y.navigation.location?y.navigation.location.pathname:null;i||(x=x.toLowerCase(),E=E?E.toLowerCase():null,v=v.toLowerCase()),E&&A&&(E=go(E,A)||E);const C=v!=="/"&&v.endsWith("/")?v.length-1:v.length;let S=x===v||!s&&x.startsWith(v)&&x.charAt(C)==="/",R=E!=null&&(E===v||!s&&E.startsWith(v)&&E.charAt(v.length)==="/"),D={isActive:S,isPending:R,isTransitioning:g},U=S?a:void 0,P;typeof o=="function"?P=o(D):P=[o,S?"active":null,R?"pending":null,g?"transitioning":null].filter(Boolean).join(" ");let K=typeof l=="function"?l(D):l;return $.createElement(qt,yc({},d,{"aria-current":U,className:P,ref:r,style:K,to:u,viewTransition:c}),typeof h=="function"?h(D):h)});var Vh;(function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmit="useSubmit",e.UseSubmitFetcher="useSubmitFetcher",e.UseFetcher="useFetcher",e.useViewTransitionState="useViewTransitionState"})(Vh||(Vh={}));var yg;(function(e){e.UseFetcher="useFetcher",e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"})(yg||(yg={}));function fA(e){let n=$.useContext(s0);return n||ct(!1),n}function pA(e,n){let{target:r,replace:a,state:i,preventScrollReset:o,relative:s,viewTransition:l}=n===void 0?{}:n,u=t4(),c=wl(),h=u0(e,{relative:s});return $.useCallback(d=>{if(rA(d,r)){d.preventDefault();let f=a!==void 0?a:gc(c)===gc(h);u(e,{replace:f,state:i,preventScrollReset:o,relative:s,viewTransition:l})}},[c,u,h,a,i,r,e,o,s,l])}function mA(e,n){n===void 0&&(n={});let r=$.useContext(sA);r==null&&ct(!1);let{basename:a}=fA(Vh.useViewTransitionState),i=u0(e,{relative:n.relative});if(!r.isTransitioning)return!1;let o=go(r.currentLocation.pathname,a)||r.currentLocation.pathname,s=go(r.nextLocation.pathname,a)||r.nextLocation.pathname;return Gh(i.pathname,s)!=null||Gh(i.pathname,o)!=null}const s4=$.createContext(void 0);function gA({children:e}){const[n,r]=$.useState(()=>localStorage.getItem("theme")||"dark");$.useEffect(()=>{const i=document.documentElement;n==="light"?i.classList.add("light"):i.classList.remove("light"),localStorage.setItem("theme",n)},[n]);const a=()=>{r(i=>i==="dark"?"light":"dark")};return H.jsx(s4.Provider,{value:{theme:n,toggleTheme:a,isDark:n==="dark"},children:e})}function yA(){const e=$.useContext(s4);if(e===void 0)throw new Error("useTheme must be used within a ThemeProvider");return e}function l4(e){var n,r,a="";if(typeof e=="string"||typeof e=="number")a+=e;else if(typeof e=="object")if(Array.isArray(e)){var i=e.length;for(n=0;n<i;n++)e[n]&&(r=l4(e[n]))&&(a&&(a+=" "),a+=r)}else for(r in e)e[r]&&(a&&(a+=" "),a+=r);return a}function bc(){for(var e,n,r=0,a="",i=arguments.length;r<i;r++)(e=arguments[r])&&(n=l4(e))&&(a&&(a+=" "),a+=n);return a}function bA(){const{isDark:e,toggleTheme:n}=yA(),[r,a]=$.useState(!1);return $.useEffect(()=>{a(!0)},[]),r?H.jsx("div",{className:"toggle-container",children:H.jsx("div",{className:`box ${e?"boxedin":"boxedout"}`,children:H.jsx("label",{className:`switch ${e?"switchedin":"switchedout"}`,onClick:n,children:H.jsx("div",{className:`yoke ${e?"yoked":"unyoked"}`})})})}):H.jsx("div",{className:"toggle-container opacity-0",children:" "})}function u4({nodes:e,level:n=0}){return H.jsx("ul",{className:`tree-list ${n===0?"tree-root":""}`,children:e.map((r,a)=>H.jsx(vA,{node:r,level:n,isLast:a===e.length-1},r.path))})}function vA({node:e,level:n,isLast:r}){const[a,i]=$.useState(n===0);if(e.type==="note")return H.jsx("li",{className:`tree-item ${r?"tree-item-last":""}`,children:H.jsxs(qt,{to:`/note/${e.slug}`,className:"tree-link",children:[H.jsx("span",{className:"tree-line"}),H.jsx("span",{className:"tree-content",children:H.jsx("span",{className:"tree-text",children:e.name})})]})});const o=c4(e);return H.jsxs("li",{className:`tree-item tree-branch ${r?"tree-item-last":""} ${a?"tree-expanded":""}`,children:[H.jsxs("button",{className:"tree-toggle",onClick:()=>i(!a),children:[H.jsx("span",{className:"tree-line"}),H.jsxs("span",{className:"tree-content",children:[H.jsx("span",{className:"tree-chevron",children:a?"▼":"▶"}),H.jsx("span",{className:"tree-text",children:e.name}),H.jsx("span",{className:"tree-badge",children:o})]})]}),a&&e.children&&H.jsx(u4,{nodes:e.children,level:n+1})]})}function c4(e){return e.type==="note"?1:e.children?e.children.reduce((n,r)=>n+c4(r),0):0}const wA=[{slug:"astrazeneca-2025-11-25-tuesday",path:"Astrazeneca/2025-11-25, Tuesday.md",title:"2025-11-25, Tuesday",excerpt:"Meeting R&D Compute Strategy and Domino Atendees : Anders Advissor Principal Architect Strategy & Enterprise IT We spoke about a check on the Domino and Sferical entries, AND",tags:[],content:`
 ## Meeting R&D Compute Strategy and Domino
 
 **Atendees**: Anders Advissor - Principal Architect - Strategy & Enterprise IT
@@ -97,41 +97,7 @@ Laura`,links:[],backlinks:[]},{slug:"astrazeneca-untitled",path:"Astrazeneca/Unt
 Create an enabler for Domino control plane evaluaton - finished.
 
 - Get numbers for Domino
-- Review compute matrix for Domino with the Domino team`,links:[],backlinks:[]},{slug:"training-weight-lifting-day-2-hombro-y-espalda",path:"Training/Weight lifting 🏋️‍♀️/Day 2 - Hombro y Espalda.md",title:"Day 2 - Hombro y Espalda",excerpt:"Calentamiento 5 min cinta / bici / elíptica Movilidad hombros y brazos Entrenamiento [ ] Jalón al pecho — 3×12 [ ] Peso: kg [x] Remo sentado máquina",tags:[],content:`**Calentamiento**
-- 5 min cinta / bici / elíptica
-- Movilidad hombros y brazos
-
-**Entrenamiento**
-
-- [ ] Jalón al pecho — 3×12  
-    - [ ] Peso: ___ kg
-
-- [x] Remo sentado máquina — 3×12  
-    - [ ] Peso: 20 kg
-
-- [ ] Press de pecho máquina — 3×12  
-    - [ ] Peso: ___ kg
-
-- [x] Peck-deck (aperturas) — 3×12  
-    - [ ] Peso: ___ kg
-    
-- [x] Curl de bíceps máquina — 3×12  
-    Peso: 7.5 kg
-    
-Deltoides trasero
-    
-- [x] Tríceps en polea — 3×12  
-    - [ ] Peso: 17.5 kg
-
-- [ ] Abdominal máquina o crunch — 3×15
-
-
-**Cardio final**
-- 10–15 min caminata inclinada / bici
-
-**Notas rápidas**
-- Sensación general: ⭐️⭐️⭐️⭐️⭐️
-- Algo que ajustar la próxima vez: __________`,links:[],backlinks:[]},{slug:"astrazeneca-az-001-solution-blueprint-design-process-for-architects",path:"Astrazeneca/AZ/001 Solution Blueprint Design process for Architects.md",title:"001 Solution Blueprint Design process for Architects",excerpt:"1. Make sure that you work under the last version of the blueprint. Current version is https://azcollaboration.sharepoint.com/:w:/r/sites/AA002/ layouts/15/Doc.aspx?sourcedoc=%7B78B78AF9 04F4 4A4A 83DF DB5D4FA9AFB7%7D&file=Solution%20BluePrint%20Template.docx&wdLOR=c6A4AABF3 09EC 9649 980C 11ABA1E6E552&action=default&mobileredirect=true 2. Complete",tags:[],content:`
+- Review compute matrix for Domino with the Domino team`,links:[],backlinks:[]},{slug:"astrazeneca-az-001-solution-blueprint-design-process-for-architects",path:"Astrazeneca/AZ/001 Solution Blueprint Design process for Architects.md",title:"001 Solution Blueprint Design process for Architects",excerpt:"1. Make sure that you work under the last version of the blueprint. Current version is https://azcollaboration.sharepoint.com/:w:/r/sites/AA002/ layouts/15/Doc.aspx?sourcedoc=%7B78B78AF9 04F4 4A4A 83DF DB5D4FA9AFB7%7D&file=Solution%20BluePrint%20Template.docx&wdLOR=c6A4AABF3 09EC 9649 980C 11ABA1E6E552&action=default&mobileredirect=true 2. Complete",tags:[],content:`
 1. Make sure that you work under the last version of the blueprint. Current version is https://azcollaboration.sharepoint.com/:w:/r/sites/AA002/_layouts/15/Doc.aspx?sourcedoc=%7B78B78AF9-04F4-4A4A-83DF-DB5D4FA9AFB7%7D&file=Solution%20BluePrint%20Template.docx&wdLOR=c6A4AABF3-09EC-9649-980C-11ABA1E6E552&action=default&mobileredirect=true
 2. Complete the blueprint to create a first draft (1/2 weeks depending on team providing the information and SA availability)
 3. Team to raise:
@@ -1017,226 +983,41 @@ I will get certified
 </svg></div><div class="social-icon_label">Facebook</div></a><a href="https://www.instagram.com/passpaw.uk/" target="_blank" class="social-icons1_link w-inline-block"><div class="social-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M16 3H8C5.23858 3 3 5.23858 3 8V16C3 18.7614 5.23858 21 8 21H16C18.7614 21 21 18.7614 21 16V8C21 5.23858 18.7614 3 16 3ZM19.25 16C19.2445 17.7926 17.7926 19.2445 16 19.25H8C6.20735 19.2445 4.75549 17.7926 4.75 16V8C4.75549 6.20735 6.20735 4.75549 8 4.75H16C17.7926 4.75549 19.2445 6.20735 19.25 8V16ZM16.75 8.25C17.3023 8.25 17.75 7.80228 17.75 7.25C17.75 6.69772 17.3023 6.25 16.75 6.25C16.1977 6.25 15.75 6.69772 15.75 7.25C15.75 7.80228 16.1977 8.25 16.75 8.25ZM12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5027 10.8057 16.0294 9.65957 15.1849 8.81508C14.3404 7.97059 13.1943 7.49734 12 7.5ZM9.25 12C9.25 13.5188 10.4812 14.75 12 14.75C13.5188 14.75 14.75 13.5188 14.75 12C14.75 10.4812 13.5188 9.25 12 9.25C10.4812 9.25 9.25 10.4812 9.25 12Z" fill="CurrentColor"/></path>
 </svg></div><div class="social-icon_label">Instagram</div></a><a href="#" class="social-icons1_link w-inline-block"><div class="social-icon_label">Twitter</div></a><a href="#" class="social-icons1_link w-inline-block"><div class="social-icon_label">YouTube</div></a></div></div></div><div id="w-node-_7a56818a-2d20-f91b-593a-57107d8f6e42-e58694a3" data-w-id="7a56818a-2d20-f91b-593a-57107d8f6e42" style="opacity: 0.17101; transform: translate3d(0px, 12.4349px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="functions"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6e7c652f7e6a33f3bd0_Captura_de_Pantalla_2023-05-19_a_las_11.34.45-removebg-preview.webp" loading="eager" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" height="300" alt="" data-w-id="7a56818a-2d20-f91b-593a-57107d8f6e43" class="image-functions" /><h3 data-w-id="7a56818a-2d20-f91b-593a-57107d8f6e44" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="heading-functions">Available now <span class="text-transparent">at the following UK locations. </span></h3><p data-w-id="7a56818a-2d20-f91b-593a-57107d8f6e48" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="paragraph">Not yet in you area?<br/>Please <a href="/contact" class="link-3"><span class="text-span-16">contact us</span> for more information.</a><br/></p></div></div></div><div data-w-id="88c26a7d-3953-e420-b7d0-81c8acd3651e" style="opacity: 1;" class="gradient"><div class="noise"></div></div></div><div class="section"><div class="content"><h2 data-w-id="9a2dfb51-1c08-f11b-cf75-ece1757f0eb3" style="opacity: 0.17101; transform: translate3d(0px, 12.4349px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="heading">Our difference</h2><div class="w-layout-grid grid-features"><div id="w-node-dcc960b3-abed-aaf9-d0c3-1b59732bf5d4-e58694a3" data-w-id="dcc960b3-abed-aaf9-d0c3-1b59732bf5d4" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/640664d9ab697735ed95d048_Captura_de_Pantalla_2023-03-06_a_las_22.09.52-removebg-preview.png" loading="eager" height="15" width="267.5" alt="" class="icon-features"/></div><h5 class="heading-features">Approved</h5><p class="paragraph-features">Pet health certificates that meet all the necessary requirements for traveling abroad.</p></div><div id="w-node-_739467ac-32c4-e8a0-a160-77cadd3688c7-e58694a3" data-w-id="739467ac-32c4-e8a0-a160-77cadd3688c7" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6e7e556b31d08662aa5_Captura_de_Pantalla_2023-03-06_a_las_21.45.00-removebg-preview.webp" loading="eager" alt="" class="icon-features"/></div><h5 class="heading-features">Travel requirements </h5><p class="paragraph-features">We will help you make sure your pet is ready for your international adventures.</p></div><div id="w-node-f58d2cf8-736b-0aab-98d8-69c9c47ca8e8-e58694a3" data-w-id="f58d2cf8-736b-0aab-98d8-69c9c47ca8e8" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6ea3596a7ff478bc9c3_Captura_de_Pantalla_2023-03-06_a_las_21.56.18-removebg-preview.webp" loading="eager" alt="" class="icon-features"/></div><h5 class="heading-features">Online order</h5><p class="paragraph-features">Easily order your pet´s health certificate with our online booking system.</p></div><div id="w-node-_311ad2c7-47e2-ebb0-122b-bf6339f9ab36-e58694a3" data-w-id="311ad2c7-47e2-ebb0-122b-bf6339f9ab36" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6eabd989cfde1d7e80c_Captura_de_Pantalla_2023-03-06_a_las_22.00.47-removebg-preview.webp" loading="eager" alt="" class="icon-features"/></div><h5 class="heading-features">Pay online</h5><p class="paragraph-features">Flexible online payment options. Pay now or split the cost into smaller payments. </p></div><div id="w-node-ede8888f-bd98-3ac0-d4c4-5c0fff663286-e58694a3" data-w-id="ede8888f-bd98-3ac0-d4c4-5c0fff663286" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6e73a4c28d2cfff6f97_Captura_de_Pantalla_2023-03-06_a_las_21.45.25-removebg-preview.webp" loading="eager" sizes="(max-width: 1439px) 78.390625px, (max-width: 1919px) 84px, 80px" srcset="https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6e73a4c28d2cfff6f97_Captura_de_Pantalla_2023-03-06_a_las_21.45.25-removebg-preview-p-500.webp 500w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6e73a4c28d2cfff6f97_Captura_de_Pantalla_2023-03-06_a_las_21.45.25-removebg-preview.webp 543w" alt="" class="icon-features"/></div><h5 class="heading-features">Express delivery </h5><p class="paragraph-features">Have your pet&#x27;s health certificate delivered to your home, in as few as 24 hours.</p></div><div id="w-node-_7b5598ba-075a-2d2c-167d-205a35011197-e58694a3" data-w-id="7b5598ba-075a-2d2c-167d-205a35011197" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="features"><div class="icon-features-bg"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6ea19dcc482e0e91c40_Captura_de_Pantalla_2023-03-06_a_las_21.59.26-removebg-preview.webp" loading="eager" alt="" class="icon-features"/></div><h5 class="heading-features">Any questions?</h5><p class="paragraph-features">Our team will be readily available to answer any questions you have, please get in touch.</p></div></div></div></div><div class="section"><div class="content"><h2 data-w-id="290f2322-e7d6-2060-3be0-7ab755cfb719" style="opacity: 0.17101; transform: translate3d(0px, 12.4349px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="heading">What clients say about us</h2></div><div class="content-wide"><div class="w-layout-grid grid-testimonials smaller-desktop"><div id="w-node-cdfd6c5d-0a52-e545-c7ba-8b60f0a0b9e2-e58694a3" data-w-id="cdfd6c5d-0a52-e545-c7ba-8b60f0a0b9e2" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="testimonials"><p class="paragraph-testimonials">&quot;I can&#x27;t recommend Passpaw enough. Their online animal health certificate service was a breeze to use, and their delivery was quick and reliable. The customer service team was also incredibly helpful and professional. Thank you for making the process so easy and stress-free!&quot;</p><div class="testimonials-info"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6ecc60f6893e08deb0c_IMG_7398.webp" loading="eager" sizes="(max-width: 479px) 28vw, (max-width: 1439px) 65.796875px, (max-width: 1919px) 70.5px, 75.1875px" srcset="https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6ecc60f6893e08deb0c_IMG_7398-p-500.webp 500w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650bf6ecc60f6893e08deb0c_IMG_7398.webp 742w" alt="" class="avatar"/><div class="block-testimonials-info"><h6 class="testimonials-name">P A L M A</h6><div class="testimonials-subtitle">@palma.the.cockapoo</div></div></div></div><div id="w-node-d0dbb8e8-ac8c-fa60-036c-b0e63fe5c384-e58694a3" data-w-id="d0dbb8e8-ac8c-fa60-036c-b0e63fe5c384" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="testimonials"><p class="paragraph-testimonials">&quot;I highly recommend Passpaw´s animal health certificate service! Booking online was easy, the vet was professional, and the certificate was delivered quickly to my doorstep. Thanks to them, I can now travel with my pet without any worries.&quot;</p><div class="testimonials-info"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d16662e505c6375ba4d_Captura_de_Pantalla_2023-03-23_a_las_0.30.28-removebg-preview.webp" loading="eager" sizes="(max-width: 1439px) 65.796875px, (max-width: 1919px) 70.5px, 75.1875px" srcset="https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d16662e505c6375ba4d_Captura_de_Pantalla_2023-03-23_a_las_0.30.28-removebg-preview-p-500.webp 500w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d16662e505c6375ba4d_Captura_de_Pantalla_2023-03-23_a_las_0.30.28-removebg-preview.webp 520w" alt="pipo.the.labrador" class="avatar"/><div class="block-testimonials-info"><h6 class="testimonials-name">P I P O </h6><div class="testimonials-subtitle">@labrador.pipo</div></div></div></div><div id="w-node-_5bf53881-3daa-5a9f-3b5e-91464fa1eb15-e58694a3" data-w-id="5bf53881-3daa-5a9f-3b5e-91464fa1eb15" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="testimonials"><p class="paragraph-testimonials">&quot;If you&#x27;re are looking for a hassle-free way to obtain a health certificate for your furry friend, look no further! Passpaw´s online booking system is user-friendly, quick, and efficient, and their delivery service is prompt. I highly recommend them.&quot;</p><div class="testimonials-info"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d1755e21d4cbf8ef81a_Captura-de-Pantalla-2023-03-23-a-las-0.21.47.webp" loading="eager" sizes="(max-width: 1439px) 65.796875px, (max-width: 1919px) 70.5px, 75.1875px" srcset="https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d1755e21d4cbf8ef81a_Captura-de-Pantalla-2023-03-23-a-las-0.21.47-p-500.webp 500w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d1755e21d4cbf8ef81a_Captura-de-Pantalla-2023-03-23-a-las-0.21.47-p-800.webp 800w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d1755e21d4cbf8ef81a_Captura-de-Pantalla-2023-03-23-a-las-0.21.47-p-1080.webp 1080w, https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/650b7d1755e21d4cbf8ef81a_Captura-de-Pantalla-2023-03-23-a-las-0.21.47.webp 1126w" alt="" class="avatar"/><div class="block-testimonials-info"><h6 class="testimonials-name">M A G G I E </h6><div class="testimonials-subtitle">@maggie.mcnamara</div></div></div></div></div></div></div><footer class="section-footer"><div class="content"><div class="w-layout-grid grid-footer-copy"><div id="w-node-d87cbd18-91ba-8432-4de1-815597fdbc61-e58694a3" class="footer-left-copy-copy"><h2 data-w-id="d87cbd18-91ba-8432-4de1-815597fdbc62" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="heading-footer">Order your <br/>‍<span data-w-id="d87cbd18-91ba-8432-4de1-815597fdbc66" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="text-transparent">Pet Health Certificate </span></h2><div data-w-id="d87cbd18-91ba-8432-4de1-815597fdbc68" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;"><div class="accordion-header"><div><h6 class="heading-accordion-copy">All-in cost starting at £150 COLLECTION or £200 HOME DELIVERY.</h6></div></div><div><p><span class="text-span-18"><strong class="bold-text-2"><br/></strong></span><span><strong class="bold-text-29">‍</strong></span><a href="/collection-points" target="_blank"><span class="text-span-20"><strong class="bold-text-6">Find your closest collection point</strong></span></a><span class="text-span-21"><strong class="bold-text-18">‍</strong><br/><strong class="bold-text-24">*</strong> URGENT (&lt;7 days before home appointment): £50 supplement.<br/><strong class="bold-text-22">** </strong>Prices are for 1 pet:£30 for each additional pet, up to a maximum of 5 pets.<br/><strong class="bold-text-21">*</strong><strong class="bold-text-20">** </strong>For pets traveling outside the European Union, please contact us for more information.</span><br/></p></div></div><a href="/order-now" class="button-2 w-button"><span class="text-span-11">Order Now</span></a></div></div></div><div data-w-id="ef2d27af-e28a-9c66-8e12-40322fccb395" style="opacity: 1;" class="gradient-footer"><div class="noise"></div></div></footer><footer class="section-footer-copy"><div class="content"><div id="w-node-_11540949-4fd5-8815-68ae-4686a8c8619b-e58694a3" class="footer-down-copy"><div data-w-id="79553be0-e04c-edb1-88ad-75e2edf92bf0" style="opacity: 0; transform: translate3d(0px, 15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform, opacity;" class="block-footer-down"><a href="/" aria-current="page" class="link-footer w--current">© 2024 PassPaw®</a></div><div class="block-footer-down"><a href="/privacy" class="link-footer">Privacy </a><a href="/terms-of-services" class="link-footer">Terms of Services</a><a href="/careers" class="link-footer">Careers</a></div></div></div><div data-w-id="11540949-4fd5-8815-68ae-4686a8c8619c" style="opacity: 1;" class="gradient-footer"><div class="noise"></div></div></footer><div class="whatsapp-block"><div style="opacity: 0; transform: translate3d(0px, 20px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="whatsapp-chat"><div class="top-section"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/652ebc75fbda11b043a3445b_PET.png" loading="lazy" width="62" alt="" class="live-icon-chat"/><div class="top-text-container"><div class="live-chat-top-text">Customer Care Team</div><div class="live-chat-bottom-text">Typically replies in a few hours</div></div><div id="close-chat" class="close-live-chat-container"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/652e839299ede0d448d92bc9_close-live-chat.svg" loading="lazy" alt="" class="close-livechat-icon"/></div></div><div class="chat-section"><div style="opacity: 0; transform: translate3d(20px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="chat-block"><div class="live-chat-top-text block">Customer Care Team</div><div class="live-chat-bottom-text block">Hi there<br/>How can I help you today?</div></div></div><a href="https://api.whatsapp.com/send?phone=%2B447543126655" target="_blank" class="live-chat-link w-inline-block"><div class="livechat-button"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/652e839299ede0d448d92bc8_small-whatsapp.svg" loading="lazy" alt="" class="small-whatsapp-icon"/><div class="live-chat-text">Start Whatsapp Chat</div></div></a></div><div id="whatsapp-button" data-w-id="ef3555f7-46e4-9b09-1969-ec724d2673de" class="whatsapp-container"><img src="https://cdn.prod.website-files.com/63f2b9d385872ac0e89b0f3a/65b29c5bbfa8688040aeb354_imageedit_2_5298503781%20(1).png" loading="lazy" width="55" alt="" class="whatsapp-icon"/><div class="live-icon"></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=63f2b9d385872ac0e89b0f3a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"><\/script><script src="https://assets-global.website-files.com/63f2b9d385872ac0e89b0f3a/js/webflow.92703b68f.js" type="text/javascript"><\/script></body></html>
-`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-02",path:"Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer Isabell and so",tags:[],content:`  
+`,links:[],backlinks:[]},{slug:"training-weight-lifting-day-2-hombro-y-espalda",path:"Training/Weight lifting 🏋️‍♀️/Day 2 - Hombro y Espalda.md",title:"Day 2 - Hombro y Espalda",excerpt:"Calentamiento 5 min cinta / bici / elíptica Movilidad hombros y brazos Entrenamiento [ ] Jalón al pecho — 3×12 [ ] Peso: kg [x] Remo sentado máquina",tags:[],content:`**Calentamiento**
+- 5 min cinta / bici / elíptica
+- Movilidad hombros y brazos
 
-  **Domino**
+**Entrenamiento**
 
-- **Ask cherry about vulnerability scan**
+- [ ] Jalón al pecho — 3×12  
+    - [ ] Peso: ___ kg
 
-- Update logical diagram
+- [x] Remo sentado máquina — 3×12  
+    - [ ] Peso: 20 kg
 
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
+- [ ] Press de pecho máquina — 3×12  
+    - [ ] Peso: ___ kg
 
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints
+- [x] Peck-deck (aperturas) — 3×12  
+    - [ ] Peso: ___ kg
+    
+- [x] Curl de bíceps máquina — 3×12  
+    Peso: 7.5 kg
+    
+Deltoides trasero
+    
+- [x] Tríceps en polea — 3×12  
+    - [ ] Peso: 17.5 kg
 
-
-
-Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-
-- Enviar link de confluence to Rodrigo
-
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-
-- Update domino blueprint
-
-- Request an organisation for EAIA
-
-- Add AI news to our private teams
-- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-03",path:"Astrazeneca/999Daily/April/2025-04-03.md",title:"2025-04-03",excerpt:"Domino Ask cherry about vulnerability scan Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear",tags:[],content:`  
-
-  **Domino**
-- **Ask cherry about vulnerability scan**
-- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-- Enviar link de confluence to Rodrigo
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-- Update logical diagram
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
-- Update domino blueprint
-- Ask Michael who is responsible of the S3 bucket ticket
-- Ask michael for access to the repo for vulnerability scan
-- Ask rakesh about the 15 minutes sign off
-
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
-
-**EAIA**
-- Request an organisation for EAIA
-- Add AI news to our private teams
-- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-04",path:"Astrazeneca/999Daily/April/2025-04-04.md",title:"2025-04-04",excerpt:"Domino Create documentation for vulnerability Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear el",tags:[],content:`
-  **Domino**
-- Create documentation for vulnerability
-- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-- Enviar link de confluence to Rodrigo
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-- Update logical diagram
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
-- Update domino blueprint
-- Ask Michael who is responsible of the S3 bucket ticket
-- Ask michael for access to the repo for vulnerability scan
-- Ask rakesh about the 15 minutes sign off
-- Ask Domino engineers bout the 15 mintues isig off
-
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
-
-**EAIA**
-- Request an organisation for EAIA
-- Add AI news to our private teams
-- Send SCP to francesco
-- Create documentation for the workshop, including estimation of costs
-- Create a document testing edge cases where Open AI fails`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-09",path:"Astrazeneca/999Daily/April/2025-04-09.md",title:"2025-04-09",excerpt:"Plan for Vulnerability analysis Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2). We shared this report with Kasanianthan, director of",tags:[],content:`Plan for Vulnerability analysis
-Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2).
-We shared this report with Kasanianthan, director of cyber security. We discussed the options to run a vulnerability assessment, raise the Required exceptions and get approval to deploy this latest version of Domino into production.
-
-# Vulnerability Comparison Report: Domino 5.9.3 vs 6.0.2
-
-## Summary
-
-- Total vulnerabilities in version 5.9.3: **58**
-- Total vulnerabilities in version 6.0.2: **720**
-- Vulnerabilities only present in 5.9.3: **54**
-- Vulnerabilities only present in 6.0.2: **713**
-- Vulnerabilities common to both versions: **7**
-## New Vulnerabilities Introduced in 6.0.2
-
-The following high or critical vulnerabilities were introduced in Domino 6.0.2 and are not found in version 5.9.3:
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/spark-cluster-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2024-41110** (CVSS: 9.9, Severity: Critical): Found in quay.io/domino/soci-controller, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary.
-
-- **CVE-2018-19361** (CVSS: 9.8, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-  
-
-## Resolved or Removed Vulnerabilities in 6.0.2
-
-These vulnerabilities were found in 5.9.3 but no longer appear in 6.0.2, suggesting they may have been resolved or removed:
-
-- **CVE-2023-37903** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2023-37466** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2023-6018** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2019-10202** (CVSS: 9.8, Severity: High): Previously impacted docker://domino/bitnami.spark:3.5.0-debian-11-r35-390110
-
-- **CVE-2019-16224** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ingress-nginx.controller:v1.9.6-390065`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-10",path:"Astrazeneca/999Daily/April/2025-04-10.md",title:"2025-04-10",excerpt:"1:1 with Cherry meeting Agentic AI workshop Look into costs to run notebooks (GCP?, AWS?) for the hands on activity Raggify and Employer KG (Reusable AI Services) Heads",tags:[],content:`**1:1 with Cherry #meeting** 
-
-**Agentic AI workshop**
-- Look into costs to run notebooks (GCP?, AWS?) for the hands-on activity
-
-**Raggify and Employer KG** (Reusable AI Services)
-- Heads up that the projects will arrive very soon.
-
-AI Summit London -> Look at costs`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-14-monday",path:"Astrazeneca/999Daily/April/2025-04-14, Monday.md",title:"2025-04-14, Monday",excerpt:"Ragify Blueprint Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D) The diagram is mstl the same as the one we need for Raggify Library consumng",tags:[],content:`
-**Ragify Blueprint**
-- Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting_OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D)
-- The diagram is mstl the same  as the one we need for Raggify
-- Library consumng platforms
-- Ragify library
-- Artifactory (Jfrog) -search for ragify- I´ll dfind the library build and the models used by the library
-- One big difference between Kazu and Ragify
-- WATRNING: they pull the models without any checks to Artifactory
-
-Aplication boundaries:
-A docker image of the libraqry is pushed used githubn actions into HARBOR (??)
-
-GitHub actions are sitting effectively betweenthe librar5y and applicatin boundaries
-K8s vertical and horizontal
-automatic scale up of ragify services
-
-Kubernetes orchestrates all the clusters, inludng the EC2 were the pods are run 
-Over the weekend the deployed the conference AI assistant
-The databases wit thte indexed data are running in EC2 instances
-https://excalidraw.com/#json=sT0sACJafNZdq7K2U93Yw,bmNAaSXzqCq_4kRV7YH2DQ
-
-**Domino SSH VSCode**
-Haran Kumar is going to take the lead in this meeting.
-1. SSH server
-2. New domino CLI (developed in GO)
-3. Run the cli with the workspace id
-
-Are there other major features launched in the 6.1 version?
-Have you run any vulnerability scan in the code?
-Regarding architectre
-CLI is sponning up a local proxy server, which thnen connects to the Domino Control Pane`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-29",path:"Astrazeneca/999Daily/April/2025-04-29.md",title:"2025-04-29",excerpt:"Goals for today 1. Call dad x 2. Go to ceramics x 3. do exercise 4. catch up with my emails 5. Study for C1 exam x 6.",tags:[],content:`Goals for today
-1. Call dad x
-2. Go to ceramics x
-3. do exercise
-4. catch up with my emails
-5. Study for C1 exam x
-6. Hablar con la psicologa x
-
-`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-20",path:"Astrazeneca/999Daily/March/2025-03-20.md",title:"2025-03-20",excerpt:"Hello! Let´s start using obsidian Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd I´ve just finished the video on Makemore (part2,",tags:[],content:`Hello!
-
-Let´s start using obsidian
-Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd
-
-I´ve just finished the video on Makemore (part2, MLP). I really enjoyed it. Next I want to read the paper mentioned in the video and, after that, watch part 3.
-
-These are all the tasks that I have to complete:
-- [ ] Subir TLS Blueprint to Blueprint repository with Draft Status and let Antonio & co. know #TLS
-- [ ] Watch video scp
-- [ ] Poner a vender Mac M1
-- [ ] Reclamar dinero SOEUR
-- [ ] Reclamar Bici Yellow Jersey
-- [ ] crear primer PR #scispacy
-- [ ] Update version of spacy #scispacy
-- [ ]  [Graph Generation with LLMs] Read documentation 
-- [ ] Terminar de pulir el formulario #passpaw
-- [ ] Mirar post de Georgios #ontoverse
-- [x] Llamar a papa`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-21",path:"Astrazeneca/999Daily/March/2025-03-21.md",title:"2025-03-21",excerpt:"Today I want to look into the Yoga course, ceramics and/or music",tags:[],content:"Today I want to look into the Yoga course, ceramics and/or music",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-24",path:"Astrazeneca/999Daily/March/2025-03-24.md",title:"2025-03-24",excerpt:"Domino blueprint update Questions for Rakesh: 1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for",tags:[],content:`Domino blueprint update
-Questions for Rakesh: 
-1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for better security and auditing.
-
-2. Introduced in [Domino v5.10 are Domino Service Accounts](https://docs.dominodatalab.com/en/latest/admin_guide/6921e5/domino-service-accounts/) as an alternative option to NPA API Keys for integrations. Admin role is required to manage this but it is a more secure and recommended way over non-personal accounts for service account integrations. Operational documentation will be created by the platform team to include a process for teams to request creation, review, modification, and revocation of these Service Accounts. -> Was this ever done?
-3. 
-4. New Governance Admin role. Was SysAdmin used for compliance tasks? clarify whether you will adopt the new role to reduce privilege overhead.`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-25",path:"Astrazeneca/999Daily/March/2025-03-25.md",title:"2025-03-25",excerpt:"Today I have a dinner with my managers. I need to write to Leroy Merlin to get my money back Done! I need to write to SOEUR to",tags:[],content:`Today I have a dinner with my managers.
-I need to write to Leroy Merlin to get my money back - Done!
-I need to write to SOEUR to get my money back
-I need to add my next appointment with Pablo Navalon to my calendar
-Hoy es el dia en el que contesto a MR y a Nacho`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-26",path:"Astrazeneca/999Daily/March/2025-03-26.md",title:"2025-03-26",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-28",path:"Astrazeneca/999Daily/March/2025-03-28.md",title:"2025-03-28",excerpt:"AIRGAP bugs https://github.com/azu ignite/aws airgapped/blob/main/backend/model cleanup/app.py L33 Maybe there are more status to check? https://github.com/azu ignite/aws airgapped/blob/main/backend/apis/model vetting environment/delete model test env/app.py L24 Please don´t use try except",tags:[],content:`**AIRGAP bugs**
-https://github.com/azu-ignite/aws-airgapped/blob/main/backend/model_cleanup/app.py#L33
-Maybe there are more status to check?
-
-https://github.com/azu-ignite/aws-airgapped/blob/main/backend/apis/model_vetting_environment/delete_model_test_env/app.py#L24
-Please don´t use try except
+- [ ] Abdominal máquina o crunch — 3×15
 
 
-OpenAI
-Keep working on the solution https://azcollaboration.sharepoint.com/:w:/r/sites/EnterpriseAIArchitectureEAIA/_layouts/15/doc.aspx?sourcedoc=%7B89f46814-c5ea-4447-9e16-0d88d0f2ac4e%7D&action=edit`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-31",path:"Astrazeneca/999Daily/March/2025-03-31.md",title:"2025-03-31",excerpt:"SEND EMAIL TO DOMINO ENGINEERS",tags:[],content:"SEND EMAIL TO DOMINO ENGINEERS",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-13",path:"Astrazeneca/999Daily/May/2025-05-13.md",title:"2025-05-13",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-30-friday",path:"Astrazeneca/999Daily/May/2025-05-30, Friday.md",title:"2025-05-30, Friday",excerpt:"TODO's [x] Do a couple of Saba trainings [x] Book Esther for Palma",tags:[],content:`**TODO's**
-- [x] Do a couple of Saba trainings
-- [x] Book Esther for Palma`,links:[],backlinks:[]},{slug:"astrazeneca-az-data-science-communities-dss-05-agentic-ai-hands-on-workshop",path:"Astrazeneca/AZ/Data Science Communities/DSS'05 - Agentic AI Hands-on Workshop.md",title:"DSS'05 - Agentic AI Hands-on Workshop",excerpt:"Introduction and Context The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. It will be a",tags:[],content:`### Introduction and Context
+**Cardio final**
+- 10–15 min caminata inclinada / bici
+
+**Notas rápidas**
+- Sensación general: ⭐️⭐️⭐️⭐️⭐️
+- Algo que ajustar la próxima vez: __________`,links:[],backlinks:[]},{slug:"astrazeneca-az-data-science-communities-dss-05-agentic-ai-hands-on-workshop",path:"Astrazeneca/AZ/Data Science Communities/DSS'05 - Agentic AI Hands-on Workshop.md",title:"DSS'05 - Agentic AI Hands-on Workshop",excerpt:"Introduction and Context The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. It will be a",tags:[],content:`### Introduction and Context
 
 The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. 
 It will be a collaborative effort between the Artificial intelligence enterprise team and the NextGen Data Science Community.
@@ -1505,7 +1286,226 @@ Think about how to advertise it more`,links:[],backlinks:[]},{slug:"astrazeneca-
 
 **Vulnerabilities**
 - Convince ourselves that the vulnerabilities introduced in the new version are okay (accept the risk)
-- What vulnerabilities are open in v6.0.2 that are still present on 6.1`,links:[],backlinks:[]},{slug:"astrazeneca-conferences-and-sympossiums-ai-summit-london-2025-06-11-wednesday",path:"Astrazeneca/Conferences and Sympossiums/AI Summit London/2025-06-11, Wednesday.md",title:"2025-06-11, Wednesday",excerpt:"AI won't take your job but someone who uses it will AI at Scale Marketing Nick Handley Impression The Open vs. Closed Debate The next generation stage OS",tags:[],content:`**AI won't take your job but someone who uses it will** - AI at Scale
+- What vulnerabilities are open in v6.0.2 that are still present on 6.1`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-02",path:"Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer Isabell and so",tags:[],content:`  
+
+  **Domino**
+
+- **Ask cherry about vulnerability scan**
+
+- Update logical diagram
+
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints
+
+
+
+Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+
+- Enviar link de confluence to Rodrigo
+
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+
+- Update domino blueprint
+
+- Request an organisation for EAIA
+
+- Add AI news to our private teams
+- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-03",path:"Astrazeneca/999Daily/April/2025-04-03.md",title:"2025-04-03",excerpt:"Domino Ask cherry about vulnerability scan Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear",tags:[],content:`  
+
+  **Domino**
+- **Ask cherry about vulnerability scan**
+- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+- Enviar link de confluence to Rodrigo
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+- Update logical diagram
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+- Update domino blueprint
+- Ask Michael who is responsible of the S3 bucket ticket
+- Ask michael for access to the repo for vulnerability scan
+- Ask rakesh about the 15 minutes sign off
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
+
+**EAIA**
+- Request an organisation for EAIA
+- Add AI news to our private teams
+- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-04",path:"Astrazeneca/999Daily/April/2025-04-04.md",title:"2025-04-04",excerpt:"Domino Create documentation for vulnerability Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear el",tags:[],content:`
+  **Domino**
+- Create documentation for vulnerability
+- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+- Enviar link de confluence to Rodrigo
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+- Update logical diagram
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+- Update domino blueprint
+- Ask Michael who is responsible of the S3 bucket ticket
+- Ask michael for access to the repo for vulnerability scan
+- Ask rakesh about the 15 minutes sign off
+- Ask Domino engineers bout the 15 mintues isig off
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
+
+**EAIA**
+- Request an organisation for EAIA
+- Add AI news to our private teams
+- Send SCP to francesco
+- Create documentation for the workshop, including estimation of costs
+- Create a document testing edge cases where Open AI fails`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-09",path:"Astrazeneca/999Daily/April/2025-04-09.md",title:"2025-04-09",excerpt:"Plan for Vulnerability analysis Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2). We shared this report with Kasanianthan, director of",tags:[],content:`Plan for Vulnerability analysis
+Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2).
+We shared this report with Kasanianthan, director of cyber security. We discussed the options to run a vulnerability assessment, raise the Required exceptions and get approval to deploy this latest version of Domino into production.
+
+# Vulnerability Comparison Report: Domino 5.9.3 vs 6.0.2
+
+## Summary
+
+- Total vulnerabilities in version 5.9.3: **58**
+- Total vulnerabilities in version 6.0.2: **720**
+- Vulnerabilities only present in 5.9.3: **54**
+- Vulnerabilities only present in 6.0.2: **713**
+- Vulnerabilities common to both versions: **7**
+## New Vulnerabilities Introduced in 6.0.2
+
+The following high or critical vulnerabilities were introduced in Domino 6.0.2 and are not found in version 5.9.3:
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/spark-cluster-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2024-41110** (CVSS: 9.9, Severity: Critical): Found in quay.io/domino/soci-controller, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary.
+
+- **CVE-2018-19361** (CVSS: 9.8, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+  
+
+## Resolved or Removed Vulnerabilities in 6.0.2
+
+These vulnerabilities were found in 5.9.3 but no longer appear in 6.0.2, suggesting they may have been resolved or removed:
+
+- **CVE-2023-37903** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2023-37466** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2023-6018** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2019-10202** (CVSS: 9.8, Severity: High): Previously impacted docker://domino/bitnami.spark:3.5.0-debian-11-r35-390110
+
+- **CVE-2019-16224** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ingress-nginx.controller:v1.9.6-390065`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-10",path:"Astrazeneca/999Daily/April/2025-04-10.md",title:"2025-04-10",excerpt:"1:1 with Cherry meeting Agentic AI workshop Look into costs to run notebooks (GCP?, AWS?) for the hands on activity Raggify and Employer KG (Reusable AI Services) Heads",tags:[],content:`**1:1 with Cherry #meeting** 
+
+**Agentic AI workshop**
+- Look into costs to run notebooks (GCP?, AWS?) for the hands-on activity
+
+**Raggify and Employer KG** (Reusable AI Services)
+- Heads up that the projects will arrive very soon.
+
+AI Summit London -> Look at costs`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-14-monday",path:"Astrazeneca/999Daily/April/2025-04-14, Monday.md",title:"2025-04-14, Monday",excerpt:"Ragify Blueprint Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D) The diagram is mstl the same as the one we need for Raggify Library consumng",tags:[],content:`
+**Ragify Blueprint**
+- Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting_OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D)
+- The diagram is mstl the same  as the one we need for Raggify
+- Library consumng platforms
+- Ragify library
+- Artifactory (Jfrog) -search for ragify- I´ll dfind the library build and the models used by the library
+- One big difference between Kazu and Ragify
+- WATRNING: they pull the models without any checks to Artifactory
+
+Aplication boundaries:
+A docker image of the libraqry is pushed used githubn actions into HARBOR (??)
+
+GitHub actions are sitting effectively betweenthe librar5y and applicatin boundaries
+K8s vertical and horizontal
+automatic scale up of ragify services
+
+Kubernetes orchestrates all the clusters, inludng the EC2 were the pods are run 
+Over the weekend the deployed the conference AI assistant
+The databases wit thte indexed data are running in EC2 instances
+https://excalidraw.com/#json=sT0sACJafNZdq7K2U93Yw,bmNAaSXzqCq_4kRV7YH2DQ
+
+**Domino SSH VSCode**
+Haran Kumar is going to take the lead in this meeting.
+1. SSH server
+2. New domino CLI (developed in GO)
+3. Run the cli with the workspace id
+
+Are there other major features launched in the 6.1 version?
+Have you run any vulnerability scan in the code?
+Regarding architectre
+CLI is sponning up a local proxy server, which thnen connects to the Domino Control Pane`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-29",path:"Astrazeneca/999Daily/April/2025-04-29.md",title:"2025-04-29",excerpt:"Goals for today 1. Call dad x 2. Go to ceramics x 3. do exercise 4. catch up with my emails 5. Study for C1 exam x 6.",tags:[],content:`Goals for today
+1. Call dad x
+2. Go to ceramics x
+3. do exercise
+4. catch up with my emails
+5. Study for C1 exam x
+6. Hablar con la psicologa x
+
+`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-20",path:"Astrazeneca/999Daily/March/2025-03-20.md",title:"2025-03-20",excerpt:"Hello! Let´s start using obsidian Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd I´ve just finished the video on Makemore (part2,",tags:[],content:`Hello!
+
+Let´s start using obsidian
+Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd
+
+I´ve just finished the video on Makemore (part2, MLP). I really enjoyed it. Next I want to read the paper mentioned in the video and, after that, watch part 3.
+
+These are all the tasks that I have to complete:
+- [ ] Subir TLS Blueprint to Blueprint repository with Draft Status and let Antonio & co. know #TLS
+- [ ] Watch video scp
+- [ ] Poner a vender Mac M1
+- [ ] Reclamar dinero SOEUR
+- [ ] Reclamar Bici Yellow Jersey
+- [ ] crear primer PR #scispacy
+- [ ] Update version of spacy #scispacy
+- [ ]  [Graph Generation with LLMs] Read documentation 
+- [ ] Terminar de pulir el formulario #passpaw
+- [ ] Mirar post de Georgios #ontoverse
+- [x] Llamar a papa`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-21",path:"Astrazeneca/999Daily/March/2025-03-21.md",title:"2025-03-21",excerpt:"Today I want to look into the Yoga course, ceramics and/or music",tags:[],content:"Today I want to look into the Yoga course, ceramics and/or music",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-24",path:"Astrazeneca/999Daily/March/2025-03-24.md",title:"2025-03-24",excerpt:"Domino blueprint update Questions for Rakesh: 1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for",tags:[],content:`Domino blueprint update
+Questions for Rakesh: 
+1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for better security and auditing.
+
+2. Introduced in [Domino v5.10 are Domino Service Accounts](https://docs.dominodatalab.com/en/latest/admin_guide/6921e5/domino-service-accounts/) as an alternative option to NPA API Keys for integrations. Admin role is required to manage this but it is a more secure and recommended way over non-personal accounts for service account integrations. Operational documentation will be created by the platform team to include a process for teams to request creation, review, modification, and revocation of these Service Accounts. -> Was this ever done?
+3. 
+4. New Governance Admin role. Was SysAdmin used for compliance tasks? clarify whether you will adopt the new role to reduce privilege overhead.`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-25",path:"Astrazeneca/999Daily/March/2025-03-25.md",title:"2025-03-25",excerpt:"Today I have a dinner with my managers. I need to write to Leroy Merlin to get my money back Done! I need to write to SOEUR to",tags:[],content:`Today I have a dinner with my managers.
+I need to write to Leroy Merlin to get my money back - Done!
+I need to write to SOEUR to get my money back
+I need to add my next appointment with Pablo Navalon to my calendar
+Hoy es el dia en el que contesto a MR y a Nacho`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-26",path:"Astrazeneca/999Daily/March/2025-03-26.md",title:"2025-03-26",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-28",path:"Astrazeneca/999Daily/March/2025-03-28.md",title:"2025-03-28",excerpt:"AIRGAP bugs https://github.com/azu ignite/aws airgapped/blob/main/backend/model cleanup/app.py L33 Maybe there are more status to check? https://github.com/azu ignite/aws airgapped/blob/main/backend/apis/model vetting environment/delete model test env/app.py L24 Please don´t use try except",tags:[],content:`**AIRGAP bugs**
+https://github.com/azu-ignite/aws-airgapped/blob/main/backend/model_cleanup/app.py#L33
+Maybe there are more status to check?
+
+https://github.com/azu-ignite/aws-airgapped/blob/main/backend/apis/model_vetting_environment/delete_model_test_env/app.py#L24
+Please don´t use try except
+
+
+OpenAI
+Keep working on the solution https://azcollaboration.sharepoint.com/:w:/r/sites/EnterpriseAIArchitectureEAIA/_layouts/15/doc.aspx?sourcedoc=%7B89f46814-c5ea-4447-9e16-0d88d0f2ac4e%7D&action=edit`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-31",path:"Astrazeneca/999Daily/March/2025-03-31.md",title:"2025-03-31",excerpt:"SEND EMAIL TO DOMINO ENGINEERS",tags:[],content:"SEND EMAIL TO DOMINO ENGINEERS",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-13",path:"Astrazeneca/999Daily/May/2025-05-13.md",title:"2025-05-13",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-30-friday",path:"Astrazeneca/999Daily/May/2025-05-30, Friday.md",title:"2025-05-30, Friday",excerpt:"TODO's [x] Do a couple of Saba trainings [x] Book Esther for Palma",tags:[],content:`**TODO's**
+- [x] Do a couple of Saba trainings
+- [x] Book Esther for Palma`,links:[],backlinks:[]},{slug:"astrazeneca-conferences-and-sympossiums-ai-summit-london-2025-06-11-wednesday",path:"Astrazeneca/Conferences and Sympossiums/AI Summit London/2025-06-11, Wednesday.md",title:"2025-06-11, Wednesday",excerpt:"AI won't take your job but someone who uses it will AI at Scale Marketing Nick Handley Impression The Open vs. Closed Debate The next generation stage OS",tags:[],content:`**AI won't take your job but someone who uses it will** - AI at Scale
 Marketing - Nick Handley - Impression
 
 The Open vs. Closed Debate  - The next generation stage

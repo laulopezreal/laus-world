@@ -257,64 +257,105 @@ a {
 }
 
 /* Folder Tree */
-.folder-tree {
-  font-size: 0.875rem;
+.tree-root {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.tree-node {
+.tree-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-border);
+  margin-left: 0.5rem;
+}
+
+.tree-item {
+  position: relative;
+}
+
+.tree-link,
+.tree-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  transition: all 0.2s var(--ease-smooth);
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.tree-link:hover,
+.tree-toggle:hover {
+  background: var(--color-accentSoft);
+  color: var(--color-accent);
+}
+
+.tree-line {
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.tree-root>.tree-item>.tree-toggle>.tree-line,
+.tree-root>.tree-item>.tree-link>.tree-line {
+  display: none;
+}
+
+.tree-content {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  transition: all 0.15s ease;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--color-text);
-  border: none;
-  background: transparent;
-  width: 100%;
-  text-align: left;
+  flex: 1;
+  min-width: 0;
 }
 
-.tree-node:hover {
-  background: var(--color-elevated);
-}
-
-.tree-icon {
+.tree-chevron {
+  font-size: 0.625rem;
+  color: var(--color-muted);
+  transition: transform 0.2s var(--ease-smooth);
   flex-shrink: 0;
-  font-size: 1rem;
+  width: 0.75rem;
 }
 
-.tree-label {
+.tree-text {
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.tree-count {
+.tree-badge {
   flex-shrink: 0;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--color-muted);
   background: var(--color-elevated);
   padding: 0.125rem 0.5rem;
-  border-radius: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
 }
 
-.tree-folder-toggle {
+.tree-branch>.tree-toggle {
   font-weight: 500;
 }
 
-.tree-note {
+.tree-item:not(.tree-branch) .tree-link {
   color: var(--color-muted);
-  font-weight: 400;
+  padding-left: 1.5rem;
 }
 
-.tree-note:hover {
+.tree-item:not(.tree-branch) .tree-link:hover {
   color: var(--color-text);
-}
-
-.tree-folder {
-  margin-bottom: 0.25rem;
 }

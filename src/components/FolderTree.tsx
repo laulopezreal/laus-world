@@ -9,52 +9,60 @@ interface FolderTreeProps {
 
 export function FolderTree({ nodes, level = 0 }: FolderTreeProps) {
     return (
-        <div className="folder-tree">
-            {nodes.map((node) => (
-                <TreeNodeComponent key={node.path} node={node} level={level} />
+        <ul className={`tree-list ${level === 0 ? 'tree-root' : ''}`}>
+            {nodes.map((node, index) => (
+                <TreeNodeComponent
+                    key={node.path}
+                    node={node}
+                    level={level}
+                    isLast={index === nodes.length - 1}
+                />
             ))}
-        </div>
+        </ul>
     );
 }
 
 interface TreeNodeComponentProps {
     node: TreeNode;
     level: number;
+    isLast: boolean;
 }
 
-function TreeNodeComponent({ node, level }: TreeNodeComponentProps) {
+function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
     const [isExpanded, setIsExpanded] = useState(level === 0);
 
     if (node.type === 'note') {
         return (
-            <Link
-                to={`/note/${node.slug}`}
-                className="tree-node tree-note"
-                style={{ paddingLeft: `${level * 1.25 + 0.5}rem` }}
-            >
-                <span className="tree-icon">📄</span>
-                <span className="tree-label">{node.name}</span>
-            </Link>
+            <li className={`tree-item ${isLast ? 'tree-item-last' : ''}`}>
+                <Link to={`/note/${node.slug}`} className="tree-link">
+                    <span className="tree-line" />
+                    <span className="tree-content">
+                        <span className="tree-text">{node.name}</span>
+                    </span>
+                </Link>
+            </li>
         );
     }
 
     const noteCount = countNotes(node);
 
     return (
-        <div className="tree-folder">
+        <li className={`tree-item tree-branch ${isLast ? 'tree-item-last' : ''} ${isExpanded ? 'tree-expanded' : ''}`}>
             <button
-                className="tree-node tree-folder-toggle"
-                style={{ paddingLeft: `${level * 1.25 + 0.5}rem` }}
+                className="tree-toggle"
                 onClick={() => setIsExpanded(!isExpanded)}
             >
-                <span className="tree-icon">{isExpanded ? '📂' : '📁'}</span>
-                <span className="tree-label">{node.name}</span>
-                <span className="tree-count">{noteCount}</span>
+                <span className="tree-line" />
+                <span className="tree-content">
+                    <span className="tree-chevron">{isExpanded ? '▼' : '▶'}</span>
+                    <span className="tree-text">{node.name}</span>
+                    <span className="tree-badge">{noteCount}</span>
+                </span>
             </button>
             {isExpanded && node.children && (
                 <FolderTree nodes={node.children} level={level + 1} />
             )}
-        </div>
+        </li>
     );
 }
 

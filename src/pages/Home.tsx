@@ -72,7 +72,7 @@ export function Home() {
         <div className="grid gap-6 md:grid-cols-3">
           {recent.map((note) => (
             <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
-              <Card key={note.slug} className="flex h-full flex-col border-border/40 group-hover:border-accent/40 group-hover:bg-accentSoft motion-float">
+              <Card className="flex h-full flex-col border-border/40 group-hover:border-accent/40 group-hover:bg-accentSoft">
                 <h3 className="text-lg font-display group-hover:text-accent transition-colors">{note.title}</h3>
                 <p className="mt-3 text-sm text-muted line-clamp-3 leading-relaxed">{note.excerpt}</p>
                 <div className="mt-auto pt-6 flex items-center justify-between">

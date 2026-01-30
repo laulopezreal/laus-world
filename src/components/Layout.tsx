@@ -13,6 +13,7 @@ const navItems = [
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [isNotesExpanded, setIsNotesExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
   const folderTree = useMemo(() => buildFolderTree(), []);
@@ -61,14 +62,24 @@ export function Layout({ children }: { children: ReactNode }) {
                 {item.label}
               </NavLink>
             ))}
-          </nav>
 
-          <div className="mt-12 mb-4 px-4 text-xs uppercase tracking-widest text-accent font-semibold opacity-70">
-            Notes Tree
-          </div>
-          <div className="flex-1 overflow-y-auto">
-            <FolderTree nodes={folderTree} />
-          </div>
+            <button
+              onClick={() => setIsNotesExpanded(!isNotesExpanded)}
+              className={clsx(
+                'flex w-full items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 ease-smooth',
+                isNotesExpanded ? 'bg-accentSoft text-text shadow-glow-sm' : 'text-muted hover:text-text hover:translate-x-1'
+              )}
+            >
+              <span className={clsx('tree-arrow', isNotesExpanded && 'is-open')} />
+              <span className="font-medium">Notes Tree</span>
+            </button>
+
+            <div className={clsx('tree-children mt-1', isNotesExpanded && 'is-visible')}>
+              <div className="px-2">
+                <FolderTree nodes={folderTree} />
+              </div>
+            </div>
+          </nav>
         </aside>
 
         <main className="flex-1 min-w-0">

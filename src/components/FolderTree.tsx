@@ -33,12 +33,9 @@ function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
 
     if (node.type === 'note') {
         return (
-            <li className={`tree-item ${isLast ? 'tree-item-last' : ''}`}>
+            <li className={`tree-item tree-note-item ${isLast ? 'tree-item-last' : ''}`}>
                 <Link to={`/note/${node.slug}`} className="tree-link">
-                    <span className="tree-line" />
-                    <span className="tree-content">
-                        <span className="tree-text">{node.name}</span>
-                    </span>
+                    {node.name}
                 </Link>
             </li>
         );
@@ -47,21 +44,18 @@ function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
     const noteCount = countNotes(node);
 
     return (
-        <li className={`tree-item tree-branch ${isLast ? 'tree-item-last' : ''} ${isExpanded ? 'tree-expanded' : ''}`}>
+        <li className={`tree-item tree-folder-item ${isLast ? 'tree-item-last' : ''} ${isExpanded ? 'is-expanded' : ''}`}>
             <button
-                className="tree-toggle"
+                className="tree-folder-btn"
                 onClick={() => setIsExpanded(!isExpanded)}
             >
-                <span className="tree-line" />
-                <span className="tree-content">
-                    <span className="tree-chevron">{isExpanded ? '▼' : '▶'}</span>
-                    <span className="tree-text">{node.name}</span>
-                    <span className="tree-badge">{noteCount}</span>
-                </span>
+                <span className={`tree-arrow ${isExpanded ? 'is-open' : ''}`} />
+                <span className="tree-folder-name">{node.name}</span>
+                <span className="tree-count">{noteCount}</span>
             </button>
-            {isExpanded && node.children && (
-                <FolderTree nodes={node.children} level={level + 1} />
-            )}
+            <div className={`tree-children ${isExpanded ? 'is-visible' : ''}`}>
+                {node.children && <FolderTree nodes={node.children} level={level + 1} />}
+            </div>
         </li>
     );
 }

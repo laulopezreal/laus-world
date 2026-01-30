@@ -428,3 +428,32 @@ a {
   transform: scale(0.98);
   transition-duration: 0.1s;
 }
+
+/* Micro-motion Utilities */
+.motion-float {
+  transition: transform 0.5s var(--ease-smooth), box-shadow 0.5s var(--ease-smooth);
+}
+
+.motion-float:hover {
+  transform: translateY(-4px);
+}
+
+.motion-drift {
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.motion-drift:hover {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

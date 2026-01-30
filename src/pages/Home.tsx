@@ -10,7 +10,7 @@ export function Home() {
 
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-700 ease-out">
-      <section className="relative overflow-hidden rounded-[2.5rem] border border-border bg-surface/40 p-12 shadow-glow-sm backdrop-blur-sm">
+      <section className="relative overflow-hidden rounded-[2.5rem] border border-border bg-surface/40 p-12 shadow-hero backdrop-blur-sm">
         <div className="relative z-10">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-semibold">Discovery</p>
           <h1 className="mt-4 text-5xl font-display leading-[1.1] md:text-6xl tracking-tight">
@@ -48,7 +48,7 @@ export function Home() {
           )}
           {pinned.map((note) => (
             <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
-              <Card className="h-full border-border/40 group-hover:border-accent group-hover:bg-accentSoft group-hover:shadow-glow-sm transition-all duration-500">
+              <Card className="h-full border-border/40 group-hover:border-accent group-hover:bg-accentSoft group-hover:shadow-glow-sm motion-float">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-display group-hover:text-accent transition-colors">{note.title}</h3>
                   <span className="text-[10px] uppercase tracking-[0.3em] text-muted group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
@@ -72,7 +72,7 @@ export function Home() {
         <div className="grid gap-6 md:grid-cols-3">
           {recent.map((note) => (
             <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
-              <Card key={note.slug} className="flex h-full flex-col border-border/40 group-hover:border-accent/40 group-hover:bg-accentSoft transition-all duration-500">
+              <Card key={note.slug} className="flex h-full flex-col border-border/40 group-hover:border-accent/40 group-hover:bg-accentSoft motion-float">
                 <h3 className="text-lg font-display group-hover:text-accent transition-colors">{note.title}</h3>
                 <p className="mt-3 text-sm text-muted line-clamp-3 leading-relaxed">{note.excerpt}</p>
                 <div className="mt-auto pt-6 flex items-center justify-between">
@@ -97,7 +97,7 @@ export function Home() {
             { to: '/graph', label: 'Knowledge Graph', copy: 'See the network.' }
           ].map((item) => (
             <Link key={item.to} to={item.to} className="group block">
-              <Card className="space-y-2 border-border/40 group-hover:border-accent group-hover:bg-accentSoft transition-all duration-500">
+              <Card className="space-y-2 border-border/40 group-hover:border-accent group-hover:bg-accentSoft motion-float">
                 <h3 className="text-xl font-display group-hover:text-accent transition-colors">
                   {item.label}
                 </h3>

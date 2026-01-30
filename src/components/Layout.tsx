@@ -30,7 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <div className="mx-auto flex min-h-screen max-w-7xl gap-10 px-6 py-8 lg:px-12">
         <aside
           className={clsx(
-            'fixed inset-y-0 left-0 z-50 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-soft backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
+            'fixed inset-y-0 left-0 z-50 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/60 px-6 pb-6 pt-8 shadow-flat backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none border-r border-border/20',
             open && 'translate-x-0'
           )}
         >

@@ -10,7 +10,7 @@ export function Home() {
 
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-700 ease-out">
-      <section className="relative overflow-hidden rounded-[2.5rem] border border-border bg-surface/40 p-12 shadow-hero backdrop-blur-sm">
+      <Card variant="hero" className="relative">
         <div className="relative z-10">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-semibold">Discovery</p>
           <h1 className="mt-4 text-5xl font-display leading-[1.1] md:text-6xl tracking-tight">
@@ -33,7 +33,7 @@ export function Home() {
         {/* Subtle decorative element */}
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
-      </section>
+      </Card>
 
       <section>
         <SectionHeader

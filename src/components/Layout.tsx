@@ -64,7 +64,9 @@ export function Layout({ children }: { children: ReactNode }) {
             ))}
 
             <button
-              onClick={() => setIsNotesExpanded(!isNotesExpanded)}
+              onClick={() => setIsNotesExpanded((prev) => !prev)}
+              aria-expanded={isNotesExpanded}
+              aria-controls="notes-tree-container"
               className={clsx(
                 'flex w-full items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 ease-smooth',
                 isNotesExpanded ? 'bg-accentSoft text-text shadow-glow-sm' : 'text-muted hover:text-text hover:translate-x-1'
@@ -74,7 +76,10 @@ export function Layout({ children }: { children: ReactNode }) {
               <span className="font-medium">Notes Tree</span>
             </button>
 
-            <div className={clsx('tree-children mt-1', isNotesExpanded && 'is-visible')}>
+            <div
+              id="notes-tree-container"
+              className={clsx('tree-children mt-1', isNotesExpanded && 'is-visible')}
+            >
               <div className="px-2">
                 <FolderTree nodes={folderTree} />
               </div>
@@ -84,7 +89,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
         <main className="flex-1 min-w-0">
           <header className="sticky top-0 z-40 mb-8 rounded-2xl border border-border bg-surface/80 px-6 py-4 backdrop-blur-md shadow-card flex items-center justify-between gap-6">
-            <form onSubmit={handleSearch} className="flex-1 flex items-center gap-4">
+            <form onSubmit={handleSearch} role="search" className="flex-1 flex items-center gap-4">
               <input
                 type="text"
                 value={searchQuery}

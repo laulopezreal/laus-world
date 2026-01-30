@@ -1,7 +1,9 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useMemo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { ThemeToggle } from './ThemeToggle';
+import { FolderTree } from './FolderTree';
+import { buildFolderTree } from '../lib/folder-tree';
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -12,13 +14,14 @@ const navItems = [
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const folderTree = useMemo(() => buildFolderTree(), []);
 
   return (
     <div className="min-h-screen">
       <div className="mx-auto flex min-h-screen max-w-6xl gap-6 px-4 py-6 lg:px-8">
         <aside
           className={clsx(
-            'fixed inset-y-0 left-0 z-40 w-72 translate-x-[-100%] bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
+            'fixed inset-y-0 left-0 z-40 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
             open && 'translate-x-0'
           )}
         >
@@ -51,6 +54,11 @@ export function Layout({ children }: { children: ReactNode }) {
               </NavLink>
             ))}
           </nav>
+
+          <div className="mt-8 flex-1 overflow-y-auto">
+            <h3 className="mb-3 px-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">Notes</h3>
+            <FolderTree nodes={folderTree} />
+          </div>
 
           <div className="mt-8 pl-1">
             <ThemeToggle />

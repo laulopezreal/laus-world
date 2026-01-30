@@ -63,21 +63,17 @@ export function Layout({ children }: { children: ReactNode }) {
             ))}
           </nav>
 
-          <div className="mt-12 mb-4 px-4 text-2xs uppercase tracking-wide-xl text-muted font-bold">
+          <div className="mt-12 mb-4 px-4 text-xs uppercase tracking-widest text-accent font-semibold opacity-70">
             Notes Tree
           </div>
           <div className="flex-1 overflow-y-auto">
             <FolderTree nodes={folderTree} />
           </div>
-
-          <div className="mt-6 flex items-center gap-2">
-            <ThemeToggle />
-          </div>
         </aside>
 
         <main className="flex-1 min-w-0">
-          <header className="sticky top-0 z-40 mb-8 rounded-2xl border border-border bg-surface/80 px-6 py-4 backdrop-blur-md shadow-card">
-            <form onSubmit={handleSearch} className="flex items-center gap-4">
+          <header className="sticky top-0 z-40 mb-8 rounded-2xl border border-border bg-surface/80 px-6 py-4 backdrop-blur-md shadow-card flex items-center justify-between gap-6">
+            <form onSubmit={handleSearch} className="flex-1 flex items-center gap-4">
               <input
                 type="text"
                 value={searchQuery}
@@ -86,6 +82,10 @@ export function Layout({ children }: { children: ReactNode }) {
                 className="global-search-input"
               />
               <span className="hidden text-xs text-muted sm:block font-medium bg-elevated px-2 py-1 rounded-md">⌘K</span>
+            </form>
+
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
               <button
                 className="rounded-full border border-border px-3 py-2 text-xs uppercase tracking-[0.2em] lg:hidden"
                 type="button"
@@ -93,7 +93,7 @@ export function Layout({ children }: { children: ReactNode }) {
               >
                 Menu
               </button>
-            </form>
+            </div>
           </header>
           {children}
         </main>

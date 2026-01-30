@@ -97,7 +97,7 @@ export function Home() {
             { to: '/graph', label: 'Knowledge Graph', copy: 'See the network.' }
           ].map((item) => (
             <Link key={item.to} to={item.to} className="group block">
-              <Card className="space-y-2 border-border/40 group-hover:border-accent group-hover:bg-accentSoft motion-float">
+              <Card className="space-y-2 border-border/40 group-hover:border-accent group-hover:bg-accentSoft">
                 <h3 className="text-xl font-display group-hover:text-accent transition-colors">
                   {item.label}
                 </h3>

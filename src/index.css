@@ -313,6 +313,10 @@ a {
   position: relative;
 }
 
+.tree-root>.tree-item {
+  margin-bottom: 0.25rem;
+}
+
 /* Folder button */
 .tree-folder-btn {
   display: flex;

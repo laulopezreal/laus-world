@@ -76,3 +76,71 @@ a {
   border-radius: 18px;
   overflow-x: auto;
 }
+
+/* Callout Styles */
+.markdown .callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid;
+  background: var(--color-elevated);
+}
+
+.markdown .callout-title {
+  font-weight: 600;
+  font-family: var(--font-display);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.markdown .callout-title::before {
+  content: '';
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.markdown .callout-content {
+  color: var(--color-text);
+}
+
+/* Callout Types */
+.markdown .callout-note {
+  border-left-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.markdown .callout-tip {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.markdown .callout-important {
+  border-left-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.markdown .callout-warning {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.markdown .callout-caution {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Math Styles */
+.markdown .katex {
+  font-size: 1.1em;
+}
+
+.markdown .katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

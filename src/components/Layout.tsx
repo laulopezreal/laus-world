@@ -30,7 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <div className="mx-auto flex min-h-screen max-w-7xl gap-10 px-6 py-8 lg:px-12">
         <aside
           className={clsx(
-            'fixed inset-y-0 left-0 z-50 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
+            'fixed inset-y-0 left-0 z-50 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-soft backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
             open && 'translate-x-0'
           )}
         >
@@ -52,10 +52,10 @@ export function Layout({ children }: { children: ReactNode }) {
                 to={item.to}
                 className={({ isActive }) =>
                   clsx(
-                    'block rounded-xl px-4 py-3 transition-all duration-300 ease-smooth',
+                    'block rounded-xl px-4 py-3 motion-drift',
                     isActive
                       ? 'bg-accentSoft text-text'
-                      : 'text-muted hover:text-text hover:translate-x-1'
+                      : 'text-muted hover:text-text'
                   )
                 }
               >

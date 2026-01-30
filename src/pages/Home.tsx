@@ -14,16 +14,15 @@ export function Home() {
         <div className="relative z-10">
           <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-semibold">Discovery</p>
           <h1 className="mt-4 text-5xl font-display leading-[1.1] md:text-6xl tracking-tight">
-            Laura&apos;s World
+            A living map of thoughts
           </h1>
           <p className="mt-5 max-w-xl text-lg text-muted leading-relaxed font-light">
-            A quiet sanctuary for your thoughts and discoveries. Explore the connections between your
-            notes in a space designed for reflection.
+            Notes, questions, and connections — slowly growing.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               to="/graph"
-              className="group flex items-center gap-3 rounded-full border border-accent bg-accentSoft px-8 py-3 text-xs uppercase tracking-[0.3em] text-accent transition-all duration-500 hover:bg-accent hover:text-surface hover:shadow-glow"
+              className="group flex items-center gap-3 rounded-full border border-border/60 bg-transparent px-8 py-3 text-xs uppercase tracking-[0.3em] text-muted transition-all duration-500 hover:border-accent/40 hover:text-accent hover:bg-accent/5 hover:shadow-glow-sm"
             >
               Explore Graph
               <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>

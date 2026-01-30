@@ -1017,7 +1017,226 @@ Deltoides trasero
 
 **Notas rápidas**
 - Sensación general: ⭐️⭐️⭐️⭐️⭐️
-- Algo que ajustar la próxima vez: __________`,links:[],backlinks:[]},{slug:"astrazeneca-az-data-science-communities-dss-05-agentic-ai-hands-on-workshop",path:"Astrazeneca/AZ/Data Science Communities/DSS'05 - Agentic AI Hands-on Workshop.md",title:"DSS'05 - Agentic AI Hands-on Workshop",excerpt:"Introduction and Context The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. It will be a",tags:[],content:`### Introduction and Context
+- Algo que ajustar la próxima vez: __________`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-02",path:"Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer Isabell and so",tags:[],content:`  
+
+  **Domino**
+
+- **Ask cherry about vulnerability scan**
+
+- Update logical diagram
+
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints
+
+
+
+Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+
+- Enviar link de confluence to Rodrigo
+
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+
+- Update domino blueprint
+
+- Request an organisation for EAIA
+
+- Add AI news to our private teams
+- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-03",path:"Astrazeneca/999Daily/April/2025-04-03.md",title:"2025-04-03",excerpt:"Domino Ask cherry about vulnerability scan Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear",tags:[],content:`  
+
+  **Domino**
+- **Ask cherry about vulnerability scan**
+- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+- Enviar link de confluence to Rodrigo
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+- Update logical diagram
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+- Update domino blueprint
+- Ask Michael who is responsible of the S3 bucket ticket
+- Ask michael for access to the repo for vulnerability scan
+- Ask rakesh about the 15 minutes sign off
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
+
+**EAIA**
+- Request an organisation for EAIA
+- Add AI news to our private teams
+- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-04",path:"Astrazeneca/999Daily/April/2025-04-04.md",title:"2025-04-04",excerpt:"Domino Create documentation for vulnerability Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear el",tags:[],content:`
+  **Domino**
+- Create documentation for vulnerability
+- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
+- Enviar link de confluence to Rodrigo
+- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
+- Update logical diagram
+- Reach out to domino to confirm:
+	- PLUGIN
+	- UPDATE their logical diagram in the documentation
+- Update domino blueprint
+- Ask Michael who is responsible of the S3 bucket ticket
+- Ask michael for access to the repo for vulnerability scan
+- Ask rakesh about the 15 minutes sign off
+- Ask Domino engineers bout the 15 mintues isig off
+
+**Ragify**
+- Answer Isabell and so
+- Follow up 
+	- Start drafting the blueprint
+	- AI Governance?
+	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
+
+**EAIA**
+- Request an organisation for EAIA
+- Add AI news to our private teams
+- Send SCP to francesco
+- Create documentation for the workshop, including estimation of costs
+- Create a document testing edge cases where Open AI fails`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-09",path:"Astrazeneca/999Daily/April/2025-04-09.md",title:"2025-04-09",excerpt:"Plan for Vulnerability analysis Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2). We shared this report with Kasanianthan, director of",tags:[],content:`Plan for Vulnerability analysis
+Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2).
+We shared this report with Kasanianthan, director of cyber security. We discussed the options to run a vulnerability assessment, raise the Required exceptions and get approval to deploy this latest version of Domino into production.
+
+# Vulnerability Comparison Report: Domino 5.9.3 vs 6.0.2
+
+## Summary
+
+- Total vulnerabilities in version 5.9.3: **58**
+- Total vulnerabilities in version 6.0.2: **720**
+- Vulnerabilities only present in 5.9.3: **54**
+- Vulnerabilities only present in 6.0.2: **713**
+- Vulnerabilities common to both versions: **7**
+## New Vulnerabilities Introduced in 6.0.2
+
+The following high or critical vulnerabilities were introduced in Domino 6.0.2 and are not found in version 5.9.3:
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/spark-cluster-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+- **CVE-2024-41110** (CVSS: 9.9, Severity: Critical): Found in quay.io/domino/soci-controller, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary.
+
+- **CVE-2018-19361** (CVSS: 9.8, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
+
+  
+
+## Resolved or Removed Vulnerabilities in 6.0.2
+
+These vulnerabilities were found in 5.9.3 but no longer appear in 6.0.2, suggesting they may have been resolved or removed:
+
+- **CVE-2023-37903** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2023-37466** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2023-6018** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
+
+docker://domino/ai-hub-environment-images:llm-inference5.8
+
+- **CVE-2019-10202** (CVSS: 9.8, Severity: High): Previously impacted docker://domino/bitnami.spark:3.5.0-debian-11-r35-390110
+
+- **CVE-2019-16224** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ingress-nginx.controller:v1.9.6-390065`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-10",path:"Astrazeneca/999Daily/April/2025-04-10.md",title:"2025-04-10",excerpt:"1:1 with Cherry meeting Agentic AI workshop Look into costs to run notebooks (GCP?, AWS?) for the hands on activity Raggify and Employer KG (Reusable AI Services) Heads",tags:[],content:`**1:1 with Cherry #meeting** 
+
+**Agentic AI workshop**
+- Look into costs to run notebooks (GCP?, AWS?) for the hands-on activity
+
+**Raggify and Employer KG** (Reusable AI Services)
+- Heads up that the projects will arrive very soon.
+
+AI Summit London -> Look at costs`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-14-monday",path:"Astrazeneca/999Daily/April/2025-04-14, Monday.md",title:"2025-04-14, Monday",excerpt:"Ragify Blueprint Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D) The diagram is mstl the same as the one we need for Raggify Library consumng",tags:[],content:`
+**Ragify Blueprint**
+- Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting_OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D)
+- The diagram is mstl the same  as the one we need for Raggify
+- Library consumng platforms
+- Ragify library
+- Artifactory (Jfrog) -search for ragify- I´ll dfind the library build and the models used by the library
+- One big difference between Kazu and Ragify
+- WATRNING: they pull the models without any checks to Artifactory
+
+Aplication boundaries:
+A docker image of the libraqry is pushed used githubn actions into HARBOR (??)
+
+GitHub actions are sitting effectively betweenthe librar5y and applicatin boundaries
+K8s vertical and horizontal
+automatic scale up of ragify services
+
+Kubernetes orchestrates all the clusters, inludng the EC2 were the pods are run 
+Over the weekend the deployed the conference AI assistant
+The databases wit thte indexed data are running in EC2 instances
+https://excalidraw.com/#json=sT0sACJafNZdq7K2U93Yw,bmNAaSXzqCq_4kRV7YH2DQ
+
+**Domino SSH VSCode**
+Haran Kumar is going to take the lead in this meeting.
+1. SSH server
+2. New domino CLI (developed in GO)
+3. Run the cli with the workspace id
+
+Are there other major features launched in the 6.1 version?
+Have you run any vulnerability scan in the code?
+Regarding architectre
+CLI is sponning up a local proxy server, which thnen connects to the Domino Control Pane`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-29",path:"Astrazeneca/999Daily/April/2025-04-29.md",title:"2025-04-29",excerpt:"Goals for today 1. Call dad x 2. Go to ceramics x 3. do exercise 4. catch up with my emails 5. Study for C1 exam x 6.",tags:[],content:`Goals for today
+1. Call dad x
+2. Go to ceramics x
+3. do exercise
+4. catch up with my emails
+5. Study for C1 exam x
+6. Hablar con la psicologa x
+
+`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-20",path:"Astrazeneca/999Daily/March/2025-03-20.md",title:"2025-03-20",excerpt:"Hello! Let´s start using obsidian Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd I´ve just finished the video on Makemore (part2,",tags:[],content:`Hello!
+
+Let´s start using obsidian
+Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd
+
+I´ve just finished the video on Makemore (part2, MLP). I really enjoyed it. Next I want to read the paper mentioned in the video and, after that, watch part 3.
+
+These are all the tasks that I have to complete:
+- [ ] Subir TLS Blueprint to Blueprint repository with Draft Status and let Antonio & co. know #TLS
+- [ ] Watch video scp
+- [ ] Poner a vender Mac M1
+- [ ] Reclamar dinero SOEUR
+- [ ] Reclamar Bici Yellow Jersey
+- [ ] crear primer PR #scispacy
+- [ ] Update version of spacy #scispacy
+- [ ]  [Graph Generation with LLMs] Read documentation 
+- [ ] Terminar de pulir el formulario #passpaw
+- [ ] Mirar post de Georgios #ontoverse
+- [x] Llamar a papa`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-21",path:"Astrazeneca/999Daily/March/2025-03-21.md",title:"2025-03-21",excerpt:"Today I want to look into the Yoga course, ceramics and/or music",tags:[],content:"Today I want to look into the Yoga course, ceramics and/or music",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-24",path:"Astrazeneca/999Daily/March/2025-03-24.md",title:"2025-03-24",excerpt:"Domino blueprint update Questions for Rakesh: 1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for",tags:[],content:`Domino blueprint update
+Questions for Rakesh: 
+1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for better security and auditing.
+
+2. Introduced in [Domino v5.10 are Domino Service Accounts](https://docs.dominodatalab.com/en/latest/admin_guide/6921e5/domino-service-accounts/) as an alternative option to NPA API Keys for integrations. Admin role is required to manage this but it is a more secure and recommended way over non-personal accounts for service account integrations. Operational documentation will be created by the platform team to include a process for teams to request creation, review, modification, and revocation of these Service Accounts. -> Was this ever done?
+3. 
+4. New Governance Admin role. Was SysAdmin used for compliance tasks? clarify whether you will adopt the new role to reduce privilege overhead.`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-25",path:"Astrazeneca/999Daily/March/2025-03-25.md",title:"2025-03-25",excerpt:"Today I have a dinner with my managers. I need to write to Leroy Merlin to get my money back Done! I need to write to SOEUR to",tags:[],content:`Today I have a dinner with my managers.
+I need to write to Leroy Merlin to get my money back - Done!
+I need to write to SOEUR to get my money back
+I need to add my next appointment with Pablo Navalon to my calendar
+Hoy es el dia en el que contesto a MR y a Nacho`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-26",path:"Astrazeneca/999Daily/March/2025-03-26.md",title:"2025-03-26",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-28",path:"Astrazeneca/999Daily/March/2025-03-28.md",title:"2025-03-28",excerpt:"AIRGAP bugs https://github.com/azu ignite/aws airgapped/blob/main/backend/model cleanup/app.py L33 Maybe there are more status to check? https://github.com/azu ignite/aws airgapped/blob/main/backend/apis/model vetting environment/delete model test env/app.py L24 Please don´t use try except",tags:[],content:`**AIRGAP bugs**
+https://github.com/azu-ignite/aws-airgapped/blob/main/backend/model_cleanup/app.py#L33
+Maybe there are more status to check?
+
+https://github.com/azu-ignite/aws-airgapped/blob/main/backend/apis/model_vetting_environment/delete_model_test_env/app.py#L24
+Please don´t use try except
+
+
+OpenAI
+Keep working on the solution https://azcollaboration.sharepoint.com/:w:/r/sites/EnterpriseAIArchitectureEAIA/_layouts/15/doc.aspx?sourcedoc=%7B89f46814-c5ea-4447-9e16-0d88d0f2ac4e%7D&action=edit`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-31",path:"Astrazeneca/999Daily/March/2025-03-31.md",title:"2025-03-31",excerpt:"SEND EMAIL TO DOMINO ENGINEERS",tags:[],content:"SEND EMAIL TO DOMINO ENGINEERS",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-13",path:"Astrazeneca/999Daily/May/2025-05-13.md",title:"2025-05-13",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-30-friday",path:"Astrazeneca/999Daily/May/2025-05-30, Friday.md",title:"2025-05-30, Friday",excerpt:"TODO's [x] Do a couple of Saba trainings [x] Book Esther for Palma",tags:[],content:`**TODO's**
+- [x] Do a couple of Saba trainings
+- [x] Book Esther for Palma`,links:[],backlinks:[]},{slug:"astrazeneca-az-data-science-communities-dss-05-agentic-ai-hands-on-workshop",path:"Astrazeneca/AZ/Data Science Communities/DSS'05 - Agentic AI Hands-on Workshop.md",title:"DSS'05 - Agentic AI Hands-on Workshop",excerpt:"Introduction and Context The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. It will be a",tags:[],content:`### Introduction and Context
 
 The Workshop will take place in the context of the Data Science Symposium, whose focus this year is on Agentic AI. 
 It will be a collaborative effort between the Artificial intelligence enterprise team and the NextGen Data Science Community.
@@ -1286,226 +1505,7 @@ Think about how to advertise it more`,links:[],backlinks:[]},{slug:"astrazeneca-
 
 **Vulnerabilities**
 - Convince ourselves that the vulnerabilities introduced in the new version are okay (accept the risk)
-- What vulnerabilities are open in v6.0.2 that are still present on 6.1`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-02",path:"Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer Isabell and so",tags:[],content:`  
-
-  **Domino**
-
-- **Ask cherry about vulnerability scan**
-
-- Update logical diagram
-
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
-
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints
-
-
-
-Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-
-- Enviar link de confluence to Rodrigo
-
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-
-- Update domino blueprint
-
-- Request an organisation for EAIA
-
-- Add AI news to our private teams
-- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-03",path:"Astrazeneca/999Daily/April/2025-04-03.md",title:"2025-04-03",excerpt:"Domino Ask cherry about vulnerability scan Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear",tags:[],content:`  
-
-  **Domino**
-- **Ask cherry about vulnerability scan**
-- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-- Enviar link de confluence to Rodrigo
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-- Update logical diagram
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
-- Update domino blueprint
-- Ask Michael who is responsible of the S3 bucket ticket
-- Ask michael for access to the repo for vulnerability scan
-- Ask rakesh about the 15 minutes sign off
-
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
-
-**EAIA**
-- Request an organisation for EAIA
-- Add AI news to our private teams
-- Send SCP to francesco`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-04",path:"Astrazeneca/999Daily/April/2025-04-04.md",title:"2025-04-04",excerpt:"Domino Create documentation for vulnerability Encontrar el link to the exception in blueprint for domino phase 1 , la referencia Enviar link de confluence to Rodrigo Escanear el",tags:[],content:`
-  **Domino**
-- Create documentation for vulnerability
-- Encontrar el link to the exception in blueprint for domino phase 1 , la referencia
-- Enviar link de confluence to Rodrigo
-- Escanear el código del plugin -> que no tenga vulnerabilidades medias o altas
-- Update logical diagram
-- Reach out to domino to confirm:
-	- PLUGIN
-	- UPDATE their logical diagram in the documentation
-- Update domino blueprint
-- Ask Michael who is responsible of the S3 bucket ticket
-- Ask michael for access to the repo for vulnerability scan
-- Ask rakesh about the 15 minutes sign off
-- Ask Domino engineers bout the 15 mintues isig off
-
-**Ragify**
-- Answer Isabell and so
-- Follow up 
-	- Start drafting the blueprint
-	- AI Governance?
-	- One vs. Several blueprints (1 4 library, 1 4 back and frontend )
-
-**EAIA**
-- Request an organisation for EAIA
-- Add AI news to our private teams
-- Send SCP to francesco
-- Create documentation for the workshop, including estimation of costs
-- Create a document testing edge cases where Open AI fails`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-09",path:"Astrazeneca/999Daily/April/2025-04-09.md",title:"2025-04-09",excerpt:"Plan for Vulnerability analysis Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2). We shared this report with Kasanianthan, director of",tags:[],content:`Plan for Vulnerability analysis
-Domino provided a transparency report where they showed all the vulnerabilities of the new release (6.0.2).
-We shared this report with Kasanianthan, director of cyber security. We discussed the options to run a vulnerability assessment, raise the Required exceptions and get approval to deploy this latest version of Domino into production.
-
-# Vulnerability Comparison Report: Domino 5.9.3 vs 6.0.2
-
-## Summary
-
-- Total vulnerabilities in version 5.9.3: **58**
-- Total vulnerabilities in version 6.0.2: **720**
-- Vulnerabilities only present in 5.9.3: **54**
-- Vulnerabilities only present in 6.0.2: **713**
-- Vulnerabilities common to both versions: **7**
-## New Vulnerabilities Introduced in 6.0.2
-
-The following high or critical vulnerabilities were introduced in Domino 6.0.2 and are not found in version 5.9.3:
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/spark-cluster-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2018-14721** (CVSS: 10.0, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-- **CVE-2024-41110** (CVSS: 9.9, Severity: Critical): Found in quay.io/domino/soci-controller, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary.
-
-- **CVE-2018-19361** (CVSS: 9.8, Severity: Critical): Found in quay.io/domino/domino-spark-environment, Status: This service is part of Domino's 'extended' catalog, which includes services that Domino has no ability to control functional and security updates. Domino will continue to monitor for updates and apply when a fix is made available; Customers may choose to remove this optional feature if necessary. Additionally, Apache Spark's official security page does not list any known vulnerabilities for the service with this version : https://spark.apache.org/security.html
-
-  
-
-## Resolved or Removed Vulnerabilities in 6.0.2
-
-These vulnerabilities were found in 5.9.3 but no longer appear in 6.0.2, suggesting they may have been resolved or removed:
-
-- **CVE-2023-37903** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2023-37466** (CVSS: 10.0, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2023-6018** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ai-hub-environment-images:project-hub-gpu5.8
-
-docker://domino/ai-hub-environment-images:llm-inference5.8
-
-- **CVE-2019-10202** (CVSS: 9.8, Severity: High): Previously impacted docker://domino/bitnami.spark:3.5.0-debian-11-r35-390110
-
-- **CVE-2019-16224** (CVSS: 9.8, Severity: Critical): Previously impacted docker://domino/ingress-nginx.controller:v1.9.6-390065`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-10",path:"Astrazeneca/999Daily/April/2025-04-10.md",title:"2025-04-10",excerpt:"1:1 with Cherry meeting Agentic AI workshop Look into costs to run notebooks (GCP?, AWS?) for the hands on activity Raggify and Employer KG (Reusable AI Services) Heads",tags:[],content:`**1:1 with Cherry #meeting** 
-
-**Agentic AI workshop**
-- Look into costs to run notebooks (GCP?, AWS?) for the hands-on activity
-
-**Raggify and Employer KG** (Reusable AI Services)
-- Heads up that the projects will arrive very soon.
-
-AI Summit London -> Look at costs`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-14-monday",path:"Astrazeneca/999Daily/April/2025-04-14, Monday.md",title:"2025-04-14, Monday",excerpt:"Ragify Blueprint Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D) The diagram is mstl the same as the one we need for Raggify Library consumng",tags:[],content:`
-**Ragify Blueprint**
-- Base the blueprint on the KAZU blueprint [Chrysostomou, George: https://azcollaboration.sharepoint.com/:w:/r/sites/KazuImple...](https://teams.microsoft.com/l/message/19:meeting_OTI1NDcwODctNWM1YS00YTNmLTlkNzgtNjU3OTZkNzdlMDFj@thread.v2/1744632138793?context=%7B%22contextType%22%3A%22chat%22%7D)
-- The diagram is mstl the same  as the one we need for Raggify
-- Library consumng platforms
-- Ragify library
-- Artifactory (Jfrog) -search for ragify- I´ll dfind the library build and the models used by the library
-- One big difference between Kazu and Ragify
-- WATRNING: they pull the models without any checks to Artifactory
-
-Aplication boundaries:
-A docker image of the libraqry is pushed used githubn actions into HARBOR (??)
-
-GitHub actions are sitting effectively betweenthe librar5y and applicatin boundaries
-K8s vertical and horizontal
-automatic scale up of ragify services
-
-Kubernetes orchestrates all the clusters, inludng the EC2 were the pods are run 
-Over the weekend the deployed the conference AI assistant
-The databases wit thte indexed data are running in EC2 instances
-https://excalidraw.com/#json=sT0sACJafNZdq7K2U93Yw,bmNAaSXzqCq_4kRV7YH2DQ
-
-**Domino SSH VSCode**
-Haran Kumar is going to take the lead in this meeting.
-1. SSH server
-2. New domino CLI (developed in GO)
-3. Run the cli with the workspace id
-
-Are there other major features launched in the 6.1 version?
-Have you run any vulnerability scan in the code?
-Regarding architectre
-CLI is sponning up a local proxy server, which thnen connects to the Domino Control Pane`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-april-2025-04-29",path:"Astrazeneca/999Daily/April/2025-04-29.md",title:"2025-04-29",excerpt:"Goals for today 1. Call dad x 2. Go to ceramics x 3. do exercise 4. catch up with my emails 5. Study for C1 exam x 6.",tags:[],content:`Goals for today
-1. Call dad x
-2. Go to ceramics x
-3. do exercise
-4. catch up with my emails
-5. Study for C1 exam x
-6. Hablar con la psicologa x
-
-`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-20",path:"Astrazeneca/999Daily/March/2025-03-20.md",title:"2025-03-20",excerpt:"Hello! Let´s start using obsidian Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd I´ve just finished the video on Makemore (part2,",tags:[],content:`Hello!
-
-Let´s start using obsidian
-Today´s goal, fix the HMCR issue and send an email with updates regarding the pHd
-
-I´ve just finished the video on Makemore (part2, MLP). I really enjoyed it. Next I want to read the paper mentioned in the video and, after that, watch part 3.
-
-These are all the tasks that I have to complete:
-- [ ] Subir TLS Blueprint to Blueprint repository with Draft Status and let Antonio & co. know #TLS
-- [ ] Watch video scp
-- [ ] Poner a vender Mac M1
-- [ ] Reclamar dinero SOEUR
-- [ ] Reclamar Bici Yellow Jersey
-- [ ] crear primer PR #scispacy
-- [ ] Update version of spacy #scispacy
-- [ ]  [Graph Generation with LLMs] Read documentation 
-- [ ] Terminar de pulir el formulario #passpaw
-- [ ] Mirar post de Georgios #ontoverse
-- [x] Llamar a papa`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-21",path:"Astrazeneca/999Daily/March/2025-03-21.md",title:"2025-03-21",excerpt:"Today I want to look into the Yoga course, ceramics and/or music",tags:[],content:"Today I want to look into the Yoga course, ceramics and/or music",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-24",path:"Astrazeneca/999Daily/March/2025-03-24.md",title:"2025-03-24",excerpt:"Domino blueprint update Questions for Rakesh: 1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for",tags:[],content:`Domino blueprint update
-Questions for Rakesh: 
-1. Are there any automated processes that uses personal credentials? In such a case, they can now migrate to “service accounts” for better security and auditing.
-
-2. Introduced in [Domino v5.10 are Domino Service Accounts](https://docs.dominodatalab.com/en/latest/admin_guide/6921e5/domino-service-accounts/) as an alternative option to NPA API Keys for integrations. Admin role is required to manage this but it is a more secure and recommended way over non-personal accounts for service account integrations. Operational documentation will be created by the platform team to include a process for teams to request creation, review, modification, and revocation of these Service Accounts. -> Was this ever done?
-3. 
-4. New Governance Admin role. Was SysAdmin used for compliance tasks? clarify whether you will adopt the new role to reduce privilege overhead.`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-25",path:"Astrazeneca/999Daily/March/2025-03-25.md",title:"2025-03-25",excerpt:"Today I have a dinner with my managers. I need to write to Leroy Merlin to get my money back Done! I need to write to SOEUR to",tags:[],content:`Today I have a dinner with my managers.
-I need to write to Leroy Merlin to get my money back - Done!
-I need to write to SOEUR to get my money back
-I need to add my next appointment with Pablo Navalon to my calendar
-Hoy es el dia en el que contesto a MR y a Nacho`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-26",path:"Astrazeneca/999Daily/March/2025-03-26.md",title:"2025-03-26",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-28",path:"Astrazeneca/999Daily/March/2025-03-28.md",title:"2025-03-28",excerpt:"AIRGAP bugs https://github.com/azu ignite/aws airgapped/blob/main/backend/model cleanup/app.py L33 Maybe there are more status to check? https://github.com/azu ignite/aws airgapped/blob/main/backend/apis/model vetting environment/delete model test env/app.py L24 Please don´t use try except",tags:[],content:`**AIRGAP bugs**
-https://github.com/azu-ignite/aws-airgapped/blob/main/backend/model_cleanup/app.py#L33
-Maybe there are more status to check?
-
-https://github.com/azu-ignite/aws-airgapped/blob/main/backend/apis/model_vetting_environment/delete_model_test_env/app.py#L24
-Please don´t use try except
-
-
-OpenAI
-Keep working on the solution https://azcollaboration.sharepoint.com/:w:/r/sites/EnterpriseAIArchitectureEAIA/_layouts/15/doc.aspx?sourcedoc=%7B89f46814-c5ea-4447-9e16-0d88d0f2ac4e%7D&action=edit`,links:[],backlinks:[]},{slug:"astrazeneca-999daily-march-2025-03-31",path:"Astrazeneca/999Daily/March/2025-03-31.md",title:"2025-03-31",excerpt:"SEND EMAIL TO DOMINO ENGINEERS",tags:[],content:"SEND EMAIL TO DOMINO ENGINEERS",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-13",path:"Astrazeneca/999Daily/May/2025-05-13.md",title:"2025-05-13",excerpt:"",tags:[],content:"",links:[],backlinks:[]},{slug:"astrazeneca-999daily-may-2025-05-30-friday",path:"Astrazeneca/999Daily/May/2025-05-30, Friday.md",title:"2025-05-30, Friday",excerpt:"TODO's [x] Do a couple of Saba trainings [x] Book Esther for Palma",tags:[],content:`**TODO's**
-- [x] Do a couple of Saba trainings
-- [x] Book Esther for Palma`,links:[],backlinks:[]},{slug:"astrazeneca-conferences-and-sympossiums-ai-summit-london-2025-06-11-wednesday",path:"Astrazeneca/Conferences and Sympossiums/AI Summit London/2025-06-11, Wednesday.md",title:"2025-06-11, Wednesday",excerpt:"AI won't take your job but someone who uses it will AI at Scale Marketing Nick Handley Impression The Open vs. Closed Debate The next generation stage OS",tags:[],content:`**AI won't take your job but someone who uses it will** - AI at Scale
+- What vulnerabilities are open in v6.0.2 that are still present on 6.1`,links:[],backlinks:[]},{slug:"astrazeneca-conferences-and-sympossiums-ai-summit-london-2025-06-11-wednesday",path:"Astrazeneca/Conferences and Sympossiums/AI Summit London/2025-06-11, Wednesday.md",title:"2025-06-11, Wednesday",excerpt:"AI won't take your job but someone who uses it will AI at Scale Marketing Nick Handley Impression The Open vs. Closed Debate The next generation stage OS",tags:[],content:`**AI won't take your job but someone who uses it will** - AI at Scale
 Marketing - Nick Handley - Impression
 
 The Open vs. Closed Debate  - The next generation stage

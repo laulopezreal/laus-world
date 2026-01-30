@@ -22,7 +22,7 @@ export function Note() {
   const next = vaultIndex.notes[noteIndex + 1];
 
   return (
-    <div className="relative">
+    <div>
       <ReadingProgress content={note.content} />
       <div className="space-y-8">
         <section className="rounded-3xl border border-border bg-surface/80 p-8 shadow-card">

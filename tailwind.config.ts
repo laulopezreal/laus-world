@@ -32,7 +32,9 @@ export default {
         card: 'var(--shadow-card)',
         glow: 'var(--shadow-glow)',
         soft: '0 8px 32px -4px rgba(0,0,0,0.04)',
-        hero: '0 24px 48px -8px rgba(0,0,0,0.08)'
+        hero: 'var(--shadow-hero)',
+        cardDefault: 'var(--shadow-card-default)',
+        flat: 'var(--shadow-flat)'
       },
       spacing: {
         18: '4.5rem',

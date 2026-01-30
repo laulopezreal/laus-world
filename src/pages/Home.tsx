@@ -48,7 +48,7 @@ export function Home() {
           )}
           {pinned.map((note) => (
             <Link key={note.slug} to={`/note/${note.slug}`} className="group block h-full">
-              <Card className="h-full border-border/40 group-hover:border-accent group-hover:bg-accentSoft group-hover:shadow-glow-sm motion-float">
+              <Card className="h-full border-border/40 group-hover:border-accent group-hover:bg-accentSoft group-hover:shadow-glow-sm">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-display group-hover:text-accent transition-colors">{note.title}</h3>
                   <span className="text-[10px] uppercase tracking-[0.3em] text-muted group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">

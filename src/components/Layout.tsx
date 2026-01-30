@@ -26,15 +26,15 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto flex min-h-screen max-w-7xl gap-8 px-6 py-8 lg:px-12">
+      <div className="mx-auto flex min-h-screen max-w-7xl gap-10 px-6 py-8 lg:px-12">
         <aside
           className={clsx(
-            'fixed inset-y-0 left-0 z-40 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
+            'fixed inset-y-0 left-0 z-50 flex w-72 translate-x-[-100%] flex-col overflow-y-auto bg-surface/95 px-6 pb-6 pt-8 shadow-card backdrop-blur lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none',
             open && 'translate-x-0'
           )}
         >
           <div className="flex items-center justify-between min-h-[4rem]">
-            <Link to="/" className="text-xl font-display tracking-tight hover:text-accent transition-colors">
+            <Link to="/" className="text-2xl font-display tracking-tight hover:text-accent transition-all duration-300">
               Laura&apos;s World
             </Link>
             <button
@@ -73,16 +73,16 @@ export function Layout({ children }: { children: ReactNode }) {
         </aside>
 
         <main className="flex-1 min-w-0">
-          <header className="sticky top-0 z-40 mb-6 rounded-2xl border border-border bg-surface/80 px-4 py-3 backdrop-blur-md">
-            <form onSubmit={handleSearch} className="flex items-center gap-3">
+          <header className="sticky top-0 z-40 mb-8 rounded-2xl border border-border bg-surface/80 px-6 py-4 backdrop-blur-md shadow-card">
+            <form onSubmit={handleSearch} className="flex items-center gap-4">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search notes..."
+                placeholder="Search notes, ideas, tags..."
                 className="global-search-input"
               />
-              <span className="hidden text-xs text-muted sm:block">⌘K</span>
+              <span className="hidden text-xs text-muted sm:block font-medium bg-elevated px-2 py-1 rounded-md">⌘K</span>
               <button
                 className="rounded-full border border-border px-3 py-2 text-xs uppercase tracking-[0.2em] lg:hidden"
                 type="button"
@@ -97,7 +97,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </div>
       {open && (
         <button
-          className="fixed inset-0 z-30 bg-black/50 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
           onClick={() => setOpen(false)}
         />
       )}

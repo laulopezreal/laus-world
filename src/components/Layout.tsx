@@ -63,7 +63,10 @@ export function Layout({ children }: { children: ReactNode }) {
             ))}
           </nav>
 
-          <div className="mt-8 flex-1 overflow-y-auto">
+          <div className="mt-12 mb-4 px-4 text-[10px] uppercase tracking-[0.4em] text-muted font-bold">
+            Notes Tree
+          </div>
+          <div className="flex-1 overflow-y-auto">
             <FolderTree nodes={folderTree} />
           </div>
 

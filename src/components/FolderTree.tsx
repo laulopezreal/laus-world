@@ -33,7 +33,7 @@ function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
 
     if (node.type === 'note') {
         return (
-            <li className={`tree-item tree-note-item ${isLast ? 'tree-item-last' : ''}`}>
+            <li className={`tree-item ${isLast ? 'tree-item-last' : ''}`}>
                 <Link to={`/note/${node.slug}`} className="tree-link">
                     {node.name}
                 </Link>
@@ -44,7 +44,7 @@ function TreeNodeComponent({ node, level, isLast }: TreeNodeComponentProps) {
     const noteCount = countNotes(node);
 
     return (
-<li className={`tree-item tree-folder-item ${isLast ? 'tree-item-last' : ''}`}>
+        <li className={`tree-item ${isLast ? 'tree-item-last' : ''}`}>
             <button
                 className="tree-folder-btn"
                 onClick={() => setIsExpanded(!isExpanded)}

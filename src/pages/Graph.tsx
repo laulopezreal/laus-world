@@ -36,16 +36,25 @@ export function Graph() {
     const nodes: GraphNode[] = [];
     const links: GraphLink[] = [];
     const degreeMap = new Map<string, number>();
+    const neighborMap = new Map<string, Set<string>>();
 
     // 1. Generate Links and count degrees
     vaultIndex.notes.forEach((note) => {
-      // Initialize degree for every note to ensure 0-degree nodes are counted
+      // Initialize degree/neighbors for every note
       if (!degreeMap.has(note.slug)) degreeMap.set(note.slug, 0);
+      if (!neighborMap.has(note.slug)) neighborMap.set(note.slug, new Set());
 
       note.links.forEach((link) => {
         links.push({ source: note.slug, target: link.target });
+
+        // Update degrees
         degreeMap.set(note.slug, (degreeMap.get(note.slug) || 0) + 1);
         degreeMap.set(link.target, (degreeMap.get(link.target) || 0) + 1);
+
+        // Update neighbors
+        if (!neighborMap.has(link.target)) neighborMap.set(link.target, new Set());
+        neighborMap.get(note.slug)?.add(link.target);
+        neighborMap.get(link.target)?.add(note.slug);
       });
     });
 
@@ -78,7 +87,7 @@ export function Graph() {
       });
     });
 
-    return { nodes, links };
+    return { nodes, links, neighborMap };
   }, []);
 
   // Check for reduced motion preference
@@ -94,13 +103,8 @@ export function Graph() {
   // Get neighbors of a node
   const getNeighbors = useCallback((node: GraphNode | null): Set<string> => {
     if (!node) return new Set();
-    const neighbors = new Set<string>();
-    graphData.links.forEach((link) => {
-      if (link.source === node.id) neighbors.add(link.target as string);
-      if (link.target === node.id) neighbors.add(link.source as string);
-    });
-    return neighbors;
-  }, [graphData.links]);
+    return graphData.neighborMap.get(node.id) || new Set();
+  }, [graphData.neighborMap]);
 
   // Get 2-hop neighbors
   const getTwoHopNeighbors = useCallback((node: GraphNode | null): Set<string> => {
@@ -316,9 +320,9 @@ export function Graph() {
   useEffect(() => {
     // Re-center when dimensions change
     if (graphRef.current && dimensions.width > 0 && dimensions.height > 0) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         graphRef.current?.zoomToFit(400, 50);
-      }, 200);
+      });
     }
   }, [dimensions]);
 

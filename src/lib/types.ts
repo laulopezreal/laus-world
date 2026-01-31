@@ -26,6 +26,18 @@ export type NoteRecord = {
   backlinks: NoteLink[];
 };
 
+export type LinkSuggestion = {
+  target: string;
+  targetTitle: string;
+  reason: string;
+  confidence: 'low' | 'medium' | 'high';
+};
+
+export type SuggestedLink = {
+  source: string;
+  target: string;
+};
+
 export type VaultIndex = {
   generatedAt: string;
   notes: NoteRecord[];

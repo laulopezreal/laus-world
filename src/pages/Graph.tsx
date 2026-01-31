@@ -5,6 +5,8 @@ import { SectionHeader } from '../components/SectionHeader';
 import { vaultIndex } from '../lib/data';
 import { useLocation } from 'react-router-dom';
 import { useGraphDimensions } from '../hooks/useGraphDimensions';
+import { getAllSuggestedLinks, loadSuggestions } from '../lib/suggestions';
+import type { SuggestedLink } from '../lib/types';
 
 type GraphMode = 'overview' | 'local' | 'focused' | 'bridge';
 
@@ -13,6 +15,7 @@ interface GraphNode extends NodeObject {
   name: string;
   val: number; // Size multiplier (0.8 - 1.35)
   opacity: number; // Semantic opacity (0.15 - 0.9)
+  distance?: number; // Hops from center
 }
 
 interface GraphLink extends LinkObject {
@@ -23,6 +26,7 @@ interface GraphLink extends LinkObject {
 export function Graph() {
   const location = useLocation();
   const graphRef = useRef<ForceGraphMethods<GraphNode, GraphLink>>();
+  const overlayRef = useRef<HTMLCanvasElement | null>(null);
 
   // State
   const [mode, setMode] = useState<GraphMode>('overview');
@@ -30,39 +34,40 @@ export function Graph() {
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [showSuggestedLinks, setShowSuggestedLinks] = useState(false);
+  const [suggestedLinks, setSuggestedLinks] = useState<SuggestedLink[]>([]);
 
-  // Graph data
-  const graphData = useMemo(() => {
+  // Graph data (Full Universe)
+  const fullGraphData = useMemo(() => {
     const nodes: GraphNode[] = [];
     const links: GraphLink[] = [];
     const degreeMap = new Map<string, number>();
     const neighborMap = new Map<string, Set<string>>();
+    const validSlugs = new Set(vaultIndex.notes.map((n) => n.slug));
 
-    // 1. Generate Links and count degrees
+    // 1. Generate Links and count degrees (only links whose target is an existing note)
     vaultIndex.notes.forEach((note) => {
-      // Initialize degree/neighbors for every note
       if (!degreeMap.has(note.slug)) degreeMap.set(note.slug, 0);
       if (!neighborMap.has(note.slug)) neighborMap.set(note.slug, new Set());
 
       note.links.forEach((link) => {
+        if (!validSlugs.has(link.target)) return;
+
         links.push({ source: note.slug, target: link.target });
 
-        // Update degrees
         degreeMap.set(note.slug, (degreeMap.get(note.slug) || 0) + 1);
         degreeMap.set(link.target, (degreeMap.get(link.target) || 0) + 1);
 
-        // Update neighbors
         if (!neighborMap.has(link.target)) neighborMap.set(link.target, new Set());
         neighborMap.get(note.slug)?.add(link.target);
         neighborMap.get(link.target)?.add(note.slug);
       });
     });
 
-    // 2. Calculate Min/Max degree for normalization
+    // 2. Normalize degrees
     let minDegree = Infinity;
     let maxDegree = -Infinity;
 
-    // Only count degrees for nodes that actually exist in our vault
     vaultIndex.notes.forEach(note => {
       const degree = degreeMap.get(note.slug) || 0;
       if (degree < minDegree) minDegree = degree;
@@ -72,7 +77,7 @@ export function Graph() {
     if (minDegree === Infinity) { minDegree = 0; maxDegree = 1; }
     if (minDegree === maxDegree) { maxDegree = minDegree + 1; }
 
-    // 3. Generate Nodes with visual properties
+    // 3. Generate Nodes
     vaultIndex.notes.forEach((note) => {
       const degree = degreeMap.get(note.slug) || 0;
       const normalized = (degree - minDegree) / (maxDegree - minDegree);
@@ -80,15 +85,97 @@ export function Graph() {
       nodes.push({
         id: note.slug,
         name: note.title,
-        // Map degree to size multiplier (0.8 - 1.35)
         val: 0.8 + (normalized * (1.35 - 0.8)),
-        // Map degree to opacity (0.15 - 0.9)
         opacity: 0.15 + (normalized * (0.9 - 0.15))
       });
     });
 
-    return { nodes, links, neighborMap };
+    return { nodes, links, neighborMap, degreeMap, maxDegree };
   }, []);
+
+  // Hub Node (Highest Degree)
+  const hubNode = useMemo(() => {
+    let max = -1;
+    let hub: GraphNode | null = null;
+    fullGraphData.nodes.forEach(node => {
+      const degree = fullGraphData.degreeMap.get(node.id) || 0;
+      if (degree > max) {
+        max = degree;
+        hub = node;
+      }
+    });
+    return hub;
+  }, [fullGraphData]);
+
+  // Visual Data (Ego Network)
+  const vizData = useMemo(() => {
+    const centerNode = focusedNode || hubNode;
+    if (!centerNode) return fullGraphData;
+
+    // BFS to find 2-hop neighborhood
+    const visited = new Set<string>();
+    const queue: { id: string; dist: number }[] = [{ id: centerNode.id, dist: 0 }];
+    const neighborhood = new Set<string>();
+    const nodeDistances = new Map<string, number>();
+
+    visited.add(centerNode.id);
+    neighborhood.add(centerNode.id);
+    nodeDistances.set(centerNode.id, 0);
+
+    let head = 0;
+    while (head < queue.length) {
+      const { id, dist } = queue[head++];
+      if (dist >= 2) continue; // Stop exploring after 2 hops
+
+      const neighbors = fullGraphData.neighborMap.get(id);
+      if (neighbors) {
+        neighbors.forEach(nid => {
+          if (!visited.has(nid)) {
+            visited.add(nid);
+            neighborhood.add(nid);
+            nodeDistances.set(nid, dist + 1);
+            queue.push({ id: nid, dist: dist + 1 });
+          }
+        });
+      }
+    }
+
+    // Filter nodes
+    const nodes = fullGraphData.nodes.filter(n => neighborhood.has(n.id)).map(n => {
+      const isCenter = n.id === centerNode.id;
+      return {
+        ...n,
+        // Attach distance for opacity logic
+        distance: nodeDistances.get(n.id),
+        // Pin visual center to (0,0) to ensure ego-centric stability
+        fx: isCenter ? 0 : undefined,
+        fy: isCenter ? 0 : undefined
+      };
+    });
+
+    // Filter links (only internal to neighborhood)
+    const links = fullGraphData.links.filter(l =>
+      neighborhood.has(l.source as string) && neighborhood.has(l.target as string)
+    );
+
+    return { nodes, links, nodeDistances };
+  }, [fullGraphData, focusedNode, hubNode]);
+
+  // Camera handling for focus changes
+  useEffect(() => {
+    if (focusedNode || hubNode) {
+      // When focus changes, we wait slightly for data update then center
+      // Since we pinned the node to (0,0), we can just centerAt(0,0)
+      // But zoomToFit is safer for varying neighborhood sizes
+      // We use requestAnimationFrame to ensure it runs after render
+      requestAnimationFrame(() => {
+        if (graphRef.current) {
+          graphRef.current.centerAt(0, 0, 1000);
+          graphRef.current.zoom(1.2, 1000);
+        }
+      });
+    }
+  }, [focusedNode, hubNode]);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -100,11 +187,33 @@ export function Graph() {
     return () => mediaQuery.removeEventListener('change', handler);
   }, []);
 
-  // Get neighbors of a node
+  useEffect(() => {
+    let isActive = true;
+    if (!showSuggestedLinks) {
+      setSuggestedLinks([]);
+      return;
+    }
+    loadSuggestions().then((index) => {
+      if (!isActive) return;
+      setSuggestedLinks(getAllSuggestedLinks(index));
+    });
+    return () => {
+      isActive = false;
+    };
+  }, [showSuggestedLinks]);
+
+  // 1. Map for fast node lookup
+  const nodeMap = useMemo(() => {
+    const map = new Map<string, GraphNode>();
+    fullGraphData.nodes.forEach(n => map.set(n.id, n));
+    return map;
+  }, [fullGraphData.nodes]);
+
+  // Get neighbors
   const getNeighbors = useCallback((node: GraphNode | null): Set<string> => {
     if (!node) return new Set();
-    return graphData.neighborMap.get(node.id) || new Set();
-  }, [graphData.neighborMap]);
+    return fullGraphData.neighborMap.get(node.id) || new Set();
+  }, [fullGraphData.neighborMap]);
 
   // Get 2-hop neighbors
   const getTwoHopNeighbors = useCallback((node: GraphNode | null): Set<string> => {
@@ -112,7 +221,7 @@ export function Graph() {
     const oneHop = getNeighbors(node);
     const twoHop = new Set<string>();
     oneHop.forEach((neighborId) => {
-      const neighborNode = graphData.nodes.find((n: GraphNode) => n.id === neighborId);
+      const neighborNode = nodeMap.get(neighborId);
       if (neighborNode) {
         const secondLevel = getNeighbors(neighborNode);
         secondLevel.forEach((id) => {
@@ -123,7 +232,7 @@ export function Graph() {
       }
     });
     return twoHop;
-  }, [graphData.nodes, getNeighbors]);
+  }, [nodeMap, getNeighbors]);
 
   // Center camera on node
   const centerOnNode = useCallback((node: GraphNode, zoom: number) => {
@@ -137,7 +246,7 @@ export function Graph() {
   useEffect(() => {
     const state = location.state as { noteSlug?: string } | null;
     if (state?.noteSlug) {
-      const node = graphData.nodes.find((n: GraphNode) => n.id === state.noteSlug);
+      const node = fullGraphData.nodes.find((n: GraphNode) => n.id === state.noteSlug);
       if (node) {
         setMode('bridge');
         setFocusedNode(node);
@@ -146,10 +255,13 @@ export function Graph() {
           centerOnNode(node, 1.4);
         }, 500);
       }
+    } else if (hubNode && !focusedNode) {
+      // Default to Hub Node if no state and no focus
+      setFocusedNode(hubNode);
     }
     // Note: We don't auto-center here for overview mode anymore, 
     // we let onEngineStop handle the initial center to ensure nodes have settled
-  }, [location.state, centerOnNode, graphData.nodes]);
+  }, [location.state, centerOnNode, fullGraphData.nodes, hubNode]);
 
   // Handle node click
   const handleNodeClick = useCallback((node: GraphNode) => {
@@ -170,15 +282,15 @@ export function Graph() {
 
   // Handle background click
   const handleBackgroundClick = useCallback(() => {
-    if (mode === 'focused' || mode === 'bridge') {
+    if (mode === 'focused' || mode === 'bridge' || focusedNode) {
       setMode('overview');
-      setFocusedNode(null);
+      setFocusedNode(hubNode); // Reset to Hub
       if (graphRef.current) {
         const duration = prefersReducedMotion ? 0 : 600;
         graphRef.current.zoom(0.7, duration);
       }
     }
-  }, [mode, prefersReducedMotion]);
+  }, [mode, prefersReducedMotion, hubNode, focusedNode]);
 
   // Handle zoom
   const handleZoom = useCallback((transform: { k: number }) => {
@@ -192,29 +304,37 @@ export function Graph() {
 
   // Calculate node opacity based on mode
   const getNodeOpacity = useCallback((node: GraphNode): number => {
+    // Distance-based fading for Ego Network
+    if (node.distance !== undefined) {
+      if (node.distance === 0) return 1;
+      if (node.distance === 1) return 0.8;
+      if (node.distance === 2) return 0.5;
+    }
+
     const activeNode = focusedNode || hoveredNode;
 
     if (mode === 'overview') {
-      return node.opacity || 0.35;
+      // Floor at 0.25 to ensure visibility on dark backgrounds
+      return Math.max(0.25, node.opacity || 0.35);
     }
 
     if (mode === 'local' && hoveredNode) {
       if (node.id === hoveredNode.id) return 1;
       const neighbors = getNeighbors(hoveredNode);
-      if (neighbors.has(node.id)) return 0.6;
-      return 0.15;
+      if (neighbors.has(node.id)) return 0.7;
+      return 0.2;
     }
 
     if ((mode === 'focused' || mode === 'bridge') && focusedNode) {
       if (node.id === focusedNode.id) return 1;
       const oneHop = getNeighbors(focusedNode);
-      if (oneHop.has(node.id)) return 0.7;
+      if (oneHop.has(node.id)) return 0.75;
       const twoHop = getTwoHopNeighbors(focusedNode);
-      if (twoHop.has(node.id)) return mode === 'bridge' ? 0.15 : 0.25;
-      return mode === 'bridge' ? 0.05 : 0.1;
+      if (twoHop.has(node.id)) return mode === 'bridge' ? 0.2 : 0.35;
+      return mode === 'bridge' ? 0.1 : 0.15;
     }
 
-    return 0.35;
+    return 0.4;
   }, [mode, focusedNode, hoveredNode, getNeighbors, getTwoHopNeighbors]);
 
   // Calculate node size based on mode
@@ -271,10 +391,12 @@ export function Graph() {
   const nodeCanvasObject = useCallback((node: GraphNode, ctx: CanvasRenderingContext2D) => {
     const opacity = getNodeOpacity(node);
     const size = getNodeSize(node);
+    const x = node.x ?? 0;
+    const y = node.y ?? 0;
 
     // Draw node circle
     ctx.beginPath();
-    ctx.arc(node.x!, node.y!, size, 0, 2 * Math.PI);
+    ctx.arc(x, y, size, 0, 2 * Math.PI);
     ctx.fillStyle = `rgba(242, 179, 255, ${opacity})`;
     ctx.fill();
 
@@ -285,10 +407,10 @@ export function Graph() {
       const truncated = label.length > maxLength ? label.slice(0, maxLength) + '…' : label;
 
       ctx.font = '11px Manrope';
-      ctx.fillStyle = `rgba(247, 242, 255, ${Math.min(opacity, 0.7)})`;
+      ctx.fillStyle = `rgba(247, 242, 255, ${Math.max(opacity, 0.7)})`;
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      ctx.fillText(truncated, node.x! + size + 4, node.y!);
+      ctx.fillText(truncated, x + size + 4, y);
     }
   }, [getNodeOpacity, getNodeSize, shouldShowLabel, zoomLevel]);
 
@@ -326,16 +448,80 @@ export function Graph() {
     }
   }, [dimensions]);
 
+  useEffect(() => {
+    const canvas = overlayRef.current;
+    if (!canvas || !showSuggestedLinks) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = dimensions.width;
+    canvas.height = dimensions.height;
+
+    let rafId = 0;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const graph = graphRef.current as unknown as {
+        graphData?: () => { nodes: GraphNode[] };
+        graph2ScreenCoords?: (x: number, y: number) => { x: number; y: number };
+      };
+
+      const graphData = graph?.graphData ? graph.graphData() : null;
+      const nodes = graphData?.nodes || [];
+      const nodeById = new Map(nodes.map((node) => [node.id, node]));
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(242, 179, 255, 0.25)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 6]);
+
+      suggestedLinks.forEach((link) => {
+        const source = nodeById.get(link.source);
+        const target = nodeById.get(link.target);
+        if (!source || !target) return;
+
+        const sourcePos = graph.graph2ScreenCoords
+          ? graph.graph2ScreenCoords(source.x || 0, source.y || 0)
+          : { x: source.x || 0, y: source.y || 0 };
+        const targetPos = graph.graph2ScreenCoords
+          ? graph.graph2ScreenCoords(target.x || 0, target.y || 0)
+          : { x: target.x || 0, y: target.y || 0 };
+
+        ctx.beginPath();
+        ctx.moveTo(sourcePos.x, sourcePos.y);
+        ctx.lineTo(targetPos.x, targetPos.y);
+        ctx.stroke();
+      });
+
+      ctx.restore();
+      rafId = requestAnimationFrame(draw);
+    };
+
+    draw();
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
+  }, [showSuggestedLinks, suggestedLinks, dimensions.width, dimensions.height]);
+
   return (
     <div className="space-y-8">
-      <SectionHeader title="Graph" subtitle="A living constellation of notes." />
+      <div className="flex items-start justify-between gap-4">
+        <SectionHeader title="Graph" subtitle="A living constellation of notes." />
+        <button
+          type="button"
+          onClick={() => setShowSuggestedLinks((prev) => !prev)}
+          className="mt-1 rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.2em] text-muted transition duration-300 ease-smooth hover:border-accent hover:text-accent"
+        >
+          {showSuggestedLinks ? 'Hide suggested links' : 'Show suggested links'}
+        </button>
+      </div>
       <Card ref={containerRef} className="h-[520px] p-0 overflow-hidden relative">
         {dimensions.width > 0 && (
           <ForceGraph2D
             ref={graphRef}
             width={dimensions.width}
             height={dimensions.height}
-            graphData={graphData}
+            graphData={vizData}
             nodeRelSize={4}
             nodeCanvasObject={nodeCanvasObject}
             nodeCanvasObjectMode={() => 'replace'}
@@ -357,6 +543,12 @@ export function Graph() {
                 graphRef.current?.zoomToFit(400, 50);
               }
             }}
+          />
+        )}
+        {showSuggestedLinks && (
+          <canvas
+            ref={overlayRef}
+            className="absolute inset-0 pointer-events-none"
           />
         )}
       </Card>

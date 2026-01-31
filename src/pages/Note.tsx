@@ -1,13 +1,19 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Card } from '../components/Card';
 import { MarkdownContent } from '../components/MarkdownContent';
 import { TagChip } from '../components/TagChip';
 import { ReadingProgress } from '../components/ReadingProgress';
+import { SuggestedLinksSection } from '../components/SuggestedLinksSection';
 import { getNoteBySlug, vaultIndex } from '../lib/data';
+import { dismissSuggestion, getNoteSuggestions, loadSuggestions } from '../lib/suggestions';
+import type { LinkSuggestion } from '../lib/types';
 
 export function Note() {
   const { slug } = useParams();
   const note = slug ? getNoteBySlug(slug) : undefined;
+  const [noteSuggestions, setNoteSuggestions] = useState<LinkSuggestion[]>([]);
+  const [copiedMessage, setCopiedMessage] = useState('');
 
   if (!note) {
     return (
@@ -20,6 +26,35 @@ export function Note() {
   const noteIndex = vaultIndex.notes.findIndex((item) => item.slug === note.slug);
   const prev = vaultIndex.notes[noteIndex - 1];
   const next = vaultIndex.notes[noteIndex + 1];
+
+  useEffect(() => {
+    let isActive = true;
+    loadSuggestions().then((index) => {
+      if (!isActive) return;
+      setNoteSuggestions(getNoteSuggestions(note.slug, index));
+    });
+    return () => {
+      isActive = false;
+    };
+  }, [note.slug]);
+
+  const handleAcceptSuggestion = async (suggestion: LinkSuggestion) => {
+    const linkText = `[[${suggestion.targetTitle || suggestion.target}]]`;
+    try {
+      await navigator.clipboard.writeText(linkText);
+      setCopiedMessage('Link copied. Paste it where you want it.');
+    } catch {
+      setCopiedMessage('Unable to copy link automatically.');
+    }
+    window.setTimeout(() => setCopiedMessage(''), 2500);
+  };
+
+  const handleDismissSuggestion = (suggestion: LinkSuggestion) => {
+    dismissSuggestion(note.slug, suggestion.target);
+    setNoteSuggestions((current) =>
+      current.filter((item) => item.target !== suggestion.target)
+    );
+  };
 
   return (
     <div>
@@ -80,6 +115,20 @@ export function Note() {
             </ul>
           </Card>
         </section>
+
+        <SuggestedLinksSection
+          noteSlug={note.slug}
+          suggestions={noteSuggestions}
+          onAccept={handleAcceptSuggestion}
+          onDismiss={handleDismissSuggestion}
+          autoOpen={note.links.length === 0}
+        />
+
+        {copiedMessage && (
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">
+            {copiedMessage}
+          </p>
+        )}
 
         <section className="flex flex-wrap gap-4">
           {prev && (

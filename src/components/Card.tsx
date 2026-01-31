@@ -1,19 +1,22 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import clsx from 'clsx';
 
 type CardVariant = 'hero' | 'default' | 'flat';
 
-export function Card({
-  children,
-  className,
-  variant = 'default'
-}: {
+interface CardProps {
   children: ReactNode;
   className?: string;
   variant?: CardVariant;
-}) {
+}
+
+export const Card = forwardRef<HTMLDivElement, CardProps>(({
+  children,
+  className,
+  variant = 'default'
+}, ref) => {
   return (
     <div
+      ref={ref}
       className={clsx(
         'rounded-2xl border overflow-hidden',
         {
@@ -30,4 +33,6 @@ export function Card({
       {children}
     </div>
   );
-}
+});
+
+Card.displayName = 'Card';

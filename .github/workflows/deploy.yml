@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [content_update]
 
 jobs:
   build-and-deploy:
@@ -10,8 +12,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
+      - name: Checkout Source
         uses: actions/checkout@v4
+
+      - name: Checkout Notes
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.NOTES_REPO }} # Configure this secret in your repo settings (e.g. username/notes-repo)
+          token: ${{ secrets.PAT_TOKEN }}     # Configure this secret with a PAT that has repo access
+          path: public/vault
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

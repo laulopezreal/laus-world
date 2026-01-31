@@ -32,10 +32,19 @@ export function Note() {
             {note.created && <span>Created {note.created}</span>}
             {note.updated && <span>Updated {note.updated}</span>}
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {note.tags.map((tag) => (
-              <TagChip key={tag} tag={tag} />
-            ))}
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap gap-2">
+              {note.tags.map((tag) => (
+                <TagChip key={tag} tag={tag} />
+              ))}
+            </div>
+            <Link
+              to="/graph"
+              state={{ noteSlug: note.slug }}
+              className="ml-auto rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted transition duration-300 ease-smooth hover:border-accent hover:text-accent"
+            >
+              View in Graph
+            </Link>
           </div>
         </section>
 

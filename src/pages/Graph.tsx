@@ -25,7 +25,11 @@ interface GraphLink extends LinkObject {
 
 export function Graph() {
   const location = useLocation();
-  const graphRef = useRef<ForceGraphMethods<GraphNode, GraphLink>>();
+  const graphRef = useRef<
+    ForceGraphMethods<GraphNode, GraphLink> & {
+      graph2ScreenCoords?: (x: number, y: number) => { x: number; y: number };
+    }
+  >();
   const overlayRef = useRef<HTMLCanvasElement | null>(null);
 
   // State
@@ -351,18 +355,7 @@ export function Graph() {
       return baseSize * 1.5; // Ensure active node is larger than max semantic size (1.35)
     }
 
-    // Neighbors in active modes
-    // Should we respect their semantic size or normalize them?
-    // "No changes to label rules or interaction logic"
-    // Usually neighbors are just baseSize.
-    // But if a neighbor is a semantic giant, shrinking it to baseSize might be weird.
-    // Let's keep them at semantic size unless they are the active one?
-    // "Graph remains calm" -> Let's keep adjacent nodes at semantic size?
-    // Re-reading: "Mode 1/2... focused node still overrides..."
-    // Just return baseSize for non-active nodes in focused mode?
-    // If I return `baseSize`, they lose their gravity.
-    // Let's return `baseSize * node.val` for everything that isn't the focused node itself.
-    // This keeps the "gravity" context even when focusing on a specific node.
+    // Keep semantic gravity for non-active nodes in focused/local modes.
     return baseSize * (node.val || 1);
   }, [mode, focusedNode, hoveredNode]);
 
@@ -461,14 +454,7 @@ export function Graph() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const graph = graphRef.current as unknown as {
-        graphData?: () => { nodes: GraphNode[] };
-        graph2ScreenCoords?: (x: number, y: number) => { x: number; y: number };
-      };
-
-      const graphData = graph?.graphData ? graph.graphData() : null;
-      const nodes = graphData?.nodes || [];
-      const nodeById = new Map(nodes.map((node) => [node.id, node]));
+      const nodeById = new Map(vizData.nodes.map((node) => [node.id, node]));
 
       ctx.save();
       ctx.strokeStyle = 'rgba(242, 179, 255, 0.25)';
@@ -480,11 +466,11 @@ export function Graph() {
         const target = nodeById.get(link.target);
         if (!source || !target) return;
 
-        const sourcePos = graph.graph2ScreenCoords
-          ? graph.graph2ScreenCoords(source.x || 0, source.y || 0)
+        const sourcePos = graphRef.current?.graph2ScreenCoords
+          ? graphRef.current.graph2ScreenCoords(source.x || 0, source.y || 0)
           : { x: source.x || 0, y: source.y || 0 };
-        const targetPos = graph.graph2ScreenCoords
-          ? graph.graph2ScreenCoords(target.x || 0, target.y || 0)
+        const targetPos = graphRef.current?.graph2ScreenCoords
+          ? graphRef.current.graph2ScreenCoords(target.x || 0, target.y || 0)
           : { x: target.x || 0, y: target.y || 0 };
 
         ctx.beginPath();

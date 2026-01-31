@@ -487,7 +487,7 @@ export function Graph() {
     return () => {
       cancelAnimationFrame(rafId);
     };
-  }, [showSuggestedLinks, suggestedLinks, dimensions.width, dimensions.height]);
+  }, [showSuggestedLinks, suggestedLinks, vizData, dimensions.width, dimensions.height]);
 
   return (
     <div className="space-y-8">

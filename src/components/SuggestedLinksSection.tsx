@@ -48,7 +48,7 @@ export function SuggestedLinksSection({
           className="mt-4 space-y-3 text-sm text-muted"
         >
           {suggestions.map((suggestion) => (
-            <li key={`${suggestion.target}-${suggestion.reason}`} className="rounded-xl border border-border/60 p-4">
+            <li key={suggestion.target} className="rounded-xl border border-border/60 p-4">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <Link

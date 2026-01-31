@@ -17,6 +17,7 @@ Check for:
 - Review comments and suggestions
 - Merge conflicts (mergeable status)
 - Required changes
+- CI/CD status (check for failures that need fixing)
 
 ## 2. Fetch and Rebase
 

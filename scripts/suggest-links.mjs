@@ -14,6 +14,7 @@ const main = async () => {
   const titleMap = new Map(
     notes.map((note) => [normalize(note.title), { slug: note.slug, title: note.title }])
   );
+  const titleEntries = Array.from(titleMap.entries());
 
   const suggestions = {};
 
@@ -21,7 +22,7 @@ const main = async () => {
     const content = normalize(note.content || '');
     const candidates = [];
 
-    titleMap.forEach((value, titleKey) => {
+    for (const [titleKey, value] of titleEntries) {
       if (value.slug === note.slug) return;
       if (content.includes(titleKey)) {
         candidates.push({
@@ -30,8 +31,9 @@ const main = async () => {
           reason: `The note explicitly mentions "${value.title}".`,
           confidence: 'medium'
         });
+        if (candidates.length >= 3) break;
       }
-    });
+    }
 
     suggestions[note.slug] = candidates.slice(0, 3);
   });

@@ -20,15 +20,22 @@ const resolveTargetSlug = (target: string) =>
 
 export async function loadSuggestions(): Promise<SuggestionsIndex> {
   const endpoints = ['/suggestions.json', '/generated/suggestions.json'];
+  const errors: string[] = [];
   for (const endpoint of endpoints) {
     try {
       const res = await fetch(endpoint, { cache: 'no-store' });
-      if (!res.ok) continue;
+      if (!res.ok) {
+        errors.push(`${endpoint}: ${res.status}`);
+        continue;
+      }
       const json = (await res.json()) as SuggestionsIndex;
       return json ?? {};
-    } catch {
-      // Try next endpoint
+    } catch (err) {
+      errors.push(`${endpoint}: ${String(err)}`);
     }
+  }
+  if (errors.length > 0) {
+    console.warn('Failed to load suggestions', errors);
   }
   return {};
 }

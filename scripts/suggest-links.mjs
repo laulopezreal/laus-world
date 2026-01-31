@@ -23,7 +23,7 @@ const main = async () => {
     const candidates = [];
 
     for (const [titleKey, value] of titleEntries) {
-      if (value.slug === note.slug) return;
+      if (value.slug === note.slug) continue;
       if (content.includes(titleKey)) {
         candidates.push({
           target: value.slug,

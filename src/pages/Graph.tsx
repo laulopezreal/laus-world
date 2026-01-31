@@ -11,6 +11,8 @@ type GraphMode = 'overview' | 'local' | 'focused' | 'bridge';
 interface GraphNode extends NodeObject {
   id: string;
   name: string;
+  val: number; // Size multiplier (0.8 - 1.35)
+  opacity: number; // Semantic opacity (0.15 - 0.9)
 }
 
 interface GraphLink extends LinkObject {
@@ -30,18 +32,54 @@ export function Graph() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   // Graph data
-  const graphData = useMemo(() => ({
-    nodes: vaultIndex.notes.map((note) => ({
-      id: note.slug,
-      name: note.title,
-    })) as GraphNode[],
-    links: vaultIndex.notes.flatMap((note) =>
-      note.links.map((link: { target: string }) => ({
-        source: note.slug,
-        target: link.target,
-      }))
-    ) as GraphLink[],
-  }), []);
+  const graphData = useMemo(() => {
+    const nodes: GraphNode[] = [];
+    const links: GraphLink[] = [];
+    const degreeMap = new Map<string, number>();
+
+    // 1. Generate Links and count degrees
+    vaultIndex.notes.forEach((note) => {
+      // Initialize degree for every note to ensure 0-degree nodes are counted
+      if (!degreeMap.has(note.slug)) degreeMap.set(note.slug, 0);
+
+      note.links.forEach((link) => {
+        links.push({ source: note.slug, target: link.target });
+        degreeMap.set(note.slug, (degreeMap.get(note.slug) || 0) + 1);
+        degreeMap.set(link.target, (degreeMap.get(link.target) || 0) + 1);
+      });
+    });
+
+    // 2. Calculate Min/Max degree for normalization
+    let minDegree = Infinity;
+    let maxDegree = -Infinity;
+
+    // Only count degrees for nodes that actually exist in our vault
+    vaultIndex.notes.forEach(note => {
+      const degree = degreeMap.get(note.slug) || 0;
+      if (degree < minDegree) minDegree = degree;
+      if (degree > maxDegree) maxDegree = degree;
+    });
+
+    if (minDegree === Infinity) { minDegree = 0; maxDegree = 1; }
+    if (minDegree === maxDegree) { maxDegree = minDegree + 1; }
+
+    // 3. Generate Nodes with visual properties
+    vaultIndex.notes.forEach((note) => {
+      const degree = degreeMap.get(note.slug) || 0;
+      const normalized = (degree - minDegree) / (maxDegree - minDegree);
+
+      nodes.push({
+        id: note.slug,
+        name: note.title,
+        // Map degree to size multiplier (0.8 - 1.35)
+        val: 0.8 + (normalized * (1.35 - 0.8)),
+        // Map degree to opacity (0.15 - 0.9)
+        opacity: 0.15 + (normalized * (0.9 - 0.15))
+      });
+    });
+
+    return { nodes, links };
+  }, []);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -153,7 +191,7 @@ export function Graph() {
     const activeNode = focusedNode || hoveredNode;
 
     if (mode === 'overview') {
-      return 0.35;
+      return node.opacity || 0.35;
     }
 
     if (mode === 'local' && hoveredNode) {
@@ -180,14 +218,28 @@ export function Graph() {
     const baseSize = 4;
     const activeNode = focusedNode || hoveredNode;
 
-    if (mode === 'overview') return baseSize;
+    // Overview: use semantic size
+    if (mode === 'overview') return baseSize * (node.val || 1);
 
+    // Active state overrides
     if ((mode === 'local' && node.id === hoveredNode?.id) ||
       ((mode === 'focused' || mode === 'bridge') && node.id === focusedNode?.id)) {
-      return baseSize * 1.2;
+      return baseSize * 1.5; // Ensure active node is larger than max semantic size (1.35)
     }
 
-    return baseSize;
+    // Neighbors in active modes
+    // Should we respect their semantic size or normalize them?
+    // "No changes to label rules or interaction logic"
+    // Usually neighbors are just baseSize.
+    // But if a neighbor is a semantic giant, shrinking it to baseSize might be weird.
+    // Let's keep them at semantic size unless they are the active one?
+    // "Graph remains calm" -> Let's keep adjacent nodes at semantic size?
+    // Re-reading: "Mode 1/2... focused node still overrides..."
+    // Just return baseSize for non-active nodes in focused mode?
+    // If I return `baseSize`, they lose their gravity.
+    // Let's return `baseSize * node.val` for everything that isn't the focused node itself.
+    // This keeps the "gravity" context even when focusing on a specific node.
+    return baseSize * (node.val || 1);
   }, [mode, focusedNode, hoveredNode]);
 
   // Determine if label should be shown

@@ -1,3 +1,5 @@
+# Cherry's Feedback on Ragify Solution Blueprint
+
 **RAGIFY** review 
 - Approving Ragify architecture including the MCP service would mean that enterprise architecture supports the library as a pattern, which we actually don't.
 - It is okay for exploration.

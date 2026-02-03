@@ -1,3 +1,4 @@
+# 2025-07-09, Wednesday
 
 - [ ] Open PR in Scispacy to update:
 	- [ ] Spacy to the latest version

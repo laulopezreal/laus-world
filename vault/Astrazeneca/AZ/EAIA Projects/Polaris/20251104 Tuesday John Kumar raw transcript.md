@@ -1,3 +1,4 @@
+# 20251104 Tuesday John Kumar raw transcript
 
 **Innocenti:** No more CUDA out-of-memory errors. That sounds like a challenge. Well then.  
 **Kumar:** Yeah.  

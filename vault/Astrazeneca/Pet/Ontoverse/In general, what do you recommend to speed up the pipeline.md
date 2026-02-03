@@ -1,3 +1,5 @@
+# In general, what do you recommend to speed up the pipeline
+
 Below are the **biggest wins we’ve seen when teams build “graph + D3 + React” UIs like yours.**  
 I’ve grouped them from **“fastest to wire-up” → “larger refactors.”** Pick the ones that fit your schedule.
 

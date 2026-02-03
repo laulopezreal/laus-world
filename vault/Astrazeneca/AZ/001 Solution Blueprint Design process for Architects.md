@@ -1,3 +1,4 @@
+# 001 Solution Blueprint Design process for Architects
 
 1. Make sure that you work under the last version of the blueprint. Current version is https://azcollaboration.sharepoint.com/:w:/r/sites/AA002/_layouts/15/Doc.aspx?sourcedoc=%7B78B78AF9-04F4-4A4A-83DF-DB5D4FA9AFB7%7D&file=Solution%20BluePrint%20Template.docx&wdLOR=c6A4AABF3-09EC-9649-980C-11ABA1E6E552&action=default&mobileredirect=true
 2. Complete the blueprint to create a first draft (1/2 weeks depending on team providing the information and SA availability)

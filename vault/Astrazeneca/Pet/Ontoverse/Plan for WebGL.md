@@ -1,3 +1,5 @@
+# Plan for WebGL
+
 Perfect. Here's the plan to **transform your graph data into a format suitable for Deck.gl using performant force-layout algorithms**, allowing you to experiment with different layout styles efficiently.
 
 ---

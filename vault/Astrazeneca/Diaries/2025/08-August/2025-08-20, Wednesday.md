@@ -1,3 +1,5 @@
+# 2025-08-20, Wednesday
+
 **Work**
 - [ ] Talk to the guy of the Barcelona IT graduates program
 - [ ] Talk to Cherry and Haji about the graduate program https://az.brightidea.com/EarlyTalentRotationOpportunities

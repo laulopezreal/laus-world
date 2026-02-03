@@ -1,3 +1,5 @@
+# Brain dump
+
 ~~I do the LeaniX certification and understand how the tool works~~
 I need to reach out to Sebastian and Paul to explain them about the hackathon
 I contribute to a high impact repository like [https://github.com/xai-org/grok-1](https://github.com/xai-org/grok-1) 

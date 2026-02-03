@@ -1,3 +1,4 @@
+# Writing practice
 
 In recent years, the shift towards remote working has become increasingly pronounced. Whilst many applaud the flexibility it offers, critics warn of potential drabacks. This essay will examine both views before arguing that, on balance, **remote work represents a positive development**
 

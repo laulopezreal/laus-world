@@ -1,0 +1,382 @@
+{
+  "main": {
+    "id": "9ba25b257e259654",
+    "type": "split",
+    "children": [
+      {
+        "id": "0795716453cb9b4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c98d0ac63d24efb4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Diseño/25-0001-Aplique vintage Rolf Krüger para Paul Neuhaus Leuchten – Alemania, 1970s.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "25-0001-Aplique vintage Rolf Krüger para Paul Neuhaus Leuchten – Alemania, 1970s"
+            }
+          },
+          {
+            "id": "73d7a15b546e56a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NOTAS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NOTAS"
+            }
+          },
+          {
+            "id": "87900fc15b1e5f42",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cons/Cheatsheet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet"
+            }
+          },
+          {
+            "id": "3f6cf8ef376c7ceb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NOTAS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NOTAS"
+            }
+          },
+          {
+            "id": "4d9312036705ab81",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/EAIA Projects/AI Tech Radar 2025 – Current and Emerging Trends in AI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "AI Tech Radar 2025 – Current and Emerging Trends in AI"
+            }
+          },
+          {
+            "id": "00b7415f2203cb9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/Meetings/Cherry Laura 1-1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cherry Laura 1-1"
+            }
+          },
+          {
+            "id": "fed91dbe89edc99f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/Personal Development plan in AZ 2025.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Personal Development plan in AZ 2025"
+            }
+          },
+          {
+            "id": "b86f62a001071af3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/EAIA Projects/Polaris/20251016 Interview 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "20251016 Interview 2"
+            }
+          },
+          {
+            "id": "a9c83a3978b57cf7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NOTAS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NOTAS"
+            }
+          },
+          {
+            "id": "d678eea1a3ed91ab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2025-10-24, Friday.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-10-24, Friday"
+            }
+          },
+          {
+            "id": "2fae2b529e3c8e3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/EAIA Projects/Domino/Domino Multitenant analysis/20251016 Thursday meeting with Domino.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "20251016 Thursday meeting with Domino"
+            }
+          },
+          {
+            "id": "4676dd0111f02f81",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AZ/EAIA Projects/Domino/Domino Multitenant analysis/2025-10-24, Friday.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-10-24, Friday"
+            }
+          },
+          {
+            "id": "b6b4dfd9555d9b9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Listas/Lista Alpha.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lista Alpha"
+            }
+          }
+        ],
+        "currentTab": 12
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "124fd1a9c4231fcb",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbf6f856277b1a3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "740bb9363fb4a85c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a2d460bf16df8548",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0431003c7bad07ab",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 614.5
+  },
+  "right": {
+    "id": "9daf5d046fcef488",
+    "type": "split",
+    "children": [
+      {
+        "id": "9612ff6f442b9194",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20437eb67c08598c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AZ/EAIA Projects/WONT DO Sustainability Manager (Microsoft) - SM.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for WONT DO Sustainability Manager (Microsoft) - SM"
+            }
+          },
+          {
+            "id": "0d56228c00c7e52e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "1576cd4dca14ba31",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "17528f7219c2c465",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "740bb9363fb4a85c",
+  "lastOpenFiles": [
+    "Listas/Lista Beta.md",
+    "Listas/Lista Alpha.md",
+    "AZ/Personal Development plan in AZ 2025.md",
+    "NOTAS.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis/Multicloud analysis/Multiregion deployment.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis/20251016 Thursday meeting with Domino.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis/2025-10-24, Friday.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis/Multicloud analysis",
+    "AZ/EAIA Projects/Domino/Requirements",
+    "AZ/EAIA Projects/Domino/Domino Data",
+    "Untitled.md",
+    "Listas",
+    "AZ/EAIA Projects/Polaris/20251104 Tuesday John Kumar raw transcript.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis/Domino multi tenant analysis.md",
+    "AZ/EAIA Projects/Domino/Domino Multitenant analysis",
+    "AZ/EAIA Projects/Polaris/20251016 Interview 2.md",
+    "AZ/Meetings/Meeting with Rakesh and Sreekanth 18 08 2025.md",
+    "AZ/Development without borders.md",
+    "Untitled 1.md",
+    "AZ/EAIA Projects/AI Tech Radar 2025 – Current and Emerging Trends in AI.md",
+    "AZ/Meetings/Cherry Laura 1-1.md",
+    "AZ/EAIA Projects/Polaris",
+    "Diaries/2025/09-September/2025-09-19, Friday.md",
+    "Diaries/2025/09-September/2025-09-20, Saturday.md",
+    "Diaries/2025/09-September/2025-09-24, Wednesday.md",
+    "Diaries/2025/09-September/2025-09-26.md",
+    "Cons/Cheatsheet.md",
+    "Cons",
+    "Diaries/2025/09-September/25-0006-4 Cojines IKEA X Raw Color Edición Limitada \"TESAMMANS\".md",
+    "Diseño/25-0001-Aplique vintage Rolf Krüger para Paul Neuhaus Leuchten – Alemania, 1970s.md",
+    "Diseño/25-0003-Frandsen - Benny Frandsen - Aplique (2) - Frandsen Ball Wall - Verde Aqua Mate - Metal - 2 artículos.md",
+    "Diseño/25-0002-Temde Pendant Lamp – 1970s Scandinavian Design – Sisal & Wood.md",
+    "Diaries/2025/09-September/2025-09-17, Wednesday.md",
+    "Diseño",
+    "Pet",
+    "Diaries/2025/05-May",
+    "Untitled.canvas",
+    "AZ/EAIA Projects/Ragify/Pasted image 20250627141509.png",
+    "AZ/EAIA Projects/GH Enterprise for EAIA/Laura Lopez Real GH admin certification.png",
+    "AZ/EAIA Projects/GH Enterprise for EAIA/GitHub Enterprise Admin AZ.png"
+  ]
+}

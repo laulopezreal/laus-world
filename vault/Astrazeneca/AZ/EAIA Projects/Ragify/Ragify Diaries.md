@@ -1,3 +1,5 @@
+# Ragify Diaries
+
 Friday 27th June:
 We have a meeting where we agreed to progress with the blueprint, but some decissions needed to be made. A draft of the blueprint was provided.
 

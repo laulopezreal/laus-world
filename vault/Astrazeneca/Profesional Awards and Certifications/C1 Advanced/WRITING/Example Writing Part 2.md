@@ -1,3 +1,5 @@
+# Example Writing Part 2
+
 **Preparing examples for emails and reviews**
 
 The user wants examples of emails and reviews with high scores, similar to the essay examples provided earlier. I need to prepare three examples for each task type, with each example being between 220-260 words. This is the standard length for C1 Advanced writing tasks. I'll make sure each of the emails and reviews showcases the highest possible quality to demonstrate what would earn top marks. I think I'll aim to keep things clear and concise but impactful.

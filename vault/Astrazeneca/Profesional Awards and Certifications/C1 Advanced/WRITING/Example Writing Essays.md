@@ -1,3 +1,5 @@
+# Example Writing Essays
+
 ---
 
 The user has asked for three examples of high-mark essays following a provided template. These should be around 220-260 words each, focused on C1 Advanced-level writing. I’ll make sure each one has a clear structure containing an introduction, two body paragraphs, and a conclusion. Topics could include issues like whether students should choose their subjects at 16, the impact of social media, or remote work. Each essay will show off strong language skills, like good vocabulary, grammar, and coherence. I'll prepare these up next!

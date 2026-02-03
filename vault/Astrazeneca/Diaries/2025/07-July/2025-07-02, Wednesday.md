@@ -1,3 +1,4 @@
+# 2025-07-02, Wednesday
 
 **Work**
 - [ ] Talk to the guy of the Barcelona IT graduates program

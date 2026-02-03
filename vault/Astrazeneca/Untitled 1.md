@@ -1,3 +1,5 @@
+# Untitled 1
+
 From an architecture perspective, using an AWS Route53 Resolver rule to forward DNS resolution for Azure private endpoints to the corresponding Azure DNS servers, and associating it with the relevant VPC, is a valid and established cross-cloud pattern. This is appropriate where AWS workloads need to resolve Azure services exposed via private endpoints.
 
 A few important conditions to note:

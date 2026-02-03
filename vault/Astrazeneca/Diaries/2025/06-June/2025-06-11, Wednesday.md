@@ -1,3 +1,5 @@
+# 2025-06-11, Wednesday
+
 Work
 - [ ] Talk to Cherry and Haji about the graduate program https://az.brightidea.com/EarlyTalentRotationOpportunities
 - [ ] Answer Deepmind

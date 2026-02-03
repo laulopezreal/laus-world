@@ -1,3 +1,5 @@
+# Day 2 - Hombro y Espalda
+
 **Calentamiento**
 - 5 min cinta / bici / elíptica
 - Movilidad hombros y brazos

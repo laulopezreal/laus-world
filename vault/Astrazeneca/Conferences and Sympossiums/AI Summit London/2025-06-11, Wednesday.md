@@ -1,3 +1,5 @@
+# 2025-06-11, Wednesday
+
 **AI won't take your job but someone who uses it will** - AI at Scale
 Marketing - Nick Handley - Impression
 

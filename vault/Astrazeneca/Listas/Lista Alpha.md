@@ -1,3 +1,5 @@
+# Lista Alpha
+
 - [ ] Catch up with the notes and plan how to turn them into requirements. (Polaris)
 - [ ] Domino blueprint change
 - [x] Email to Robert regarding GenAI use cases

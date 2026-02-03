@@ -1,3 +1,5 @@
+# Domino multi tenant analysis
+
 “Today we need a clear decision on **how** we deploy Domino across tenants and **who** owns which plane. Multi-tenant data planes controlled by a central vendor-owned control plane **aren’t a standard pattern in AZ**; the closest analogue is **US SHARP – Databricks Multi-Tenant (2021)**, where we deliberately kept **vendor-owned control plane + AZ-owned data plane**, with strong isolation, logging, and IAM boundaries.
 
 I’ll show three options, the risks and controls for each, the **minimum guardrails** required if we pursue multi-tenancy, and the **validation evidence** Domino must provide. My recommendation is to **proceed only if** those guardrails and proofs are met; otherwise we default to a **per-tenant or per-BU isolation model** aligned to EA standards.”

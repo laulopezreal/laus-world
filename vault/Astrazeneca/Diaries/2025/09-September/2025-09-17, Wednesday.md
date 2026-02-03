@@ -1,3 +1,4 @@
+# 2025-09-17, Wednesday
 
 - [ ] Contestar correos de Sagetap en AZ mailbox 
 - [ ] Aplicar GLG

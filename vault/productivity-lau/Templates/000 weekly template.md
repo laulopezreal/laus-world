@@ -1,0 +1,54 @@
+# 📆 Week 40 – 2025
+
+## 🌟 3 Weekly Outcomes
+1. 
+2. 
+3. 
+
+## 🎯 Projects Focus
+- Ragify
+- Cybersecurity MSc
+- Blog
+
+## ✅ Task Migration
+- Review [[00_Inbox/Tasks]]
+- Move only essential tasks here
+
+## 📅 Key Dates
+- Meetings:
+- Deadlines:
+
+## 📋 Weekly Kanban
+See → [[Kanban Week 40 2025]]
+
+## 📝 Reflection (end of week)
+- Wins:
+- Struggles:
+- Adjustments:
+# 📆 Week {{date:WW}} – {{date:YYYY}}
+
+## 🌟 3 Weekly Outcomes
+1. 
+2. 
+3. 
+
+## 🎯 Projects Focus
+- Ragify
+- Cybersecurity MSc
+- Blog
+
+## ✅ Task Migration
+- Review [[00_Inbox/Tasks]]
+- Move only essential tasks here
+
+## 📅 Key Dates
+- Meetings:
+- Deadlines:
+
+## 📋 Weekly Kanban
+See → [[Kanban Week {{date:WW}} {{date:YYYY}}]]
+
+## 📝 Reflection (end of week)
+- Wins:
+- Struggles:
+- Adjustments:

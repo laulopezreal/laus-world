@@ -1,0 +1,5 @@
+“My role at AstraZeneca as an Enterprise AI Architect has given me a very broad and strategic view of how AI is enabled at scale — governance, platforms, MLOps, security, and enterprise adoption. I’ve really valued that experience, and it’s made me a much stronger practitioner.
+
+At the same time, I realized that what energizes me most is being closer to the **scientific problem itself** — building models, iterating with data, and working directly with experimental teams to influence development decisions.
+
+This role at Merck sits exactly at that intersection: deep scientific modeling, hands-on data science, and modern AI, applied directly to bioprocess development. For me, it’s not a step away from architecture — it’s a step _down the stack_ to apply those skills where they create immediate scientific value.”

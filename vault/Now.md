@@ -22,5 +22,5 @@ If unsure where something belongs, capture it here first.
 - [[_system/Templates/Weekly Review]]
 
 ## Related
-- [[Library]]
-- [[Home]]
+- [[Library.md|Library]]
+- [[Home.md|Home]]

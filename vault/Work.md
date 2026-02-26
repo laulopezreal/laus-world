@@ -5,5 +5,5 @@
 - [[Work/Pet Projects/Index]]
 
 ## Related
-- [[Library]]
-- [[Home]]
+- [[Library.md|Library]]
+- [[Home.md|Home]]

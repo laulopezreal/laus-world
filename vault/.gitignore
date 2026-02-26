@@ -1,6 +1,11 @@
+# Obsidian local/runtime state
 .obsidian/workspace
 .obsidian/workspace.json
-.obsidian/cache
-.obsidian/plugins/obsidian-git/logs
-.DS_Store
+.obsidian/workspaces.json
+.obsidian/cache/
 
+# Plugin internals and plugin logs
+.obsidian/plugins/
+
+# OS noise
+.DS_Store

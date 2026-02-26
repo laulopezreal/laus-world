@@ -1,3 +1,3 @@
 # Life
 
-- [[Life/Training]]
+- [[Life/Training/Index]]

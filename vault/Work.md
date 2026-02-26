@@ -1,5 +1,5 @@
 # Work
 
-- [[Work/Astrazeneca]]
-- [[Work/Pet Projects]]
-- [[Work/Productivity-Lau]]
+- [[Work/Astrazeneca/Index]]
+- [[Work/Productivity-Lau/Index]]
+- [[Work/Pet Projects/Index]]

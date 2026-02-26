@@ -1,9 +1,15 @@
 # Lauland
 
+## Core Hubs
 - [[Now]]
 - [[Work]]
 - [[Life]]
 - [[Library]]
 - [[Archive]]
 
-> If unsure where a note goes, put it in [[Now]].
+## Active Areas
+- [[Work/Astrazeneca/Index]]
+- [[Work/Productivity-Lau/Index]]
+- [[Work/Pet Projects/Index]]
+
+> If unsure where something belongs, capture it in [[Now]].

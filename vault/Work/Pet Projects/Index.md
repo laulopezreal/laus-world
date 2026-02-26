@@ -1,3 +1,3 @@
 # Pet Projects Index
 
-- [[Work/Pet Projects/Knightmind]]
+- [[Work/Pet Projects/Knightmind/Index]]

@@ -2477,7 +2477,7 @@ SORT file.mtime ASC
 
 ## 🌙 Someday/Maybe
 - [ ] AI auditing certification (ISO420001)
-- [ ] Explore new agentic AI repo`,links:[],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-02-thursday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-02, Thursday.md",title:"📅 2025-10-02, Thursday",excerpt:"2025 10 02 🌟 Top 3 Priorities 1. 2. 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00 → Project Work: 15:15–16:00",tags:[],content:`#2025-10-02
+- [ ] Explore new agentic AI repo`,links:[],backlinks:[{target:"work-productivity-lau-01-daily-2025-10-02-thursday",label:"📅 2025-10-02, Thursday",type:"wikilink"},{target:"work-productivity-lau-01-daily-2025-10-03-friday",label:"📅 2025-10-03, Friday",type:"wikilink"},{target:"work-productivity-lau-01-daily-2025-10-04-saturday",label:"📅 2025-10-04, Saturday",type:"wikilink"},{target:"work-productivity-lau-01-daily-2025-10-05-sunday",label:"📅 2025-10-05, Sunday",type:"wikilink"},{target:"work-productivity-lau-01-daily-2025-10-06-monday",label:"📅 2025-10-06, Monday",type:"wikilink"},{target:"work-productivity-lau-02-weekly-week-40-2025-0929-1005",label:"📆 Week 40 – 2025 0929-1005",type:"wikilink"},{target:"work-productivity-lau-02-weekly-week-40-2025-1006-12",label:"📆 Week 40 – 2025 1006-12",type:"wikilink"},{target:"work-productivity-lau-templates-000-weekly-template",label:"000 weekly template",type:"wikilink"},{target:"work-productivity-lau-templates-kanban-weekly-template",label:"Kanban Weekly Template",type:"wikilink"},{target:"work-productivity-lau-templates-2025-10-7-tuesday",label:"📅 2025-10-7, Tuesday",type:"wikilink"}]},{slug:"work-productivity-lau-01-daily-2025-10-02-thursday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-02, Thursday.md",title:"📅 2025-10-02, Thursday",excerpt:"2025 10 02 🌟 Top 3 Priorities 1. 2. 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00 → Project Work: 15:15–16:00",tags:[],content:`#2025-10-02
 ## 🌟 Top 3 Priorities
 1. 
 2. 
@@ -2496,7 +2496,7 @@ SORT file.mtime ASC
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - 
@@ -2505,7 +2505,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-03-friday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-03, Friday.md",title:"📅 2025-10-03, Friday",excerpt:"🌟 Top 3 Priorities 1. 2. 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00 → Project Work: 15:15–16:00 → Meetings: 16:15–17:30",tags:[],content:`## 🌟 Top 3 Priorities
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-03-friday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-03, Friday.md",title:"📅 2025-10-03, Friday",excerpt:"🌟 Top 3 Priorities 1. 2. 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00 → Project Work: 15:15–16:00 → Meetings: 16:15–17:30",tags:[],content:`## 🌟 Top 3 Priorities
 1. 
 2. 
 3. 
@@ -2523,7 +2523,7 @@ scheduled today
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - 
@@ -2532,7 +2532,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-04-saturday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-04, Saturday.md",title:"📅 2025-10-04, Saturday",excerpt:"🌟 Top 3 Priorities 1. Assemble Ikea shelves 2. Buy groceries 3. Start organising the lamps ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 →",tags:[],content:`## 🌟 Top 3 Priorities
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-04-saturday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-04, Saturday.md",title:"📅 2025-10-04, Saturday",excerpt:"🌟 Top 3 Priorities 1. Assemble Ikea shelves 2. Buy groceries 3. Start organising the lamps ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 →",tags:[],content:`## 🌟 Top 3 Priorities
 1. Assemble Ikea shelves
 2. Buy groceries
 3. Start organising the lamps
@@ -2550,7 +2550,7 @@ scheduled today
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - 
@@ -2559,7 +2559,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-05-sunday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-05, Sunday.md",title:"📅 2025-10-05, Sunday",excerpt:"🌟 Top 3 Priorities 1. Do sport 2. Catch up with AstraZeneca Work 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00",tags:[],content:`## 🌟 Top 3 Priorities
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-05-sunday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-05, Sunday.md",title:"📅 2025-10-05, Sunday",excerpt:"🌟 Top 3 Priorities 1. Do sport 2. Catch up with AstraZeneca Work 3. ⏱ Time Blocks 08:30–10:00 → Deep Work: 10:15–11:30 → Study: 11:30–12:00 → Admin: 13:00–15:00",tags:[],content:`## 🌟 Top 3 Priorities
 1. Do sport
 2. Catch up with AstraZeneca Work
 3. 
@@ -2577,7 +2577,7 @@ scheduled today
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - 
@@ -2586,7 +2586,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-06-monday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-06, Monday.md",title:"📅 2025-10-06, Monday",excerpt:"🌟 Top 3 Priorities 1. Go to the club to do some training 2. 3. ⏱ Time Blocks ~~08:30–10:00 → Deep Work:~~ ~~10:15–11:30 → Study:~~ ~~11:30–12:00 → Admin:~~",tags:[],content:`
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-01-daily-2025-10-06-monday",path:"Work/Productivity-Lau/01_Daily/📅 2025-10-06, Monday.md",title:"📅 2025-10-06, Monday",excerpt:"🌟 Top 3 Priorities 1. Go to the club to do some training 2. 3. ⏱ Time Blocks ~~08:30–10:00 → Deep Work:~~ ~~10:15–11:30 → Study:~~ ~~11:30–12:00 → Admin:~~",tags:[],content:`
 
 ## 🌟 Top 3 Priorities
 1. Go to the club to do some training
@@ -2608,7 +2608,7 @@ scheduled today
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - Me ha gustado mucho Explorar Sarriá, volveré cuando abra el comercio un poco mas tarde para comprar lanas y materiales para tejer <3
@@ -2618,7 +2618,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow: Go to sleep early to wake up fresh
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-02-weekly-week-40-2025-0929-1005",path:"Work/Productivity-Lau/02_Weekly/📆 Week 40 – 2025 0929-1005.md",title:"📆 Week 40 – 2025 0929-1005",excerpt:"🌟 3 Weekly Outcomes 1. Finish Design Furniture Database and Webpage 2. Finish uploading all my second live clothes to Vinted 3. Catch up with work 🎯 Projects",tags:[],content:`## 🌟 3 Weekly Outcomes
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-02-weekly-week-40-2025-0929-1005",path:"Work/Productivity-Lau/02_Weekly/📆 Week 40 – 2025 0929-1005.md",title:"📆 Week 40 – 2025 0929-1005",excerpt:"🌟 3 Weekly Outcomes 1. Finish Design Furniture Database and Webpage 2. Finish uploading all my second live clothes to Vinted 3. Catch up with work 🎯 Projects",tags:[],content:`## 🌟 3 Weekly Outcomes
 1.  Finish Design Furniture Database and Webpage
 2. Finish uploading all my second live clothes to Vinted
 3. Catch up with work
@@ -2629,7 +2629,7 @@ scheduled today
 - Blog
 
 ## ✅ Task Migration
-- Review [[00_Inbox/Tasks]]
+- Review [[Work/Productivity-Lau/00_Inbox/Master To-Do List]]
 - Move only essential tasks here
 
 ## 📅 Key Dates
@@ -2637,13 +2637,13 @@ scheduled today
 - Deadlines:
 
 ## 📋 Weekly Kanban
-See → [[Kanban Week 40 2025]]
+See → [[Work/Productivity-Lau/03_Projects/Kanban Board]]
 
 ## 📝 Reflection (end of week)
 - Wins:
 - Struggles:
 - Adjustments:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"},{label:"Kanban Week 40 2025",target:"kanban-week-40-2025",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-02-weekly-week-40-2025-1006-12",path:"Work/Productivity-Lau/02_Weekly/📆 Week 40 – 2025 1006-12.md",title:"📆 Week 40 – 2025 1006-12",excerpt:"🌟 3 Weekly Outcomes 1. 2. 3. 🎯 Projects Focus Ragify Cybersecurity MSc Blog ✅ Task Migration Review [[00 Inbox/Tasks]] Move only essential tasks here 📅 Key Dates",tags:[],content:`
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"},{label:"Work/Productivity-Lau/03_Projects/Kanban Board",target:"work-productivity-lau-03-projects-kanban-board",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-02-weekly-week-40-2025-1006-12",path:"Work/Productivity-Lau/02_Weekly/📆 Week 40 – 2025 1006-12.md",title:"📆 Week 40 – 2025 1006-12",excerpt:"📆 Week 41 – 2025 🌟 3 Weekly Outcomes 1. 2. 3. 🎯 Projects Focus Ragify Cybersecurity MSc Blog ✅ Task Migration Review [[Work/Productivity Lau/00 Inbox/Master To Do",tags:[],content:`# 📆 Week 41 – 2025
 
 ## 🌟 3 Weekly Outcomes
 1. 
@@ -2656,7 +2656,7 @@ See → [[Kanban Week 40 2025]]
 - Blog
 
 ## ✅ Task Migration
-- Review [[00_Inbox/Tasks]]
+- Review [[Work/Productivity-Lau/00_Inbox/Master To-Do List]]
 - Move only essential tasks here
 
 ## 📅 Key Dates
@@ -2664,40 +2664,13 @@ See → [[Kanban Week 40 2025]]
 - Deadlines:
 
 ## 📋 Weekly Kanban
-See → [[Kanban Week 40 2025]]
+See → [[Work/Productivity-Lau/03_Projects/Kanban Board]]
 
 ## 📝 Reflection (end of week)
 - Wins:
 - Struggles:
 - Adjustments:
-# 📆 Week 41 – 2025
-
-## 🌟 3 Weekly Outcomes
-1. 
-2. 
-3. 
-
-## 🎯 Projects Focus
-- Ragify
-- Cybersecurity MSc
-- Blog
-
-## ✅ Task Migration
-- Review [[00_Inbox/Tasks]]
-- Move only essential tasks here
-
-## 📅 Key Dates
-- Meetings:
-- Deadlines:
-
-## 📋 Weekly Kanban
-See → [[Kanban Week 41 2025]]
-
-## 📝 Reflection (end of week)
-- Wins:
-- Struggles:
-- Adjustments:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"},{label:"Kanban Week 40 2025",target:"kanban-week-40-2025",type:"wikilink"},{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"},{label:"Kanban Week 41 2025",target:"kanban-week-41-2025",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-03-projects-kanban-board",path:"Work/Productivity-Lau/03_Projects/Kanban Board.md",title:"Kanban Board",excerpt:"🎯 Kanban Board 📝 To Do [ ] Example task 1 [ ] Example task 2 🚀 In Progress [ ] Example task 3 ✅ Done [x] Example",tags:[],content:`
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"},{label:"Work/Productivity-Lau/03_Projects/Kanban Board",target:"work-productivity-lau-03-projects-kanban-board",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-03-projects-kanban-board",path:"Work/Productivity-Lau/03_Projects/Kanban Board.md",title:"Kanban Board",excerpt:"🎯 Kanban Board 📝 To Do [ ] Example task 1 [ ] Example task 2 🚀 In Progress [ ] Example task 3 ✅ Done [x] Example",tags:[],content:`
 # 🎯 Kanban Board
 
 ## 📝 To Do
@@ -2709,7 +2682,7 @@ See → [[Kanban Week 41 2025]]
 
 ## ✅ Done
 - [x] Example completed task
-`,links:[],backlinks:[]},{slug:"work-productivity-lau-az-2025-11-04-tuesday",path:"Work/Productivity-Lau/AZ/2025-11-04, Tuesday.md",title:"2025-11-04, Tuesday",excerpt:"John Kumar Head of engineering in Biopharma R&D They work on projects (Mlab, in biologics engineering) Jobs that can run across multiple GPUs Deploy open source models They",tags:[],content:`
+`,links:[],backlinks:[{target:"work-productivity-lau-02-weekly-week-40-2025-0929-1005",label:"📆 Week 40 – 2025 0929-1005",type:"wikilink"},{target:"work-productivity-lau-02-weekly-week-40-2025-1006-12",label:"📆 Week 40 – 2025 1006-12",type:"wikilink"},{target:"work-productivity-lau-templates-000-weekly-template",label:"000 weekly template",type:"wikilink"}]},{slug:"work-productivity-lau-az-2025-11-04-tuesday",path:"Work/Productivity-Lau/AZ/2025-11-04, Tuesday.md",title:"2025-11-04, Tuesday",excerpt:"John Kumar Head of engineering in Biopharma R&D They work on projects (Mlab, in biologics engineering) Jobs that can run across multiple GPUs Deploy open source models They",tags:[],content:`
 **John Kumar**
 - Head of engineering in Biopharma R&D
 - They work on projects (Mlab, in biologics engineering)
@@ -2844,7 +2817,7 @@ Be ready for these pharma-specific curves:
     - _Answer:_ Generative models might create a protein sequence that _looks_ real but folds into an unstable structure, or cite a paper that doesn't exist.
         
 
-This video shows a candidate doing a similar AI interview, which can help you visualize the pacing and interaction style. [Mercor Interview Demo](https://www.youtube.com/watch?v=xh-1nQlKFh8)`,links:[],backlinks:[]},{slug:"work-productivity-lau-templates-000-weekly-template",path:"Work/Productivity-Lau/Templates/000 weekly template.md",title:"000 weekly template",excerpt:"📆 Week 40 – 2025 🌟 3 Weekly Outcomes 1. 2. 3. 🎯 Projects Focus Ragify Cybersecurity MSc Blog ✅ Task Migration Review [[00 Inbox/Tasks]] Move only essential",tags:[],content:`# 📆 Week 40 – 2025
+This video shows a candidate doing a similar AI interview, which can help you visualize the pacing and interaction style. [Mercor Interview Demo](https://www.youtube.com/watch?v=xh-1nQlKFh8)`,links:[],backlinks:[]},{slug:"work-productivity-lau-templates-000-weekly-template",path:"Work/Productivity-Lau/Templates/000 weekly template.md",title:"000 weekly template",excerpt:"📆 Week {{date:WW}} – {{date:YYYY}} 🌟 3 Weekly Outcomes 1. 2. 3. 🎯 Projects Focus Ragify Cybersecurity MSc Blog ✅ Task Migration Review [[Work/Productivity Lau/00 Inbox/Master To Do",tags:[],content:`# 📆 Week {{date:WW}} – {{date:YYYY}}
 
 ## 🌟 3 Weekly Outcomes
 1. 
@@ -2857,7 +2830,7 @@ This video shows a candidate doing a similar AI interview, which can help you vi
 - Blog
 
 ## ✅ Task Migration
-- Review [[00_Inbox/Tasks]]
+- Review [[Work/Productivity-Lau/00_Inbox/Master To-Do List]]
 - Move only essential tasks here
 
 ## 📅 Key Dates
@@ -2865,51 +2838,24 @@ This video shows a candidate doing a similar AI interview, which can help you vi
 - Deadlines:
 
 ## 📋 Weekly Kanban
-See → [[Kanban Week 40 2025]]
+See → [[Work/Productivity-Lau/03_Projects/Kanban Board]]
 
 ## 📝 Reflection (end of week)
 - Wins:
 - Struggles:
 - Adjustments:
-# 📆 Week {{date:WW}} – {{date:YYYY}}
-
-## 🌟 3 Weekly Outcomes
-1. 
-2. 
-3. 
-
-## 🎯 Projects Focus
-- Ragify
-- Cybersecurity MSc
-- Blog
-
-## ✅ Task Migration
-- Review [[00_Inbox/Tasks]]
-- Move only essential tasks here
-
-## 📅 Key Dates
-- Meetings:
-- Deadlines:
-
-## 📋 Weekly Kanban
-See → [[Kanban Week {{date:WW}} {{date:YYYY}}]]
-
-## 📝 Reflection (end of week)
-- Wins:
-- Struggles:
-- Adjustments:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"},{label:"Kanban Week 40 2025",target:"kanban-week-40-2025",type:"wikilink"},{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"},{label:"Kanban Week {{date:WW}} {{date:YYYY}}",target:"kanban-week-date-ww-date-yyyy",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-templates-kanban-weekly-template",path:"Work/Productivity-Lau/Templates/Kanban Weekly Template.md",title:"Kanban Weekly Template",excerpt:"📆 Kanban Week {{date:WW}} {{date:YYYY}} 📝 To Do [ ] Pull tasks from [[00 Inbox/Tasks]] 🚀 In Progress [ ] Tasks you're actively working on this week ✅",tags:[],content:`
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"},{label:"Work/Productivity-Lau/03_Projects/Kanban Board",target:"work-productivity-lau-03-projects-kanban-board",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-templates-kanban-weekly-template",path:"Work/Productivity-Lau/Templates/Kanban Weekly Template.md",title:"Kanban Weekly Template",excerpt:"📆 Kanban Week {{date:WW}} {{date:YYYY}} 📝 To Do [ ] Pull tasks from [[Work/Productivity Lau/00 Inbox/Master To Do List]] 🚀 In Progress [ ] Tasks you're actively working",tags:[],content:`
 # 📆 Kanban Week {{date:WW}} {{date:YYYY}}
 
 ## 📝 To Do
-- [ ] Pull tasks from [[00_Inbox/Tasks]]
+- [ ] Pull tasks from [[Work/Productivity-Lau/00_Inbox/Master To-Do List]]
 
 ## 🚀 In Progress
 - [ ] Tasks you're actively working on this week
 
 ## ✅ Done
 - [x] Completed tasks (review at end of week)
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-templates-monthly-review-template",path:"Work/Productivity-Lau/Templates/Monthly Review Template.md",title:"Monthly Review Template",excerpt:"📅 Monthly Review – {{date:MMMM YYYY}} 🌟 Top Wins 🚀 Progress on Goals What big goals moved forward this month? 📊 Weekly Outcomes Recap ✅ Task Archive Summary",tags:[],content:`# 📅 Monthly Review – {{date:MMMM YYYY}}
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-productivity-lau-templates-monthly-review-template",path:"Work/Productivity-Lau/Templates/Monthly Review Template.md",title:"Monthly Review Template",excerpt:"📅 Monthly Review – {{date:MMMM YYYY}} 🌟 Top Wins 🚀 Progress on Goals What big goals moved forward this month? 📊 Weekly Outcomes Recap ✅ Task Archive Summary",tags:[],content:`# 📅 Monthly Review – {{date:MMMM YYYY}}
 
 ## 🌟 Top Wins
 - 
@@ -2964,7 +2910,7 @@ SORT completion DESC
 not done
 scheduled today
 \`\`\`
-- [ ] [[00_Inbox/Tasks]] → pull 2–5 tasks max
+- [ ] [[Work/Productivity-Lau/00_Inbox/Master To-Do List]] → pull 2–5 tasks max
 
 ## 🧠 Notes
 - 
@@ -2973,7 +2919,7 @@ scheduled today
 - ✔ Wins:
 - ❌ Struggles:
 - 🔄 Improve tomorrow:
-`,links:[{label:"00_Inbox/Tasks",target:"00-inbox-tasks",type:"wikilink"}],backlinks:[]},{slug:"work-astrazeneca-999daily-april-2025-04-02",path:"Work/Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"2025 04 02 Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer",tags:[],content:`# 2025-04-02
+`,links:[{label:"Work/Productivity-Lau/00_Inbox/Master To-Do List",target:"work-productivity-lau-00-inbox-master-to-do-list",type:"wikilink"}],backlinks:[]},{slug:"work-astrazeneca-999daily-april-2025-04-02",path:"Work/Astrazeneca/999Daily/April/2025-04-02.md",title:"2025-04-02",excerpt:"2025 04 02 Domino Ask cherry about vulnerability scan Update logical diagram Reach out to domino to confirm: PLUGIN UPDATE their logical diagram in the documentation Ragify Answer",tags:[],content:`# 2025-04-02
 
 **Domino**
 

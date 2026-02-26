@@ -51,3 +51,7 @@
 ## 🌙 Someday/Maybe
 - [ ] AI auditing certification (ISO420001)
 - [ ] Explore new agentic AI repo
+
+## Related
+- [[Work/Productivity-Lau/00_Inbox/Eisenhower]]
+- [[Home]]

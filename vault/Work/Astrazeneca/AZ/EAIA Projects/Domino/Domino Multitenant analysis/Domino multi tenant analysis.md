@@ -145,3 +145,7 @@ Otherwise, the **current AZ-hosted model (Option C)** remains the safest, most c
 ---
 
 Would you like me to summarize this into a **decision slide** (“Stay vs Transfer — Key Questions & Decision Criteria”) ready for your meeting deck?
+
+## Related
+- [[Work/Astrazeneca/AZ/EAIA Projects/Domino/Domino Multitenant analysis/20251016 Thursday meeting with Domino]]
+- [[Home]]

@@ -14,3 +14,13 @@
 
 ## Inbox rule
 If unsure where something belongs, capture it here first.
+
+
+## Ritual
+- [[Now/Daily-Ritual]]
+- [[_system/Templates/Today]]
+- [[_system/Templates/Weekly Review]]
+
+## Related
+- [[Library]]
+- [[Home]]

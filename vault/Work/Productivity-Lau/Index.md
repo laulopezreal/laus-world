@@ -6,3 +6,7 @@
 - [[Work/Productivity-Lau/02_Weekly/Index]]
 - [[Work/Productivity-Lau/03_Projects/Kanban Board]]
 - [[Work/Productivity-Lau/Templates/Index]]
+
+## Related
+- [[Work/Productivity-Lau/IMPORTANT]]
+- [[Home]]

@@ -69,21 +69,21 @@ Error generating stack: `+o.message+`
 Historical and legacy material.
 
 - Legacy Obsidian configs: [[Archive/_legacy_obsidian_configs/Index]]
-`,links:[{label:"Archive/_legacy_obsidian_configs/Index",target:"archive-legacy-obsidian-configs-index",type:"wikilink"}],backlinks:[{target:"home",label:"Home",type:"wikilink"},{target:"now",label:"Now",type:"wikilink"}]},{slug:"home",path:"Home.md",title:"Home",excerpt:"Lauland Core Hubs [[Now]] [[Work]] [[Life]] [[Library]] [[Archive]] Active Areas [[Work/Astrazeneca/Index]] [[Work/Productivity Lau/Index]] [[Work/Pet Projects/Index]] If unsure where something belongs, capture it in [[Now]].",tags:[],content:`# Lauland
+`,links:[{label:"Archive/_legacy_obsidian_configs/Index",target:"archive-legacy-obsidian-configs-index",type:"wikilink"}],backlinks:[{target:"home",label:"Home",type:"wikilink"},{target:"now",label:"Now",type:"wikilink"}]},{slug:"home",path:"Home.md",title:"Home",excerpt:"Lauland Core Hubs [[Now.md|Now]] [[Work.md|Work]] [[Life.md|Life]] [[Library.md|Library]] [[Archive.md|Archive]] Active Areas [[Work/Astrazeneca/Index]] [[Work/Productivity Lau/Index]] [[Work/Pet Projects/Index]] If unsure where something belongs, capture it in [[Now.md|Now]].",tags:[],content:`# Lauland
 
 ## Core Hubs
-- [[Now]]
-- [[Work]]
-- [[Life]]
-- [[Library]]
-- [[Archive]]
+- [[Now.md|Now]]
+- [[Work.md|Work]]
+- [[Life.md|Life]]
+- [[Library.md|Library]]
+- [[Archive.md|Archive]]
 
 ## Active Areas
 - [[Work/Astrazeneca/Index]]
 - [[Work/Productivity-Lau/Index]]
 - [[Work/Pet Projects/Index]]
 
-> If unsure where something belongs, capture it in [[Now]].
+> If unsure where something belongs, capture it in [[Now.md|Now]].
 `,links:[{label:"Now",target:"now",type:"wikilink"},{label:"Work",target:"work",type:"wikilink"},{label:"Life",target:"life",type:"wikilink"},{label:"Library",target:"library",type:"wikilink"},{label:"Archive",target:"archive",type:"wikilink"},{label:"Work/Astrazeneca/Index",target:"work-astrazeneca-index",type:"wikilink"},{label:"Work/Productivity-Lau/Index",target:"work-productivity-lau-index",type:"wikilink"},{label:"Work/Pet Projects/Index",target:"work-pet-projects-index",type:"wikilink"},{label:"Now",target:"now",type:"wikilink"}],backlinks:[{target:"now",label:"Now",type:"wikilink"}]},{slug:"library",path:"Library.md",title:"Library",excerpt:"Library Reference notes and evergreen material. Add curated notes here when they stop being active work.",tags:[],content:`# Library
 
 Reference notes and evergreen material.
@@ -92,7 +92,7 @@ Reference notes and evergreen material.
 `,links:[],backlinks:[{target:"home",label:"Home",type:"wikilink"},{target:"now",label:"Now",type:"wikilink"}]},{slug:"life",path:"Life.md",title:"Life",excerpt:"Life [[Life/Training/Index]]",tags:[],content:`# Life
 
 - [[Life/Training/Index]]
-`,links:[{label:"Life/Training/Index",target:"life-training-index",type:"wikilink"}],backlinks:[{target:"home",label:"Home",type:"wikilink"},{target:"now",label:"Now",type:"wikilink"}]},{slug:"now",path:"Now.md",title:"Now",excerpt:"Now Top 3 [ ] [ ] [ ] Quick navigation [[Home]] [[Work]] [[Life]] [[Library]] [[Archive]] Inbox rule If unsure where something belongs, capture it here first.",tags:[],content:`# Now
+`,links:[{label:"Life/Training/Index",target:"life-training-index",type:"wikilink"}],backlinks:[{target:"home",label:"Home",type:"wikilink"},{target:"now",label:"Now",type:"wikilink"}]},{slug:"now",path:"Now.md",title:"Now",excerpt:"Now Top 3 [ ] [ ] [ ] Quick navigation [[Home.md|Home]] [[Work.md|Work]] [[Life.md|Life]] [[Library.md|Library]] [[Archive.md|Archive]] Inbox rule If unsure where something belongs, capture it here first.",tags:[],content:`# Now
 
 ## Top 3
 - [ ]
@@ -100,11 +100,11 @@ Reference notes and evergreen material.
 - [ ]
 
 ## Quick navigation
-- [[Home]]
-- [[Work]]
-- [[Life]]
-- [[Library]]
-- [[Archive]]
+- [[Home.md|Home]]
+- [[Work.md|Work]]
+- [[Life.md|Life]]
+- [[Library.md|Library]]
+- [[Archive.md|Archive]]
 
 ## Inbox rule
 If unsure where something belongs, capture it here first.

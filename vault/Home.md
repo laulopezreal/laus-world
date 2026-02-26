@@ -1,15 +1,15 @@
 # Lauland
 
 ## Core Hubs
-- [[Now]]
-- [[Work]]
-- [[Life]]
-- [[Library]]
-- [[Archive]]
+- [[Now.md|Now]]
+- [[Work.md|Work]]
+- [[Life.md|Life]]
+- [[Library.md|Library]]
+- [[Archive.md|Archive]]
 
 ## Active Areas
 - [[Work/Astrazeneca/Index]]
 - [[Work/Productivity-Lau/Index]]
 - [[Work/Pet Projects/Index]]
 
-> If unsure where something belongs, capture it in [[Now]].
+> If unsure where something belongs, capture it in [[Now.md|Now]].

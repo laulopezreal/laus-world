@@ -6,11 +6,11 @@
 - [ ]
 
 ## Quick navigation
-- [[Home]]
-- [[Work]]
-- [[Life]]
-- [[Library]]
-- [[Archive]]
+- [[Home.md|Home]]
+- [[Work.md|Work]]
+- [[Life.md|Life]]
+- [[Library.md|Library]]
+- [[Archive.md|Archive]]
 
 ## Inbox rule
 If unsure where something belongs, capture it here first.

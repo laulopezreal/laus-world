@@ -1,4 +1,4 @@
-# Home
+# Lauland
 
 - [[Now]]
 - [[Work]]

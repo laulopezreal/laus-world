@@ -1,9 +1,9 @@
 # Work
 
 - [[Work/Astrazeneca/Index]]
-- [[Work/Productivity-Lau/Index]]
-- [[Work/Pet Projects/Index]]
+- [[Life/Productivity-Lau/Index]]
+- [[Work/Pet/Index]]
 
 ## Related
-- [[Library.md|Library]]
-- [[Home.md|Home]]
+- [[Library]]
+- [[Home]]

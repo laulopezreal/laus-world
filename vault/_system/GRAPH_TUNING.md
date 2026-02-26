@@ -9,5 +9,5 @@ Recommended defaults applied:
 For hub pages, use Local Graph first from:
 - [[Home]]
 - [[Work/Astrazeneca/MOC]]
-- [[Work/Productivity-Lau/MOC]]
+- [[Life/Productivity-Lau/MOC]]
 - [[Life/Training/MOC]]

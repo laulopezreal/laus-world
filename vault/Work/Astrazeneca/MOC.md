@@ -2,13 +2,13 @@
 
 ## Core navigation
 - [[Work/Astrazeneca/Index]]
-- [[Work/Astrazeneca/AZ/Index]]
+- [[Work/Astrazeneca/Index 1]]
 - [[Work/Astrazeneca/Diaries/Index]]
 
 ## Active anchors
 - [[Work/Astrazeneca/2026-01-30, Friday]]
-- [[Work/Astrazeneca/AZ/EAIA Projects/Domino/Domino Multitenant analysis/Domino multi tenant analysis]]
-- [[Work/Astrazeneca/AZ/EAIA Projects/Polaris/20251016 Interview 2]]
+- [[Domino multi tenant analysis]]
+- [[20251016 Interview 2]]
 
 ## Related
 - [[Work/Astrazeneca/Index]]

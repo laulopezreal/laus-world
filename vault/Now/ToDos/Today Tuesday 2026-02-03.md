@@ -11,6 +11,6 @@
 
 - [ ] Manicura y Pedicura
 ## Related
-- [[Work/Productivity-Lau/00_Inbox/Master To-Do List]]
-- [[Work/Productivity-Lau/03_Projects/Kanban Board]]
+- [[Master To-Do List]]
+- [[Kanban Board]]
 - [[Life/Training/MOC]]

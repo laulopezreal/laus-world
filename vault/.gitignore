@@ -4,7 +4,7 @@
 .obsidian/workspaces.json
 .obsidian/cache/
 
-# Plugin internals and plugin logs
+# Plugin internals (keep vault portable, avoid machine-specific churn)
 .obsidian/plugins/
 
 # OS noise

@@ -5,7 +5,7 @@
 - [[Work/Astrazeneca/Diaries/Index]]
 - [[Work/Astrazeneca/Conferences and Sympossiums/Index]]
 - [[Life/Personal/Index]]
-- [[Now/Listas/Index]]
+- [[Work/Astrazeneca/ToDo Listas/Index]]
 
 ## Related
 - [[Work/Astrazeneca/Dashboard]]

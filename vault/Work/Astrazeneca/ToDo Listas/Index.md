@@ -3,4 +3,4 @@
 Parent: [[Work/Astrazeneca/Index]]
 
 - [[Lista Alpha]]
-- [[Now/Listas/Lista Beta]]
+- [[Work/Astrazeneca/ToDo Listas/Lista Beta]]
